@@ -1,6 +1,6 @@
 .app {
-  padding: 0 1em 3em 1em;
-  background-color: #444;
+  padding: 0 1em 1em 1em;
+  background-color: #333;
   color: #ddd;
 }
 
@@ -9,16 +9,27 @@
   margin: 0 auto;
 }
 
-header {
-  padding-bottom: 1em;
+
+.accent {
+  font-family: 'Rock-Salt'
+}
+
+.mono {
+  font-family: 'Roboto-Mono'
+}
+
+
+header img {
+  float: left;
+  margin-left: -16px;
 }
 
 header h1 {
-  margin-bottom: 0;
+  margin: 5px 0 0 0;
 }
 
 header p {
-  margin-top: 0;
+  margin-top: -10px;
 }
 
 .grid {
@@ -28,8 +39,35 @@ header p {
 
 section {
   background: #ddd;
-  color: #444;
+  color: #333;
   padding: 0 1em;
+}
+
+
+#writing {
+  color: #ddd;
+  background: transparent;
+}
+
+#contact {
+  color: #ddd;
+  background: transparent;
+
+  padding-top: 1em;
+}
+
+.contact-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.contact-grid a {
+  font-size: small;
+  color: #ddd;
+
 }
 
 @media screen and (min-width: 992px) {
@@ -37,70 +75,53 @@ section {
     padding: 0;
   }
 
-
   .container {
     height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 1fr auto;
   }
 
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: auto 1fr;
   }
 
-  #demo-1 {
+  header {
     grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: 1;
     grid-column-start: 1;
-    grid-column-end: 2;
-  }
-
-  #demo-2 {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 2;
     grid-column-end: 3;
   }
 
-  #demo-3 {
-    grid-row-start: 4;
-    grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 2;
+
+  header h1 {
+    margin: 20px 0 0 0;
   }
 
-  #demo-4 {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
 
-  #demo-4 {
-    grid-row-start: 2;
-    grid-row-end: 5;
-  }
 
-  #timeline {
+  #contact {
     grid-row-start: 1;
-    grid-row-end: 6;
+    grid-row-end: 1;
     grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+  #demos {
+    grid-row-start: 2;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    overflow: scroll;
   }
 
   #writing {
-    grid-row-start: 5;
-    grid-row-end: 8;
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-
-  #contact {
-    grid-row-start: 6;
-    grid-row-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 5;
     grid-column-start: 3;
-
-    color: #ddd;
-    background: transparent;
-    border: none;
+    grid-column-end: 4;
   }
+
 
 }

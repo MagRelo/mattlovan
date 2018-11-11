@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import './fonts/Open-Sans/open-sans.css';
+
+// Fonts
+import './fonts/Roboto/roboto.css';
+import './fonts/Roboto_Mono/roboto-mono.css';
+import './fonts/Rock_Salt/rock-salt.css';
+
+//
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
 

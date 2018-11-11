@@ -1,59 +1,77 @@
 import React, { Component } from 'react';
 import './css/App.css';
 
+import Can from './images/can.svg';
+
 class App extends Component {
   render() {
     return (
       <div className="app">
         <div className="container">
-          <header>
-            <h1>Servesa</h1>
-            <p>playground and demos by Matt Lovan</p>
-          </header>
-
           <div className="grid">
-            <section id="contact">
-              <h2>Contact</h2>
-              <p>@mattlovan</p>
-              <p>medium</p>
-            </section>
+            <header>
+              <img src={Can} alt="" />
+              <h1 className="accent">Servésa</h1>
+              <p className="mono">
+                concepts / demos / projects by{' '}
+                <span style={{ fontWeight: 'bold', paddingLeft: '0.125em' }}>
+                  Matt Lovan
+                </span>
+              </p>
+            </header>
 
-            <section id="demo-1">
+            <section id="demos">
+              <h2>WebMidi Fighter</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                beatae eaque repudiandae asperiores facere minus at quod.
+                Maiores pariatur, consequuntur dolorum debitis, fugiat id totam
+                blanditiis officiis, iure numquam odio.
+              </p>
               <h2>#1</h2>
-            </section>
-
-            <section id="demo-2">
-              <h2>#2</h2>
-            </section>
-
-            <section id="demo-3">
-              <h2>#3</h2>
-            </section>
-
-            <section id="demo-4">
-              <h2>#4</h2>
-            </section>
-
-            <section id="timeline">
-              <h2>Timeline</h2>
-              <ul>
-                <li>0</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-              </ul>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                beatae eaque repudiandae asperiores facere minus at quod.
+                Maiores pariatur, consequuntur dolorum debitis, fugiat id totam
+                blanditiis officiis, iure numquam odio.
+              </p>
+              <h2>#1</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                beatae eaque repudiandae asperiores facere minus at quod.
+                Maiores pariatur, consequuntur dolorum debitis, fugiat id totam
+                blanditiis officiis, iure numquam odio.
+              </p>
+              <h2>#1</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                beatae eaque repudiandae asperiores facere minus at quod.
+                Maiores pariatur, consequuntur dolorum debitis, fugiat id totam
+                blanditiis officiis, iure numquam odio.
+              </p>
             </section>
 
             <section id="writing">
-              <h2>Writing</h2>
+              <h2>Activity</h2>
               <ul>
                 <li>article 1</li>
                 <li>article 2</li>
                 <li>article 3</li>
               </ul>
+            </section>
+
+            <section className="mono" id="contact">
+              <div className="contact-grid">
+                <a href="">
+                  <p>@mattlovan</p>
+                </a>
+                <a href="">
+                  <p>medium</p>
+                </a>
+                <a href="">
+                  <p>mattlovan@gmail.com</p>
+                </a>
+              </div>
             </section>
           </div>
 
