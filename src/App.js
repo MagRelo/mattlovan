@@ -1,7 +1,93 @@
 import React, { Component } from 'react';
 import './css/App.css';
 
-import Can from './images/can.svg';
+import TwitterLogo from './images/twitter.svg';
+import MediumLogo from './images/medium.svg';
+
+const projects = [
+  {
+    type: 'demo',
+    title: '(Web)MIDI Fighter 3D',
+    tagline:
+      'Connect any MIDI instrument to your computer and play music live on the web',
+    tech: ['WebMIDI', 'WebAudio', 'WebSockets', '3D CSS'],
+    featured: true,
+    url: 'http://google.com'
+  },
+  {
+    type: 'demo',
+    title: 'Digital Signatures',
+    tagline:
+      'Use digital signatures instead of username & password in traditional web applications',
+    tech: ['Ethereum', 'ERC721', 'Web3', 'Mechanism Design'],
+    featured: false,
+    url: 'http://google.com'
+  },
+  {
+    type: 'concept',
+    title: 'Community Garden',
+    tagline:
+      'Dynamic community-building using behavioral psycology and mechanism design.',
+    tech: ['Ethereum', 'ERC721', 'Web3', 'Human Systems'],
+    featured: false,
+    url: 'http://google.com'
+  },
+  {
+    type: 'concept',
+    title: 'Souvenir',
+    tagline:
+      'Create meaningful digital artfacts by leveraging real-world experiences',
+    tech: ['Ethereum', 'ERC721', 'ERC998', 'Web3', 'Art'],
+    featured: false,
+    url: 'http://google.com'
+  },
+  {
+    type: 'concept',
+    title: 'Priority Pricing',
+    tagline:
+      'Protocol for demand-based pricing that blurs the line betwen employee and free-lancer',
+    tech: ['Ethereum', 'ERC721', 'Web3', 'Mechanism Design'],
+    featured: false,
+    url: 'http://google.com'
+  },
+
+  {
+    type: 'article',
+    title: 'Curation Tournament',
+    tagline:
+      'A game designed to encourage a group of players to reach consensus around a list of items.',
+    tech: ['Mechanism Design'],
+    featured: false,
+    url: 'http://google.com'
+  }
+];
+
+const projectTile = projectData => {
+  return (
+    <div
+      key={projectData.title}
+      className={projectData.featured ? 'featured' : ''}
+    >
+      <div className="image" />
+      <span className="project-type mono">{projectData.type}</span>
+
+      <a href={projectData.url}>
+        <h2 className="accent">{projectData.title}</h2>
+      </a>
+
+      <p>{projectData.tagline}</p>
+      <div>
+        {projectData.tech.map(item => {
+          return (
+            <span key={item} className="project-tech">
+              {item}
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 class App extends Component {
   render() {
@@ -10,73 +96,47 @@ class App extends Component {
         <div className="container">
           <div className="grid">
             <header>
-              <img src={Can} alt="" />
               <h1 className="accent">Servésa</h1>
               <p className="mono">
                 concepts / demos / projects by{' '}
-                <span style={{ fontWeight: 'bold', paddingLeft: '0.125em' }}>
+                <span
+                  style={{
+                    fontWeight: 'bold',
+                    paddingLeft: '0.125em',
+                    display: 'inline-block'
+                  }}
+                >
                   Matt Lovan
                 </span>
               </p>
             </header>
 
-            <section id="demos">
-              <h2>WebMidi Fighter</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-                beatae eaque repudiandae asperiores facere minus at quod.
-                Maiores pariatur, consequuntur dolorum debitis, fugiat id totam
-                blanditiis officiis, iure numquam odio.
-              </p>
-              <h2>#1</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-                beatae eaque repudiandae asperiores facere minus at quod.
-                Maiores pariatur, consequuntur dolorum debitis, fugiat id totam
-                blanditiis officiis, iure numquam odio.
-              </p>
-              <h2>#1</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-                beatae eaque repudiandae asperiores facere minus at quod.
-                Maiores pariatur, consequuntur dolorum debitis, fugiat id totam
-                blanditiis officiis, iure numquam odio.
-              </p>
-              <h2>#1</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-                beatae eaque repudiandae asperiores facere minus at quod.
-                Maiores pariatur, consequuntur dolorum debitis, fugiat id totam
-                blanditiis officiis, iure numquam odio.
-              </p>
-            </section>
-
-            <section id="writing">
-              <h2>Activity</h2>
-              <ul>
-                <li>article 1</li>
-                <li>article 2</li>
-                <li>article 3</li>
-              </ul>
+            <section id="demo-grid">
+              {projects.map(project => {
+                return projectTile(project);
+              })}
             </section>
 
             <section className="mono" id="contact">
               <div className="contact-grid">
-                <a href="">
-                  <p>@mattlovan</p>
+                <a href="https://twitter.com/mattlovan">
+                  <p>
+                    <img src={TwitterLogo} alt="" />
+                    @mattlovan
+                  </p>
                 </a>
-                <a href="">
-                  <p>medium</p>
-                </a>
-                <a href="">
-                  <p>mattlovan@gmail.com</p>
+                <a href="https://medium.com/@mattlovan">
+                  <p>
+                    <img src={MediumLogo} alt="" />
+                    @mattlovan
+                  </p>
                 </a>
               </div>
             </section>
           </div>
 
           <footer>
-            <p>2018</p>
+            <p className="mono">2018</p>
           </footer>
         </div>
       </div>
