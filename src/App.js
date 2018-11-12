@@ -58,7 +58,7 @@ const projects = [
       'A game designed to encourage a group of players to reach consensus around a list of items.',
     tech: ['Mechanism Design'],
     featured: false,
-    url: 'http://google.com'
+    url: 'https://medium.com/@mattlovan/curation-tournament-babbf0155a36'
   }
 ];
 
@@ -66,7 +66,7 @@ const projectTile = projectData => {
   return (
     <div
       key={projectData.title}
-      className={projectData.featured ? 'featured' : ''}
+      className={(projectData.featured ? 'featured ' : '') + 'project'}
     >
       <div className="image" />
       <span className="project-type mono">{projectData.type}</span>
@@ -85,6 +85,11 @@ const projectTile = projectData => {
           );
         })}
       </div>
+      <div>
+        <a href={projectData.url}>
+          <div className="project-link">view {projectData.type} ▶</div>
+        </a>
+      </div>
     </div>
   );
 };
@@ -96,7 +101,7 @@ class App extends Component {
         <div className="container">
           <div className="grid">
             <header>
-              <h1 className="accent">Servésa</h1>
+              <h1 className="accent">Servesa</h1>
               <p className="mono">
                 concepts / demos / projects by{' '}
                 <span
@@ -111,7 +116,7 @@ class App extends Component {
               </p>
             </header>
 
-            <section id="demo-grid">
+            <section id="project-grid">
               {projects.map(project => {
                 return projectTile(project);
               })}
