@@ -1,0 +1,143 @@
+.controller-wrapper {
+  min-height: 300px;
+}
+
+.stage {
+  perspective: 600px;
+}
+
+.scene {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+
+  transition: transform 1s;
+  animation: spin 24s linear infinite;
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateY(0deg) rotateZ(0deg);
+}
+
+
+.scene:hover {
+
+  animation: none;
+  transform-style: preserve-3d;
+
+  transition: transform 3s;
+  transform: rotateX(25deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(360deg);
+  }
+}
+
+
+@keyframes spincube {
+  16% {
+    -webkit-transform: rotateY(-90deg);
+  }
+
+  33% {
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg);
+  }
+
+  50% {
+    -webkit-transform: rotateZ(360deg);
+  }
+
+  66% {
+    -webkit-transform: rotateY(90deg) rotateX(90deg);
+  }
+
+  83% {
+    -webkit-transform: rotateX(90deg);
+  }
+}
+
+
+
+.cube__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: grey;
+  border: solid 1px #444;
+}
+
+.cube__face--front {
+  transform: rotateX(-90deg) translateZ(170px);
+  height: 60px;
+}
+
+.cube__face--back {
+  transform: rotateX(90deg) translateZ(30px);
+  height: 60px;
+}
+
+
+.cube__face--bottom {
+  transform: rotateY(180deg) translateZ(30px);
+}
+
+.cube__face--right {
+  transform: rotateY(90deg) translateZ(170px);
+  width: 60px;
+}
+
+.cube__face--left {
+  transform: rotateY(-90deg) translateZ(30px);
+  width: 60px;
+}
+
+.cube__face--top {
+  transform: rotateY(0deg) translateZ(30px);
+
+}
+
+.midiStatus {
+  text-transform: uppercase;
+  color: gray;
+  text-align: center;
+}
+
+.controller {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 35px);
+  grid-gap: 10px;
+  border: solid 1px gray;
+  border-radius: 85px;
+  padding: 10px 0 0 10px;
+  max-width: 50vw;
+}
+
+.pad-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.pad {
+  border: solid 1px #333;
+  border-radius: 35px;
+  height: 35px;
+  width: 35px;
+  font-size: 10px;
+}
+
+
+.pad:hover {
+  background-color: yellow;
+}

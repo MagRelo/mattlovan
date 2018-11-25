@@ -4,6 +4,8 @@ import './css/App.css';
 import TwitterLogo from './images/twitter.svg';
 import MediumLogo from './images/medium.svg';
 
+import Controller from './components/controller/Controller';
+
 const projects = [
   {
     type: 'demo',
@@ -12,25 +14,25 @@ const projects = [
       'Connect any MIDI instrument to your computer and play music live on the web',
     tech: ['WebMIDI', 'WebAudio', 'WebSockets', '3D CSS'],
     featured: true,
-    url: 'http://google.com'
+    url: 'https://midifighter.servesa.io'
   },
   {
     type: 'demo',
     title: 'Digital Signatures',
     tagline:
       'Use digital signatures instead of username & password in traditional web applications',
-    tech: ['Ethereum', 'ERC721', 'Web3', 'Mechanism Design'],
+    tech: ['Ethereum', 'Web3', 'WebSockets'],
     featured: false,
-    url: 'http://google.com'
+    url: 'https://servesa.io'
   },
   {
     type: 'concept',
     title: 'Community Garden',
     tagline:
-      'Dynamic community-building using behavioral psycology and mechanism design.',
+      'Dynamic community-building using behavioral psychology and mechanism design.',
     tech: ['Ethereum', 'ERC721', 'Web3', 'Human Systems'],
     featured: false,
-    url: 'http://google.com'
+    url: 'https://garden.servesa.io'
   },
   {
     type: 'concept',
@@ -39,7 +41,7 @@ const projects = [
       'Create meaningful digital artfacts by leveraging real-world experiences',
     tech: ['Ethereum', 'ERC721', 'ERC998', 'Web3', 'Art'],
     featured: false,
-    url: 'http://google.com'
+    url: 'https://souvenir.servesa.io'
   },
   {
     type: 'concept',
@@ -48,7 +50,7 @@ const projects = [
       'Protocol for demand-based pricing that blurs the line betwen employee and free-lancer',
     tech: ['Ethereum', 'ERC721', 'Web3', 'Mechanism Design'],
     featured: false,
-    url: 'http://google.com'
+    url: 'https://servesa.io'
   },
 
   {
@@ -68,10 +70,11 @@ const projectTile = projectData => {
       key={projectData.title}
       className={(projectData.featured ? 'featured ' : '') + 'project'}
     >
-      <div className="image" />
+      {projectData.featured ? <Controller /> : ''}
+
       <span className="project-type mono">{projectData.type}</span>
 
-      <a href={projectData.url}>
+      <a href={projectData.url} target="_blank" rel="noopener noreferrer">
         <h2 className="accent">{projectData.title}</h2>
       </a>
 
@@ -86,7 +89,7 @@ const projectTile = projectData => {
         })}
       </div>
       <div>
-        <a href={projectData.url}>
+        <a href={projectData.url} target="_blank" rel="noopener noreferrer">
           <div className="project-link">view {projectData.type} ▶</div>
         </a>
       </div>
@@ -124,13 +127,21 @@ class App extends Component {
 
             <section className="mono" id="contact">
               <div className="contact-grid">
-                <a href="https://twitter.com/mattlovan">
+                <a
+                  href="https://twitter.com/mattlovan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <p>
                     <img src={TwitterLogo} alt="" />
                     @mattlovan
                   </p>
                 </a>
-                <a href="https://medium.com/@mattlovan">
+                <a
+                  href="https://medium.com/@mattlovan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <p>
                     <img src={MediumLogo} alt="" />
                     @mattlovan
