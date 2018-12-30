@@ -4,9 +4,18 @@ import './css/App.css';
 import TwitterLogo from './images/twitter.svg';
 import MediumLogo from './images/medium.svg';
 
-import Controller from './components/controller/Controller';
+// https://medium.com/@mattlovan/reputation-and-identity-in-decentralized-systems-ba4a7ff99cc4
 
-const projects = [
+const demos = [
+  {
+    type: 'demo',
+    title: 'Digital Signatures',
+    tagline:
+      'Use digital signatures instead of username & password in traditional web applications. See accompanying <a target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vQiyHWeRfKluDE_RAYgefiX_ODY4hrn8Y4jL7M5s1wKo5V2Eyd3Wf2HcIzGZIGt8hxoXc2ebYhPugrX/pub?start=false&loop=false&delayms=3000">slides<a/>.',
+    tech: ['Ethereum', 'Web3', 'WebSockets'],
+    featured: false,
+    url: 'https://signatures.servesa.io'
+  },
   {
     type: 'demo',
     title: '(Web)MIDI Fighter 3D',
@@ -15,16 +24,10 @@ const projects = [
     tech: ['WebMIDI', 'WebAudio', 'WebSockets', '3D CSS'],
     featured: true,
     url: 'https://midifighter.servesa.io'
-  },
-  {
-    type: 'demo',
-    title: 'Digital Signatures',
-    tagline:
-      'Use digital signatures instead of username & password in traditional web applications',
-    tech: ['Ethereum', 'Web3', 'WebSockets'],
-    featured: false,
-    url: 'https://servesa.io'
-  },
+  }
+];
+
+const concepts = [
   {
     type: 'concept',
     title: 'Community Garden',
@@ -42,17 +45,37 @@ const projects = [
     tech: ['Ethereum', 'ERC721', 'ERC998', 'Web3', 'Art'],
     featured: false,
     url: 'https://souvenir.servesa.io'
+  }
+];
+
+const articles = [
+  {
+    type: 'article',
+    title: 'Reputation and Identity in Decentralized Systems',
+    tagline:
+      'Survey of the challenges of decentralized reputation and identity systems',
+    tech: ['Identity', 'Reputation'],
+    featured: false,
+    url:
+      'https://medium.com/@mattlovan/reputation-and-identity-in-decentralized-systems-ba4a7ff99cc4'
+  },
+  {
+    type: 'article',
+    title: 'Deploy a Scalable Open-Source Architecture',
+    tagline: 'The architecture of servesa.io',
+    tech: ['Docker', 'NGINX', 'SSL', 'Networking'],
+    featured: false,
+    url:
+      'https://medium.com/@mattlovan/deploy-a-scalable-open-source-architecture-4349cfe27e'
   },
   {
     type: 'concept',
     title: 'Priority Pricing',
-    tagline:
-      'Protocol for demand-based pricing that blurs the line betwen employee and free-lancer',
+    tagline: 'Protocol for demand-based pricing to reduce transaction costs',
     tech: ['Ethereum', 'ERC721', 'Web3', 'Mechanism Design'],
     featured: false,
-    url: 'https://servesa.io'
+    url: 'https://github.com/MagRelo/laborMarket/blob/master/README.md'
   },
-
   {
     type: 'article',
     title: 'Curation Tournament',
@@ -64,21 +87,22 @@ const projects = [
   }
 ];
 
+function createMarkup(input) {
+  return { __html: input };
+}
+
 const projectTile = projectData => {
   return (
-    <div
-      key={projectData.title}
-      className={(projectData.featured ? 'featured ' : '') + 'project'}
-    >
-      {projectData.featured ? <Controller /> : ''}
+    <div key={projectData.title} className="project clear">
+      {/* <span className="project-type mono">{projectData.type}</span> */}
 
-      <span className="project-type mono">{projectData.type}</span>
+      <h3>
+        <a href={projectData.url} target="_blank" rel="noopener noreferrer">
+          {projectData.title}
+        </a>
+      </h3>
 
-      <a href={projectData.url} target="_blank" rel="noopener noreferrer">
-        <h2 className="accent">{projectData.title}</h2>
-      </a>
-
-      <p>{projectData.tagline}</p>
+      <p dangerouslySetInnerHTML={createMarkup(projectData.tagline)} />
       <div>
         {projectData.tech.map(item => {
           return (
@@ -105,25 +129,8 @@ class App extends Component {
           <div className="grid">
             <header>
               <h1 className="accent">Servesa</h1>
-              <p className="mono">
-                concepts / demos / projects by{' '}
-                <span
-                  style={{
-                    fontWeight: 'bold',
-                    paddingLeft: '0.125em',
-                    display: 'inline-block'
-                  }}
-                >
-                  Matt Lovan
-                </span>
-              </p>
+              <p className="mono">demos & concepts by Matt Lovan</p>
             </header>
-
-            <section id="project-grid">
-              {projects.map(project => {
-                return projectTile(project);
-              })}
-            </section>
 
             <section className="mono" id="contact">
               <div className="contact-grid">
@@ -149,10 +156,30 @@ class App extends Component {
                 </a>
               </div>
             </section>
+
+            <section id="project-grid">
+              <h2>Demos</h2>
+              {demos.map(project => {
+                return projectTile(project);
+              })}
+              <h2>Concepts</h2>
+              <p>half-finshed daydreams : )</p>
+              {concepts.map(project => {
+                return projectTile(project);
+              })}
+            </section>
+
+            <section id="article-grid">
+              <h2>Articles</h2>
+
+              {articles.map(article => {
+                return projectTile(article);
+              })}
+            </section>
           </div>
 
           <footer>
-            <p className="mono">2018</p>
+            <p className="mono">2019</p>
           </footer>
         </div>
       </div>

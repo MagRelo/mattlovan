@@ -10,7 +10,6 @@
 
 .grid {
   display: grid;
-  grid-gap: 1em;
 }
 
 
@@ -22,23 +21,32 @@
   font-family: 'Roboto-Mono'
 }
 
+h2,
+h3 {
+  font-weight: normal;
+}
+
+h3 {
+  margin-top: 0.5em;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 p {
   line-height: 1.4em;
 }
 
 a {
-  color: #36a8ff;
+  color: #2ec7fe;
   text-decoration: none;
   transition: 120ms ease-in-out;
 }
 
-a:hover,
-.featured a:hover {
+a:hover {
   color: yellow;
-}
-
-.featured a {
-  color: #ff3636;
 }
 
 
@@ -68,23 +76,25 @@ header p {
   margin-top: -10px;
 }
 
-#project-grid {
-  display: grid;
-  grid-gap: 2em;
+.serif {
+  font-family: serif;
 }
-
 
 .project {
-  margin: 15px 0 0;
-}
+  margin-bottom: 2em;
 
+  border: solid 1px gray;
+  background: #4a4a4a;
+  padding: 1em;
+
+}
 
 .project-type {
   text-transform: uppercase;
   font-size: smaller;
-  font-weight: bold;
-  letter-spacing: 0.167em;
-  color: #999999;
+  font-family: 'Roboto-Bold';
+  letter-spacing: 0.067em;
+  color: #b9b9b9;
 }
 
 .project-tech {
@@ -96,17 +106,16 @@ header p {
   border-radius: 2px;
   margin-right: 1em;
   border: solid 1px;
-  color: #999999;
+  color: #b9b9b9;
 }
 
 .project-link {
   float: right;
   margin: 0 0 1em 0;
   padding: .5em;
-
   text-transform: uppercase;
   font-size: smaller;
-  font-weight: bold;
+  font-family: 'Roboto-Bold';
 }
 
 
@@ -115,8 +124,9 @@ header p {
 #contact {
   color: #ddd;
   background: transparent;
-  padding: 1em 0 0 0;
   font-size: smaller;
+
+  margin-bottom: 2em;
 }
 
 .contact-grid {
@@ -133,10 +143,10 @@ header p {
   float: left;
 }
 
-@media screen and (min-width: 1200px) {
-  .app {
+@media screen and (min-width: 999px) {
+  /* .app {
     padding: 0;
-  }
+  } */
 
   .container {
     min-height: 100vh;
@@ -157,30 +167,24 @@ header p {
   }
 
   #contact {
-
-
     grid-row-start: 1;
     grid-row-end: 1;
     grid-column-start: 3;
     grid-column-end: 4;
+
+    margin-bottom: 0;
   }
 
   #project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     grid-row-start: 2;
-    grid-row-end: 6;
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 3;
+
+    margin-right: 2em;
   }
 
   .project {
-    margin: 0;
-  }
-
-  .project-link {
-    display: none;
+    margin-bottom: 2em;
   }
 
   .featured {
