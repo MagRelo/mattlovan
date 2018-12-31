@@ -5,6 +5,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "javascript-time-ago": "^1.0.34",
     "morgan": "^1.9.1",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",

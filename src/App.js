@@ -52,7 +52,7 @@ const concepts = [
 const articles = [
   {
     type: 'article',
-    date: 'Dec 2018',
+    date: '2018-12-05T15:43:46.739Z',
     image:
       'https://cdn-images-1.medium.com/max/2000/1*6K5vmzalJUxn44v3cm6wBw.jpeg',
     image_credit: 'Photo by Thomas Kvistholt on Unsplash',
@@ -67,7 +67,7 @@ const articles = [
   },
   {
     type: 'article',
-    date: 'Feb 2018',
+    date: '2018-02-16T18:39:44.651Z',
     title: 'Curation Tournament',
     image:
       'https://cdn-images-1.medium.com/max/2000/1*CfvgTvNenSNTKXhDFUbLtg.jpeg',
@@ -81,7 +81,7 @@ const articles = [
   },
   {
     type: 'article',
-    date: 'Aug 2017',
+    date: '2017-08-18T21:40:42.442',
     title: 'Reputation and Identity in Decentralized Systems',
     image:
       'https://cdn-images-1.medium.com/max/1915/1*Q9uMiib0_ejNQHG8-xp5-Q.jpeg',
