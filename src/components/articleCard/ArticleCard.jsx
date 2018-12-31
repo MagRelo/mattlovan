@@ -3,13 +3,14 @@ import React from 'react';
 import './ArticleCard.css';
 
 // defaults
-import defaultImage from '../../images/sunset.jpg';
 
 // relative time
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 TimeAgo.addLocale(en);
 
+const defaultImage =
+  'https://cdn-images-1.medium.com/max/2000/1*T1NrRFtxijHcsiQVRjRNJA@2x.jpeg';
 const defaultDateString = '2018-02-16T18:39:44.651Z';
 
 const timeAgo = new TimeAgo('en-US');
