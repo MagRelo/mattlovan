@@ -26,8 +26,10 @@ h3 {
   font-weight: normal;
 }
 
-h3 {
-  margin-top: 0.5em;
+h2 {
+  padding-bottom: 0.125em;
+  border-bottom: solid 1px;
+  margin-bottom: 0;
 }
 
 ul {
@@ -64,7 +66,7 @@ header h1 {
   margin: 0;
   padding-left: 0.167em;
   color: #ff3636;
-  font-size: 40px;
+  font-size: 36px;
   letter-spacing: 0.1em;
 
   background: -webkit-linear-gradient(yellow, #ff3636);
@@ -81,12 +83,8 @@ header p {
 }
 
 .project {
-  margin-bottom: 2em;
-
-  border: solid 1px gray;
-  background: #4a4a4a;
+  margin-top: 1em;
   padding: 1em;
-
 }
 
 .project-type {
@@ -100,7 +98,6 @@ header p {
 .project-tech {
   display: inline-block;
   margin-bottom: 0.5em;
-
   font-size: smaller;
   padding: 4px 8px;
   border-radius: 2px;
@@ -125,14 +122,12 @@ header p {
   color: #ddd;
   background: transparent;
   font-size: smaller;
-
-  margin-bottom: 2em;
 }
 
 .contact-grid {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   align-items: center;
   justify-items: center;
 }
@@ -171,8 +166,6 @@ header p {
     grid-row-end: 1;
     grid-column-start: 3;
     grid-column-end: 4;
-
-    margin-bottom: 0;
   }
 
   #project-grid {
@@ -183,8 +176,10 @@ header p {
     margin-right: 2em;
   }
 
+  #article-grid {}
+
   .project {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 
   .featured {

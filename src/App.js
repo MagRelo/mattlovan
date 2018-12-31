@@ -3,8 +3,9 @@ import './css/App.css';
 
 import TwitterLogo from './images/twitter.svg';
 import MediumLogo from './images/medium.svg';
+import GithubLogo from './images/GitHub-Mark-Light-32px.png';
 
-// https://medium.com/@mattlovan/reputation-and-identity-in-decentralized-systems-ba4a7ff99cc4
+import ArticleCard from './components/articleCard/ArticleCard';
 
 const demos = [
   {
@@ -51,8 +52,42 @@ const concepts = [
 const articles = [
   {
     type: 'article',
+    date: 'Dec 2018',
+    image:
+      'https://cdn-images-1.medium.com/max/2000/1*6K5vmzalJUxn44v3cm6wBw.jpeg',
+    image_credit: 'Photo by Thomas Kvistholt on Unsplash',
+    image_alt: '',
+    title: 'Deploy a Scalable Open-Source Architecture',
+    description:
+      'The architecture of servesa.io – creating virtual machines, getting SSL certificates, defining a network of Docker containers, and tweaking the configuration for local development.',
+    tech: ['Docker', 'NGINX', 'SSL', 'Networking'],
+    featured: false,
+    url:
+      'https://medium.com/@mattlovan/deploy-a-scalable-open-source-architecture-4349cfe27e'
+  },
+  {
+    type: 'article',
+    date: 'Feb 2018',
+    title: 'Curation Tournament',
+    image:
+      'https://cdn-images-1.medium.com/max/2000/1*CfvgTvNenSNTKXhDFUbLtg.jpeg',
+    image_credit: 'Photo by Michał Parzuchowski on Unsplash',
+    image_alt: '',
+    description:
+      'A game designed to encourage a group of players to reach consensus around a list of items.',
+    tech: ['Mechanism Design'],
+    featured: false,
+    url: 'https://medium.com/@mattlovan/curation-tournament-babbf0155a36'
+  },
+  {
+    type: 'article',
+    date: 'Aug 2017',
     title: 'Reputation and Identity in Decentralized Systems',
-    tagline:
+    image:
+      'https://cdn-images-1.medium.com/max/1915/1*Q9uMiib0_ejNQHG8-xp5-Q.jpeg',
+    image_credit: 'Photo by Michał Parzuchowski on Unsplash',
+    image_alt: '',
+    description:
       'Survey of the challenges of decentralized reputation and identity systems',
     tech: ['Identity', 'Reputation'],
     featured: false,
@@ -60,30 +95,14 @@ const articles = [
       'https://medium.com/@mattlovan/reputation-and-identity-in-decentralized-systems-ba4a7ff99cc4'
   },
   {
-    type: 'article',
-    title: 'Deploy a Scalable Open-Source Architecture',
-    tagline: 'The architecture of servesa.io',
-    tech: ['Docker', 'NGINX', 'SSL', 'Networking'],
-    featured: false,
-    url:
-      'https://medium.com/@mattlovan/deploy-a-scalable-open-source-architecture-4349cfe27e'
-  },
-  {
     type: 'concept',
+    date: '',
     title: 'Priority Pricing',
-    tagline: 'Protocol for demand-based pricing to reduce transaction costs',
+    description:
+      'Protocol for demand-based pricing to reduce transaction costs',
     tech: ['Ethereum', 'ERC721', 'Web3', 'Mechanism Design'],
     featured: false,
     url: 'https://github.com/MagRelo/laborMarket/blob/master/README.md'
-  },
-  {
-    type: 'article',
-    title: 'Curation Tournament',
-    tagline:
-      'A game designed to encourage a group of players to reach consensus around a list of items.',
-    tech: ['Mechanism Design'],
-    featured: false,
-    url: 'https://medium.com/@mattlovan/curation-tournament-babbf0155a36'
   }
 ];
 
@@ -140,7 +159,7 @@ class App extends Component {
                   rel="noopener noreferrer"
                 >
                   <p>
-                    <img src={TwitterLogo} alt="" />
+                    <img src={TwitterLogo} alt="twitter logo" />
                     @mattlovan
                   </p>
                 </a>
@@ -150,11 +169,36 @@ class App extends Component {
                   rel="noopener noreferrer"
                 >
                   <p>
-                    <img src={MediumLogo} alt="" />
+                    <img src={MediumLogo} alt="medium logo" />
                     @mattlovan
                   </p>
                 </a>
+                <a
+                  href="https://github.com/magrelo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>
+                    <img
+                      src={GithubLogo}
+                      alt="github logo"
+                      style={{ height: '1.2em' }}
+                    />
+                    magrelo
+                  </p>
+                </a>
               </div>
+            </section>
+
+            <section id="article-grid">
+              <h2>Articles</h2>
+              {articles.map(article => {
+                return (
+                  <div className="project clear" key={article.title}>
+                    <ArticleCard article={article} />
+                  </div>
+                );
+              })}
             </section>
 
             <section id="project-grid">
@@ -162,18 +206,11 @@ class App extends Component {
               {demos.map(project => {
                 return projectTile(project);
               })}
+
               <h2>Concepts</h2>
-              <p>half-finshed daydreams : )</p>
+              <p>half-finished daydreams : )</p>
               {concepts.map(project => {
                 return projectTile(project);
-              })}
-            </section>
-
-            <section id="article-grid">
-              <h2>Articles</h2>
-
-              {articles.map(article => {
-                return projectTile(article);
               })}
             </section>
           </div>
