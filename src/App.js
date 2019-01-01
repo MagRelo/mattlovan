@@ -12,7 +12,7 @@ const demos = [
     type: 'demo',
     title: 'Digital Signatures',
     tagline:
-      'Use digital signatures instead of username & password in traditional web applications. See accompanying <a target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vQiyHWeRfKluDE_RAYgefiX_ODY4hrn8Y4jL7M5s1wKo5V2Eyd3Wf2HcIzGZIGt8hxoXc2ebYhPugrX/pub?start=false&loop=false&delayms=3000">slides<a/>.',
+      'Use digital signatures instead of username & password in traditional web applications. See accompanying <a target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vQiyHWeRfKluDE_RAYgefiX_ODY4hrn8Y4jL7M5s1wKo5V2Eyd3Wf2HcIzGZIGt8hxoXc2ebYhPugrX/pub?start=false&loop=false&delayms=3000" rel="noopener noreferrer">slides<a/>.',
     tech: ['Ethereum', 'Web3', 'WebSockets'],
     featured: false,
     url: 'https://signatures.servesa.io'
@@ -59,7 +59,7 @@ const articles = [
     image_alt: '',
     title: 'Deploy a Scalable Open-Source Architecture',
     description:
-      'The architecture of servesa.io – creating virtual machines, getting SSL certificates, defining a network of Docker containers, and tweaking the configuration for local development.',
+      'The architecture of Servesa – creating virtual machines, getting SSL certificates, defining a network of Docker containers, and tweaking the configuration for local development. This architecture uses free, open-source tools, it runs on any cloud provider (or can be scaled across multiple providers), and it can handle thousands of requests per minute.',
     tech: ['Docker', 'NGINX', 'SSL', 'Networking'],
     featured: false,
     url:
@@ -74,7 +74,7 @@ const articles = [
     image_credit: 'Photo by Michał Parzuchowski on Unsplash',
     image_alt: '',
     description:
-      'A game designed to encourage a group of players to reach consensus around a list of items.',
+      'Modeled on a poker tournament, this game is designed to encourage a group of players to reach consensus around a list of items. Players can increase their share of the pot by predicting the group consensus around adding or removing items from the list.',
     tech: ['Mechanism Design'],
     featured: false,
     url: 'https://medium.com/@mattlovan/curation-tournament-babbf0155a36'
@@ -88,7 +88,7 @@ const articles = [
     image_credit: 'Photo by Michał Parzuchowski on Unsplash',
     image_alt: '',
     description:
-      'Survey of the challenges of decentralized reputation and identity systems',
+      "A survey of centralized and decentralized reputation and identity systems. Also summarizes research on social credit schemes such as 'Trust is Risk' and 'Trust in Friends'.",
     tech: ['Identity', 'Reputation'],
     featured: false,
     url:
