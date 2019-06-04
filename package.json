@@ -13,11 +13,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && docker build . -t magrelo/servesa-home",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node server.js",
-    "dev": "NODE_ENV=development nodemon --inspect server.js"
+    "dev": "NODE_ENV=development nodemon --inspect server.js",
+    "docker-build": "docker build . -t magrelo/servesa-home",
+    "docker-push": "docker push magrelo/servesa-home",
+    "ssh": "ssh root@209.97.154.109"
   },
   "eslintConfig": {
     "extends": "react-app"
