@@ -28,8 +28,8 @@ h3 {
 
 h2 {
   padding-bottom: 0.125em;
-  border-bottom: solid 1px;
-  margin-bottom: 0;
+  border-bottom: 1px solid #4c4b4b;
+  /* margin-bottom: 0; */
 }
 
 ul {
@@ -81,8 +81,8 @@ header p {
 }
 
 .project {
-  margin-top: 1em;
-  padding: 1em;
+  /* border-top: 1px solid #525252;
+  border-bottom: 1px solid rgb(27, 27, 27); */
 }
 
 .project-type {
@@ -113,6 +113,16 @@ header p {
   font-family: 'Roboto-Bold';
 }
 
+/* Post */
+.post-card {
+  margin-bottom: 2em;
+}
+
+.post-content {
+  padding: 0 1em;
+  border: 1px solid #4c4b4b;
+  border-top: 1px solid #313131;
+}
 
 
 /* Contact */
@@ -148,7 +158,7 @@ header p {
   }
 
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: auto 1fr;
   }
 
@@ -162,22 +172,33 @@ header p {
   #contact {
     grid-row-start: 1;
     grid-row-end: 1;
-    grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 7;
   }
 
   #project-grid {
     grid-row-start: 2;
     grid-column-start: 1;
-    grid-column-end: 3;
-
+    grid-column-end: 5;
     margin-right: 2em;
+  }
+
+  .demo-tile-grid {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  #article-grid {
+    grid-row-start: 2;
+    grid-column-start: 5;
+    grid-column-end: 8;
   }
 
   /* #article-grid {} */
 
   .project {
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
   }
 
   .featured {

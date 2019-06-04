@@ -10,6 +10,9 @@ import ArticleCard from './components/articleCard/ArticleCard';
 const slidesUrl =
   'https://docs.google.com/presentation/d/e/2PACX-1vQiyHWeRfKluDE_RAYgefiX_ODY4hrn8Y4jL7M5s1wKo5V2Eyd3Wf2HcIzGZIGt8hxoXc2ebYhPugrX/pub?start=false&loop=false&delayms=3000';
 
+const networkURL =
+  'https://medium.com/@mattlovan/run-a-public-ethereum-testnet-f0e40cefc1f2';
+
 const demos = [
   {
     type: 'demo',
@@ -19,6 +22,15 @@ const demos = [
     tech: ['Ethereum', 'Web3', 'WebSockets'],
     featured: false,
     url: 'https://signatures.servesa.io'
+  },
+  {
+    type: 'demo',
+    title: 'Ethereum Testnet',
+    tagline: `The eth-netstats dashboard for the private Ethereum network hosted by Servesa. See my article
+       <a target="_blank" href="${networkURL}" rel="noopener noreferrer">"Run your own Public Ethereum Testnet"<a/>. `,
+    tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
+    featured: true,
+    url: 'https://testnet.servesa.io'
   },
   {
     type: 'demo',
@@ -32,8 +44,7 @@ const demos = [
   {
     type: 'demo',
     title: 'Oneshot',
-    tagline:
-      'You can visit any URL - but only once...',
+    tagline: 'You can visit any URL - but only once...',
     tech: ['Nods.js', 'Express', 'Pug'],
     featured: true,
     url: 'https://oneshot.servesa.io'
@@ -64,6 +75,19 @@ const concepts = [
 const articles = [
   {
     type: 'article',
+    date: '2019-06-03T15:43:46.739Z',
+    image:
+      'https://cdn-images-1.medium.com/max/1200/1*2d9jmfyEXTKndCbBeOlihA.png',
+    image_credit: 'Photo by Thomas Kvistholt on Unsplash',
+    image_alt: '',
+    title: 'Run your own Public Ethereum Testnet',
+    description: 'Control the ETH supply, confirmations times, gas fees, etc.',
+    tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
+    featured: false,
+    url: networkURL
+  },
+  {
+    type: 'article',
     date: '2018-12-05T15:43:46.739Z',
     image:
       'https://cdn-images-1.medium.com/max/2000/1*6K5vmzalJUxn44v3cm6wBw.jpeg',
@@ -71,11 +95,22 @@ const articles = [
     image_alt: '',
     title: 'Deploy a Scalable Open-Source Architecture',
     description:
-      'The architecture of Servesa – creating virtual machines, getting SSL certificates, defining a network of Docker containers, and tweaking the configuration for local development. This architecture uses free, open-source tools, it runs on any cloud provider (or can be scaled across multiple providers), and it can handle thousands of requests per minute.',
+      'The architecture of Servesa – provisioning a virtual machine,installing SSL certificates, defining a network of Docker containers, and tweaking the configuration for local development. This architecture uses free, open-source tools, it runs on any cloud provider (or can be scaled across multiple providers), and it can handle thousands of requests per minute.',
     tech: ['Docker', 'NGINX', 'SSL', 'Networking'],
     featured: false,
     url:
       'https://medium.com/@mattlovan/deploy-a-scalable-open-source-architecture-4349cfe27e'
+  },
+
+  {
+    type: 'concept',
+    date: '2018-07-16T18:39:44.651Z',
+    title: 'Priority Pricing',
+    description:
+      'Protocol for demand-based pricing to reduce transaction costs for freelance workers.',
+    tech: ['Ethereum', 'ERC721', 'Web3', 'Mechanism Design'],
+    featured: false,
+    url: 'https://github.com/MagRelo/laborMarket/blob/master/README.md'
   },
   {
     type: 'article',
@@ -105,16 +140,6 @@ const articles = [
     featured: false,
     url:
       'https://medium.com/@mattlovan/reputation-and-identity-in-decentralized-systems-ba4a7ff99cc4'
-  },
-  {
-    type: 'concept',
-    date: '',
-    title: 'Priority Pricing',
-    description:
-      'Protocol for demand-based pricing to reduce transaction costs',
-    tech: ['Ethereum', 'ERC721', 'Web3', 'Mechanism Design'],
-    featured: false,
-    url: 'https://github.com/MagRelo/laborMarket/blob/master/README.md'
   }
 ];
 
@@ -215,12 +240,14 @@ class App extends Component {
 
             <section id="project-grid">
               <h2>Demos</h2>
-              {demos.map(project => {
-                return projectTile(project);
-              })}
+
+              <div className="demo-tile-grid">
+                {demos.map(project => {
+                  return projectTile(project);
+                })}
+              </div>
 
               <h2>Concepts</h2>
-              <p>half-finished daydreams : )</p>
               {concepts.map(project => {
                 return projectTile(project);
               })}
