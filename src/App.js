@@ -7,12 +7,15 @@ import GithubLogo from './images/GitHub-Mark-Light-32px.png';
 
 import ArticleCard from './components/articleCard/ArticleCard';
 
+const slidesUrl =
+  'https://docs.google.com/presentation/d/e/2PACX-1vQiyHWeRfKluDE_RAYgefiX_ODY4hrn8Y4jL7M5s1wKo5V2Eyd3Wf2HcIzGZIGt8hxoXc2ebYhPugrX/pub?start=false&loop=false&delayms=3000';
+
 const demos = [
   {
     type: 'demo',
     title: 'Digital Signatures',
-    tagline:
-      'Use digital signatures instead of username & password in traditional web applications. See accompanying <a target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vQiyHWeRfKluDE_RAYgefiX_ODY4hrn8Y4jL7M5s1wKo5V2Eyd3Wf2HcIzGZIGt8hxoXc2ebYhPugrX/pub?start=false&loop=false&delayms=3000" rel="noopener noreferrer">slides<a/>.',
+    tagline: `Use digital signatures instead of username & password in traditional web applications. 
+      See accompanying <a target="_blank" href="${slidesUrl}" rel="noopener noreferrer">slides<a/>.`,
     tech: ['Ethereum', 'Web3', 'WebSockets'],
     featured: false,
     url: 'https://signatures.servesa.io'
@@ -25,6 +28,15 @@ const demos = [
     tech: ['WebMIDI', 'WebAudio', 'WebSockets', '3D CSS'],
     featured: true,
     url: 'https://midifighter.servesa.io'
+  },
+  {
+    type: 'demo',
+    title: 'Oneshot',
+    tagline:
+      'You can visit any URL - but only once...',
+    tech: ['Nods.js', 'Express', 'Pug'],
+    featured: true,
+    url: 'https://oneshot.servesa.io'
   }
 ];
 
@@ -147,7 +159,7 @@ class App extends Component {
         <div className="container">
           <div className="grid">
             <header>
-              <h1 className="accent">Servesa</h1>
+              <h1>Servesa</h1>
               <p className="mono">demos & concepts by Matt Lovan</p>
             </header>
 
@@ -191,7 +203,7 @@ class App extends Component {
             </section>
 
             <section id="article-grid">
-              <h2>Articles</h2>
+              <h2>Writing</h2>
               {articles.map(article => {
                 return (
                   <div className="project clear" key={article.title}>

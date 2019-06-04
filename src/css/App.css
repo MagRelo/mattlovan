@@ -52,6 +52,8 @@ a:hover {
 }
 
 
+/* Header */
+
 header {
   padding-top: 1em;
 }
@@ -63,15 +65,11 @@ header img {
 }
 
 header h1 {
-  margin: 0;
-  padding-left: 0.167em;
-  color: #ff3636;
-  font-size: 36px;
+  font-family: 'Roboto-Bold';
   letter-spacing: 0.1em;
-
-  background: -webkit-linear-gradient(yellow, #ff3636);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-size: 3em;
+  margin-bottom: 0.25em;
 }
 
 header p {
@@ -164,7 +162,7 @@ header p {
   #contact {
     grid-row-start: 1;
     grid-row-end: 1;
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-column-end: 4;
   }
 
