@@ -16,15 +16,6 @@ const networkURL =
 const demos = [
   {
     type: 'demo',
-    title: 'Digital Signatures',
-    tagline: `Use digital signatures instead of username & password in traditional web applications. 
-      See accompanying <a target="_blank" href="${slidesUrl}" rel="noopener noreferrer">slides<a/>.`,
-    tech: ['Ethereum', 'Web3', 'WebSockets'],
-    featured: false,
-    url: 'https://signatures.servesa.io'
-  },
-  {
-    type: 'demo',
     title: 'Ethereum Testnet',
     tagline: `The eth-netstats dashboard for the private Ethereum network hosted by Servesa. See my article
        <a target="_blank" href="${networkURL}" rel="noopener noreferrer">"Run your own Public Ethereum Testnet"<a/>. `,
@@ -34,12 +25,12 @@ const demos = [
   },
   {
     type: 'demo',
-    title: '(Web)MIDI Fighter 3D',
-    tagline:
-      'Connect any MIDI instrument to your computer and play music live on the web',
-    tech: ['WebMIDI', 'WebAudio', 'WebSockets', '3D CSS'],
-    featured: true,
-    url: 'https://midifighter.servesa.io'
+    title: 'Digital Signatures',
+    tagline: `Use digital signatures instead of username & password in traditional web applications. 
+      See accompanying <a target="_blank" href="${slidesUrl}" rel="noopener noreferrer">slides<a/>.`,
+    tech: ['Ethereum', 'Web3', 'WebSockets'],
+    featured: false,
+    url: 'https://signatures.servesa.io'
   },
   {
     type: 'demo',
@@ -48,6 +39,15 @@ const demos = [
     tech: ['Nods.js', 'Express', 'Pug'],
     featured: true,
     url: 'https://oneshot.servesa.io'
+  },
+  {
+    type: 'demo',
+    title: '(Web)MIDI Fighter 3D',
+    tagline:
+      'Connect any MIDI instrument to your computer and play music live on the web',
+    tech: ['WebMIDI', 'WebAudio', 'WebSockets', '3D CSS'],
+    featured: true,
+    url: 'https://midifighter.servesa.io'
   }
 ];
 
@@ -81,7 +81,8 @@ const articles = [
     image_credit: 'Photo by Thomas Kvistholt on Unsplash',
     image_alt: '',
     title: 'Run your own Public Ethereum Testnet',
-    description: 'Control the ETH supply, confirmations times, gas fees, etc.',
+    description:
+      'If you’re developing a dApp for Ethereum it can be nice to have a semi-permanent, semi-public environment available for testing. This allows you to do things like pre-fund accounts with ETH, control gas limits, speed-up confirmation times, etc. This guide will focus on the steps to set up an Ethereum Proof-of-Authority testnet that is available from the public internet.',
     tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
     featured: false,
     url: networkURL
@@ -168,11 +169,6 @@ const projectTile = projectData => {
           );
         })}
       </div>
-      <div>
-        <a href={projectData.url} target="_blank" rel="noopener noreferrer">
-          <div className="project-link">view {projectData.type} ▶</div>
-        </a>
-      </div>
     </div>
   );
 };
@@ -228,10 +224,10 @@ class App extends Component {
             </section>
 
             <section id="article-grid">
-              <h2>Writing</h2>
+              <h2>Articles</h2>
               {articles.map(article => {
                 return (
-                  <div className="project clear" key={article.title}>
+                  <div key={article.title}>
                     <ArticleCard article={article} />
                   </div>
                 );
