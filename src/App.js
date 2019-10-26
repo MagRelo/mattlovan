@@ -16,15 +16,6 @@ const networkURL =
 const demos = [
   {
     type: 'demo',
-    title: 'Ethereum Testnet',
-    tagline: `The eth-netstats dashboard for the private Ethereum network hosted by Servesa. See my article
-       <a target="_blank" href="${networkURL}" rel="noopener noreferrer">"Run your own Public Ethereum Testnet"<a/>. `,
-    tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
-    featured: true,
-    url: 'https://testnet.servesa.io'
-  },
-  {
-    type: 'demo',
     title: 'Digital Signatures',
     tagline: `Use digital signatures instead of username & password in traditional web applications. 
       See accompanying <a target="_blank" href="${slidesUrl}" rel="noopener noreferrer">slides<a/>.`,
