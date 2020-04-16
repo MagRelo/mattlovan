@@ -1,0 +1,115 @@
+$angle: -4deg;
+
+:root {
+  --width: 100vw;
+  --full-width: 100vw;
+
+  @media (min-width: 42em) {
+    --width: 42rem;
+  }
+
+  /*-----------------
+  Magic Number Alert:
+  
+  the 0.09719 is calculated by this formula:
+  tan(11°) / 2
+  11° is the current skewY value.
+  ------------------*/
+  --magic-number: 0.09719;
+  --skew-padding: calc(var(--width) * var(--magic-number));
+  --clip-padding: calc(var(--full-width) * var(--magic-number));
+}
+
+.diagonal-box {
+  position: relative;
+  padding: var(--skew-padding) 0;
+  margin-top: -1px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: skewy($angle);
+    transform-origin: 50% 0;
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+  }
+}
+
+.bg-one:before {
+  // background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+
+  background: #00b09b;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #96c93d, #00b09b);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-two:before {
+  // background-image: linear-gradient(-135deg, #ff0084, #33001b);
+
+  background: #0f0c29;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-three:before {
+  background: #ff416c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-four:before {
+  background: #00f260;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0575e6, #00f260);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0575e6, #00f260);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-five:before {
+  background: #141e30;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243b55, #141e30);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243b55, #141e30);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.Typist .Cursor {
+  display: inline-block;
+
+  &--blinking {
+    opacity: 1;
+    animation: blink 1s linear infinite;
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      47% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      97% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
