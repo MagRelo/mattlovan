@@ -7,30 +7,27 @@ import Header from './components/header';
 
 // Routes
 import Home from './pages/home';
-import Blog from './pages/blog';
+import Blog from './pages/blog/blog';
+import BlogPost from './pages/blog/blogPost';
+import TagPage from './pages/blog/tag';
 import NotFound from './pages/404';
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="container">
-          <Header />
-        </div>
+        <Header />
 
-        <div className="">
+        <div>
           <Router>
             <Home path="/" />
 
-            <Blog path="/blog" />
+            {/* Blog */}
+            <BlogPost path="blog/:slug" />
+            <Blog path="blog"></Blog>
 
-            {/* Auth required */}
-            {/* {activeSession ? (
-                <React.Fragment>
-                  <UserDashboard path="/dashboard" />
-                  <AdminDashboard path="/admin" />
-                </React.Fragment>
-              ) : null} */}
+            {/* Tag */}
+            <TagPage path="tag/:slug" />
 
             <NotFound default />
           </Router>

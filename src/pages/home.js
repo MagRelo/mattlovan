@@ -7,7 +7,6 @@ class App extends Component {
     return (
       <div>
         <div className="main">
-          <h2>About Me</h2>
           <section className="diagonal-box bg-five">
             <div className="container">
               <div className="grid grid-3">

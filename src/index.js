@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// CSS
+import './css/bootstrap.min.css';
 import './css/index.css';
 import './css/App.scss';
 import './css/skew.scss';

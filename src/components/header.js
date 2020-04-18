@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from '@reach/router';
 
 import Typist from 'react-typist';
 
@@ -8,48 +9,53 @@ import { ReactComponent as GithubLogo } from '../images/github.svg';
 
 function Header({ steps }) {
   return (
-    <header>
-      <div>
-        <h1>
-          Matt Lovan is a <br /> <Typer />
-        </h1>
-        <p></p>
-      </div>
+    <React.Fragment>
+      <header>
+        <div>
+          <div className="title">
+            Matt Lovan is a <br /> <Typer />
+          </div>
 
-      <div className="social-container">
-        <ul className="social-links">
-          <li>
-            <SocialAccountLink
-              name="Twitter"
-              Logo={TwitterLogo}
-              fill="#1DA1F2"
-              link="https://twitter.com/mattlovan"
-              account="@mattlovan"
-            />
-          </li>
+          {/* <h1>Matt Lovan is a Web Developer</h1> */}
+        </div>
 
-          <li>
-            <SocialAccountLink
-              name="Medium"
-              Logo={MediumLogo}
-              fill="#ddd"
-              link="https://medium.com/@mattlovan"
-              account="@mattlovan"
-            />
-          </li>
+        <div className="social-container">
+          <ul className="social-links">
+            <li>
+              <SocialAccountLink
+                name="Twitter"
+                Logo={TwitterLogo}
+                fill="#1DA1F2"
+                link="https://twitter.com/mattlovan"
+                account="@mattlovan"
+              />
+            </li>
 
-          <li>
-            <SocialAccountLink
-              name="Github"
-              Logo={GithubLogo}
-              fill="#ddd"
-              link="https://github.com/magrelo"
-              account="magrelo"
-            />
-          </li>
-        </ul>
-      </div>
-    </header>
+            <li>
+              <SocialAccountLink
+                name="Medium"
+                Logo={MediumLogo}
+                fill="#ddd"
+                link="https://medium.com/@mattlovan"
+                account="@mattlovan"
+              />
+            </li>
+
+            <li>
+              <SocialAccountLink
+                name="Github"
+                Logo={GithubLogo}
+                fill="#ddd"
+                link="https://github.com/magrelo"
+                account="magrelo"
+              />
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <nav></nav>
+    </React.Fragment>
   );
 }
 
@@ -62,7 +68,7 @@ const SocialAccountLink = ({ link, Logo, account, fill }) => {
     <div style={{ display: 'inline-block' }}>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <div className="social-label">
-          <span className="icon">
+          <span className="social-label-icon">
             <Logo fill={fill} />
           </span>
           <div>
