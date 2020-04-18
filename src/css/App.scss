@@ -126,14 +126,13 @@ a .panel {
   padding: 0 1rem;
   color: #ddd;
   border: solid 1px $servesaDark;
-  border-bottom: solid 1px $linkBlue;
+  // border-bottom: solid 1px $linkBlue;
   margin-bottom: 1rem;
   transition: 120ms ease-in-out;
 }
 
 a .panel:hover {
   border: solid 1px $linkBlue;
-
 }
 
 
@@ -383,7 +382,7 @@ ul.tech-stack-items>li:before {
 
     blockquote {
       max-width: 34rem;
-      margin: 1rem auto;
+      margin: 1.4rem auto;
       padding: .667rem 1.4rem;
       border-radius: 7px;
       font-size: smaller;
