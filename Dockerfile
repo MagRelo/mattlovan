@@ -1,19 +1,20 @@
 
+# Step 1: choose a smaller base image
 FROM node:current-alpine as build
 
+# Step 2: only copy in what you need
 ENV APP_HOME /app/
-
 RUN mkdir -pv $APP_HOME
 WORKDIR $APP_HOME
-# ADD . $APP_HOME
 COPY build $APP_HOME/build
-COPY package.json server.js routes.js build $APP_HOME
+COPY package.json yarn.lock server.js routes.js $APP_HOME
 
-ENV NODE_ENV production
+# Step 3: make sure your dependancies are clean
 ENV NPM_CONFIG_LOGLEVEL warn
-RUN npm install
+ENV NODE_ENV production
+RUN yarn
 
-# from build image
+# Step 4: use a build image
 FROM node:current-alpine
 COPY --from=build /app /
 
