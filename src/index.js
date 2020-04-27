@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom';
 // CSS
 import './css/bootstrap.min.css';
 import './css/index.css';
-import './css/App.scss';
 import './css/skew.scss';
+import './css/App.scss';
+import './css/blog.scss';
 
 // Fonts
 import './fonts/Roboto/roboto.css';

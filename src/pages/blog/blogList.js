@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '@reach/router';
 
-import { getTag } from 'api/ghost';
+import { getPosts } from 'api/ghost';
 
-function TagPage({ slug }) {
+function BlogHome() {
   const [error, setError] = useState([]);
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
-    getTag(slug)
+    getPosts()
       .then((posts) => setPostList(posts))
       .catch((error) => setError(error.toString()));
   }, []);
 
   return (
-    <section style={{ marginTop: '60px' }}>
+    <section className="blog-list">
       <div className="container" style={{ margin: '0 auto', maxWidth: '42em' }}>
-        <div className="breadcrumbs">
-          <Link to="/blog">Blog </Link> ▸ Tag ▸ {slug}
-        </div>
-
-        <div className="spacer-1"></div>
-
+        <h1>Blog</h1>
         {error ? <div>{error}</div> : null}
         <SearchResults path="/" posts={postList} />
       </div>
@@ -29,7 +24,7 @@ function TagPage({ slug }) {
   );
 }
 
-export default TagPage;
+export default BlogHome;
 
 // function SearchForm(params) {
 //   return (
@@ -166,7 +161,6 @@ export function PostHeader({ post }) {
     </div>
   );
 }
-
 export function formatDate(input) {
   if (input instanceof Date) {
     return input.toLocaleDateString('en-US');

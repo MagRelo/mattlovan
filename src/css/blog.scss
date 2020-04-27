@@ -1,0 +1,314 @@
+@import 'variables.scss';
+
+
+// Blog Pos
+.blog-list {
+  padding: var(--skew-padding) 0;
+}
+
+.post-header {
+
+  .breadcrumbs {
+    font-size: smaller;
+    color: $servesaGray;
+  }
+
+  h1 {
+    margin-top: 1.5rem;
+  }
+
+}
+
+
+.date {
+  float: right;
+  // font-family: 'Roboto-Bold';
+  color: $servesaGray;
+}
+
+.excerpt {
+  font-size: smaller;
+  font-style: italic;
+  padding: .33rem;
+}
+
+
+.byline {
+  color: $servesaGray;
+  border-top: solid 2px $servesaDark;
+  border-bottom: solid 2px $servesaDark;
+  margin: 0 -1rem;
+}
+
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 6px 0 0 6px;
+}
+
+.tag {
+  color: $servesaGray;
+  font-size: smaller;
+  text-transform: uppercase;
+  padding: 5px 10px 4px;
+  border: solid 2px $servesaDark;
+  border-radius: 3px;
+
+  display: inline-block;
+  margin: 0 6px 6px 0;
+}
+
+a.tag:hover {
+  color: $linkBlue;
+  border: solid 1px $linkBlue;
+}
+
+.content {
+
+  h2 {
+    margin: 0 0 20px;
+    padding: 12px 0 0;
+  }
+
+  h3 {
+    margin: 0 0 18px;
+    padding: 12px 0 0;
+    font-size: 1.17rem;
+    font-family: 'Roboto-Bold';
+  }
+
+  blockquote {
+    margin: 2rem 0.25rem;
+    padding: 1rem;
+
+    background: $servesaDark;
+    border-left: solid 2px gray;
+
+    font-family: serif;
+    font-style: italic;
+  }
+
+  hr {
+    border-top: solid 2px $servesaDark;
+    margin: 2rem 0;
+  }
+
+  pre,
+  code,
+  kbd {
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+  }
+
+  pre code {
+    color: #ff3994;
+    font-size: small;
+  }
+}
+
+
+@media screen and (min-width: 445px) {
+
+  .byline {
+    grid-template-columns: auto 1fr auto;
+    border-top: solid 2px $servesaDark;
+    border-bottom: solid 2px $servesaDark
+  }
+
+  .tag {
+    border: solid 1px $servesaDark;
+  }
+
+
+  .post {
+
+    max-width: 44rem;
+    margin: 0 auto;
+  }
+
+
+  .content {
+
+    padding: 0 1em;
+
+    h2 {
+      margin: 0 0 20px -1rem;
+    }
+
+    h3 {
+      margin: 0 0 20px -1rem;
+    }
+
+
+    blockquote {
+      margin: 2rem;
+      padding: 1rem 1.5rem;
+
+
+      font-style: italic;
+    }
+
+  }
+
+
+
+}
+
+
+// Koenig cards(?)
+.kg-card {
+  figcaption {
+    text-align: center;
+    font-size: smaller;
+    padding: 0.667rem;
+    font-style: italic;
+
+    background-color: $servesaDark;
+    // border-bottom: solid 1px $servesaGray;
+    box-shadow: $box-shadow-inner;
+  }
+}
+
+.kg-image-card {
+  margin: 2rem -1rem;
+}
+
+.kg-image {
+  max-width: 100%;
+}
+
+// from https://ghost.org/docs/api/v2/handlebars-themes/editor/#bookmark-card
+.kg-bookmark-card {
+  width: 100%;
+  position: relative;
+}
+
+.kg-bookmark-card {
+  width: 100%;
+  position: relative;
+}
+
+.kg-bookmark-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  color: currentColor;
+  font-family: inherit;
+  text-decoration: none;
+  border: 1px solid $servesaDark;
+}
+
+.kg-bookmark-container:hover {
+  text-decoration: none;
+}
+
+.kg-bookmark-content {
+  flex-basis: 0;
+  flex-grow: 999;
+  padding: 20px;
+  order: 1;
+
+  background-color: $servesaDark;
+}
+
+.kg-bookmark-title {
+  font-weight: 600;
+}
+
+.kg-bookmark-metadata,
+.kg-bookmark-description {
+  margin-top: .5em;
+}
+
+.kg-bookmark-metadata {
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kg-bookmark-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.kg-bookmark-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
+  margin-right: .5em;
+  margin-bottom: .05em;
+}
+
+.kg-bookmark-thumbnail {
+  display: flex;
+  flex-basis: 24rem;
+  flex-grow: 1;
+}
+
+.kg-bookmark-thumbnail img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  object-fit: cover;
+}
+
+.kg-bookmark-author {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.kg-bookmark-publisher::before {
+  content: "•";
+  margin: 0 .5em;
+}
+
+@media screen and (min-width: 445px) {
+
+  .kg-image-card {
+    margin: 2rem;
+  }
+}
+
+// Gallery
+
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em auto;
+  max-width: 1040px;
+  width: 100vw;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 0.75em;
+}

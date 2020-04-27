@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
-import { Router, navigate } from '@reach/router';
+import { Router } from '@reach/router';
 import { OnRouteChange } from './components/routingHack';
 
 import Header from './components/header';
 
 // Routes
 import Home from './pages/home';
-import Blog from './pages/blog/blog';
+import Blog from './pages/blog/blogList';
 import BlogPost from './pages/blog/blogPost';
 import TagPage from './pages/blog/tag';
+
 import NotFound from './pages/404';
 
 class App extends Component {

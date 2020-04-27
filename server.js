@@ -9,11 +9,6 @@ const morgan = require('morgan');
 // *
 
 // configure express middleware
-app.use(
-  express.static('build', {
-    maxage: '1y'
-  })
-);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: '1mb' }));
 app.use(
@@ -21,14 +16,20 @@ app.use(
     skip: function(req, res) {
       // remove the frontend dev server's 'json' calls from the console output
       return req.originalUrl.indexOf('json') > 0;
-    }
+    },
   })
 );
 
-// serve the frontend for all requests
-app.get('/*', function(req, res) {
-  res.sendFile('index.html', { root: './build' });
-});
+app.use(
+  express.static('build', {
+    maxage: '1y',
+    index: false,
+  })
+);
+
+// page routing
+const routesApi = require('./routes');
+app.use('/', routesApi);
 
 // start server
 server.listen(8080, () => {

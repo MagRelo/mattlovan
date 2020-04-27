@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import HeadShot from '../images/matt_headshot_blue.jpg';
+import HeadShot from 'images/matt_headshot_blue.jpg';
+
+import BlogList from 'pages/blog/blogList';
 
 class App extends Component {
   render() {
@@ -11,17 +13,7 @@ class App extends Component {
             <div className="container">
               <div className="grid grid-3">
                 <div>
-                  <img
-                    src={HeadShot}
-                    alt=""
-                    style={{
-                      float: 'left',
-                      height: '90px',
-                      margin: ' 0 1rem 0rem 0',
-                      border: 'solid 2px #333',
-                      borderRadius: '50%',
-                    }}
-                  />
+                  <img src={HeadShot} alt="" className="profile-pic" />
                   <p>
                     Hi, I'm <b>Matt Lovan</b>. Originally from Idaho, I now
                     split my time between New York and Boise. When I'm not
@@ -85,33 +77,8 @@ class App extends Component {
             </div>
           </section>
 
-          <h2>Blog</h2>
-          <div style={{ paddingTop: '60px' }}></div>
-
           <section className="">
-            <div className="container">
-              <div>Performant Art</div>
-              <div className="grid-blog">
-                <div>search</div>
-                <div>
-                  <h4>Title</h4>
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Ipsam illo, ut molestias quae cupiditate ex architecto,
-                    animi dolores id iusto ducimus fugit quaerat. Ab sequi
-                    quisquam atque doloremque nihil est?
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ullam illo quasi odit quibusdam hic eveniet asperiores,
-                    corporis minus voluptatem explicabo accusantium tempora
-                    laudantium reiciendis temporibus quis sapiente omnis.
-                    Placeat, facilis.
-                  </p>
-                </div>
-                <div>topics</div>
-              </div>
-            </div>
+            <BlogList />
           </section>
         </div>
       </div>

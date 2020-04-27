@@ -1,43 +1,7 @@
-$primaryColor: #00203fff;
-$primaryLight: #1e68bc;
-$lightBlue: #e6f6fe;
-$secondaryColor: #adefd1ff;
-$orange: #ffa400;
-$green: #0ea51d;
-
-$darkText: #3a3a3a;
-$lightText: lighten($color: $darkText,
-  $amount: 15);
-$lighterText: lighten($color: $darkText,
-  $amount: 25);
-$lightGray: #dfdfdf;
-$lighterGray: lighten($color: $lightGray,
-  $amount: 11);
-$white: #fdfffc;
-
-
-$linkBlue: #2ec7fe;
-
-
-$servesaBlack: #282929;
-$servesaDark: lighten($color: $servesaBlack,
-  $amount: 11);
-$servesaGray: lighten($color: $servesaBlack,
-  $amount: 60);
-
-
-$box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-0 4px 6px -2px rgba(0, 0, 0, 0.05);
-$box-shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$box-shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
-0 1px 2px 0 rgba(0, 0, 0, 0.06);
-
-$box-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-
+@import 'variables.scss';
 
 .app {
-  color: #ddd;
+  color: $white;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
@@ -56,13 +20,13 @@ $box-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   }
 }
 
-
-
-
-
 ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: circle;
+  padding-left: 2rem;
+}
+
+ol {
+  padding-left: 2rem;
 }
 
 p {
@@ -71,7 +35,7 @@ p {
 }
 
 a {
-  color: #2ec7fe;
+  color: $linkBlue;
   text-decoration: none;
   transition: 120ms ease-in-out;
 }
@@ -80,7 +44,6 @@ a:hover {
   color: yellow;
   text-decoration: none;
 }
-
 
 .spacer-1 {
   margin-top: 1rem;
@@ -94,8 +57,8 @@ a:hover {
   margin-top: 60px;
 }
 
-
-nav {
+// stripe
+.stripe {
   font-size: 1.2em;
   font-weight: bold;
   font-family: 'Roboto-Bold';
@@ -103,30 +66,30 @@ nav {
   text-transform: uppercase;
   padding: 10px;
   transform: skewY(-4deg);
-  background: rgba(255, 255, 255, .5);
-  box-shadow: inset 0 -1px 1px #313747;
+  background: $servesaDark;
+  box-shadow: $box-shadow-inner;
 
   z-index: 1;
 }
 
-nav ul {
-  margin-bottom: 0;
-}
+// nav {}
 
-nav ul>li {
-  display: inline-block;
-}
+// nav ul {
+//   margin-bottom: 0;
+// }
 
-nav ul>li+li {
-  margin-left: 2rem;
-}
+// nav ul>li {
+//   display: inline-block;
+// }
 
+// nav ul>li+li {
+//   margin-left: 2rem;
+// }
 
 a .panel {
   padding: 0 1rem;
-  color: #ddd;
-  border: solid 1px $servesaDark;
-  // border-bottom: solid 1px $linkBlue;
+  color: $white;
+  border: solid 1px $servesaBlack;
   margin-bottom: 1rem;
   transition: 120ms ease-in-out;
 }
@@ -135,9 +98,6 @@ a .panel:hover {
   border: solid 1px $linkBlue;
 }
 
-
-
-
 /* Header */
 header {
   transform: skewY(-4deg);
@@ -145,7 +105,7 @@ header {
 }
 
 header a {
-  color: #ddd;
+  color: $white;
 }
 
 header .title {
@@ -181,12 +141,13 @@ header .title {
 .social-label {
   display: flex;
   align-items: center;
+  font-size: small;
 }
 
 .social-label-icon {
   width: 1rem;
   margin-right: 0.667rem;
-  padding: 8px;
+  padding: 4px;
   border-radius: 25%;
   box-sizing: content-box;
 }
@@ -210,7 +171,6 @@ ul.social-links>li {
   display: block;
   flex: 0 1 auto;
   list-style-type: none;
-  margin-bottom: 0.25rem;
 }
 
 @media screen and (min-width: 999px) {
@@ -222,6 +182,15 @@ ul.social-links>li {
     display: flex;
     align-items: center;
   }
+
+  .social-label {
+    font-size: unset;
+  }
+
+  .social-label-icon {
+    padding: 7px;
+  }
+
 }
 
 //
@@ -240,6 +209,13 @@ ul.social-links>li {
 }
 
 /* Bio */
+.profile-pic {
+  float: left;
+  height: 90px;
+  margin: 0 1rem 0rem 0;
+  border: solid 2px $servesaGray;
+  border-radius: 50%;
+}
 
 ul.tech-stack {
   display: unset;
@@ -283,167 +259,4 @@ ul.tech-stack-items>li:before {
     margin: 0;
     padding: 0;
   }
-}
-
-
-// Blog Post
-
-.blogpost {
-
-  .breadcrumbs {
-    font-size: smaller;
-    color: $servesaGray;
-  }
-
-  h1 {
-    margin-top: 1.5rem;
-  }
-
-  .excerpt {
-    font-size: 'smaller';
-  }
-
-  .excerpt::before {
-    color: $servesaGray;
-    content: '◌';
-    padding-right: .33rem;
-  }
-
-  .byline {
-    display: grid;
-    gap: .667rem;
-
-    border-top: solid 1px $servesaDark;
-    border-bottom: solid 1px $servesaDark;
-    padding: 6px 4px;
-    color: $servesaGray;
-
-    margin: 0 -1rem;
-  }
-
-  .byline>div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .tag {
-    color: $servesaGray;
-    font-size: smaller;
-    text-transform: uppercase;
-    padding: 5px 10px 4px;
-
-    border: solid 1px $servesaDark;
-    border-radius: 3px;
-  }
-
-
-  .date {
-    font-size: smaller;
-    padding: 5px 10px;
-    color: $servesaGray;
-  }
-
-  a.tag:hover {
-    color: $linkBlue;
-    border: solid 1px $linkBlue;
-  }
-
-  *.tag+*.tag {
-    margin-left: .667rem;
-  }
-
-
-  blockquote {
-    max-width: 34rem;
-    margin: 2rem 1rem;
-
-    padding: 1rem 1rem;
-    border-radius: 7px;
-
-    background: $servesaDark;
-
-
-    font-size: smaller;
-    box-shadow: $box-shadow-inner;
-  }
-
-}
-
-@media screen and (min-width: 445px) {
-  .blogpost {
-    .byline {
-      grid-template-columns: auto 1fr auto;
-    }
-
-    .content {
-      margin: 0 1.5rem;
-    }
-
-    blockquote {
-      max-width: 34rem;
-      margin: 1.4rem auto;
-      padding: .667rem 1.4rem;
-      border-radius: 7px;
-      font-size: smaller;
-    }
-  }
-}
-
-
-
-
-.kg-card {}
-
-.kg-image-card {
-  max-width: 36em;
-  margin: 2rem auto;
-}
-
-.kg-image {
-  max-width: 100%;
-}
-
-// Form
-
-
-.form-radio {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: inline-block;
-  position: relative;
-  top: 10px;
-  height: 30px;
-  width: 30px;
-  margin-right: 10px;
-  color: $lightText;
-  background-color: $white;
-  border: solid 1px $primaryLight;
-  border-radius: 50px;
-
-  outline: none;
-  cursor: pointer;
-  transition: all 200ms;
-}
-
-.form-radio:checked::before {
-  position: absolute;
-  font: 13px/1 'Open Sans', sans-serif;
-  left: 10px;
-  top: 6px;
-  content: '\02143';
-  transform: rotate(40deg);
-}
-
-.form-radio:hover {
-  border: solid 1px $primaryLight;
-  color: $lightGray;
-  content: '\02143';
-}
-
-.form-radio:checked {
-  color: $white;
-  background-color: $primaryLight;
-  border: solid 1px $primaryLight;
 }

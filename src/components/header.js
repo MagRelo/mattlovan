@@ -12,11 +12,14 @@ function Header({ steps }) {
     <React.Fragment>
       <header>
         <div>
-          <div className="title">
-            Matt Lovan is a <br /> <Typer />
-          </div>
-
-          {/* <h1>Matt Lovan is a Web Developer</h1> */}
+          <Link to="/">
+            <div className="title">
+              Matt Lovan is a
+              <div style={{ minHeight: '40px' }}>
+                <Typer />
+              </div>
+            </div>
+          </Link>
         </div>
 
         <div className="social-container">
@@ -54,7 +57,8 @@ function Header({ steps }) {
         </div>
       </header>
 
-      <nav></nav>
+      <div className="stripe"></div>
+      {/* <nav></nav> */}
     </React.Fragment>
   );
 }
