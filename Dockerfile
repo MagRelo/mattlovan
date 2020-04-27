@@ -20,4 +20,4 @@ COPY --from=build /app /
 
 # start
 EXPOSE 8080
-CMD [ "npm", "run", "server" ]
+CMD [ "yarn", "run", "server" ]
