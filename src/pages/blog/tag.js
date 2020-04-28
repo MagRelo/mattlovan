@@ -3,6 +3,8 @@ import { Link } from '@reach/router';
 
 import { getTag } from 'api/ghost';
 
+import PostTeaser from 'pages/blog/blogPostTeaser';
+
 function TagPage({ slug }) {
   const [error, setError] = useState([]);
   const [postList, setPostList] = useState([]);
@@ -16,14 +18,19 @@ function TagPage({ slug }) {
   return (
     <section style={{ marginTop: '60px' }}>
       <div className="container" style={{ margin: '0 auto', maxWidth: '42em' }}>
-        <div className="breadcrumbs">
-          <Link to="/blog">Blog </Link> ▸ Tag ▸ {slug}
-        </div>
-
-        <div className="spacer-1"></div>
+        <h1>Tag ▸ {slug}</h1>
 
         {error ? <div>{error}</div> : null}
-        <SearchResults path="/" posts={postList} />
+
+        {postList.map((post) => {
+          return (
+            <Link to={'/blog/' + post.slug} key={post.id}>
+              <div className="panel">
+                <PostTeaser post={post} />
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );
@@ -122,50 +129,6 @@ export default TagPage;
 //     </div>
 //   );
 // }
-
-function SearchResults({ posts }) {
-  return (
-    <div className="">
-      {posts.map((post) => {
-        return (
-          <Link to={'/blog/' + post.slug} key={post.id}>
-            <div className="panel">
-              <PostHeader post={post} />
-            </div>
-          </Link>
-        );
-      })}
-    </div>
-  );
-}
-
-export function PostHeader({ post }) {
-  return (
-    <div className="post-header">
-      <div className="breadcrumbs">
-        <div className="date">{formatDate(post.created_at)}</div>
-        {/* <Link to="/blog">Blog </Link> ▸ {post.title} */}
-      </div>
-
-      <h1>{post.title}</h1>
-
-      {/* Excerpt */}
-      {post.excerpt ? <p className="excerpt">{post.excerpt}</p> : null}
-
-      <div className="byline">
-        <div className="tag-container">
-          {post.tags.map((tag) => {
-            return (
-              <span className="tag" key={tag.id}>
-                {tag.name}
-              </span>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export function formatDate(input) {
   if (input instanceof Date) {

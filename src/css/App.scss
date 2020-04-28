@@ -87,10 +87,13 @@ a:hover {
 // }
 
 a .panel {
-  padding: 0 1rem;
+  margin-bottom: 2rem;
+
+  padding: 1rem 1rem 0 1rem;
   color: $white;
   border: solid 1px $servesaBlack;
-  margin-bottom: 1rem;
+  background-color: $servesaDark;
+
   transition: 120ms ease-in-out;
 }
 
