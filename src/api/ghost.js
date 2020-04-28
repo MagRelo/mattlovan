@@ -3,11 +3,11 @@ import GhostContentAPI from '@tryghost/content-api';
 let url = null;
 let key = null;
 if (process.env.NODE_ENV === 'development') {
-  url = 'http://localhost';
+  url = 'http://localhost:2368';
   key = '1fc7e25f67b8d101115c0f07c1';
 } else {
-  url = 'https://mattlovan.com';
-  key = '5655d677448a3ab09c8d14f1b4';
+  url = 'https://content.mattlovan.com';
+  key = '56c748b686a94f2f5ea7cd0f64';
 }
 
 // Create API instance with site credentials
