@@ -106,11 +106,15 @@ a.tag:hover {
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow: auto;
+
+    padding: 1rem;
+    background-color: #1d2020;
+    border-radius: 8px;
   }
 
   pre code {
     color: #ff3994;
-    font-size: small;
+    font-size: 10px;
   }
 }
 

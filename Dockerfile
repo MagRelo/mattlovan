@@ -6,13 +6,16 @@ FROM node:current-alpine as build
 ENV APP_HOME /app/
 RUN mkdir -pv $APP_HOME
 WORKDIR $APP_HOME
-COPY build $APP_HOME/build
-COPY package.json yarn.lock server.js routes.js $APP_HOME
 
-# Step 3: make sure your dependancies are clean
+# Step 3: Copy npm dependencies & install
 ENV NPM_CONFIG_LOGLEVEL warn
 ENV NODE_ENV production
+COPY package.json yarn.lock $APP_HOME
 RUN yarn
+
+# Step #4: copy app files
+COPY build $APP_HOME/build
+COPY server.js routes.js $APP_HOME
 
 # Step 4: use a multi-stage build
 FROM node:current-alpine
