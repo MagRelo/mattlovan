@@ -5,6 +5,18 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 // *
+// load env var's
+// *
+const dotenv = require('dotenv');
+if (process.env.NODE_ENV !== 'production') {
+  // load local config from .env file
+  const result = dotenv.config();
+  if (result.error) {
+    throw result.error;
+  }
+}
+
+// *
 // Server
 // *
 

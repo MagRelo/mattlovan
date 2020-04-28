@@ -14,7 +14,7 @@ ENV NPM_CONFIG_LOGLEVEL warn
 ENV NODE_ENV production
 RUN yarn
 
-# Step 4: use a build image
+# Step 4: use a multi-stage build
 FROM node:current-alpine
 COPY --from=build /app /
 

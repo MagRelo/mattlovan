@@ -4,17 +4,10 @@ var router = express.Router();
 const path = require('path');
 const fs = require('fs');
 
-let url = null;
-let key = null;
 const GhostContentAPI = require('@tryghost/content-api');
-
-if (process.env.NODE_ENV === 'development') {
-  url = 'http://localhost:8000';
-  key = '0885c91fec23401bae1a8b9988';
-} else {
-  url = 'https://content.mattlovan.com';
-  key = '5655d677448a3ab09c8d14f1b4';
-}
+let url = process.env.GHOST_PATH;
+let key = process.env.GHOST_KEY;
+console.log('Ghost Settings:', url, key);
 
 // Create API instance with site credentials
 const api = new GhostContentAPI({
@@ -34,7 +27,7 @@ async function getPost(postSlug) {
     )
     .catch((error) => {
       // swallow errors, let the front-end handle it
-      console.log(error.errorType);
+      console.log('Ghost Error:', error.errorType);
       return {};
     });
 }
@@ -66,9 +59,8 @@ let pub = {
 getSettings()
   .then((settings) => {
     pub = settings;
-    // console.log(pub);
   })
-  .catch((error) => console.log('load ghostsettings', error.code));
+  .catch((error) => console.log('Ghost Error:', error.code));
 
 //
 // ROUTES
@@ -86,6 +78,8 @@ router.get('/blog/:slug', async function(req, res) {
       if (err) {
         res.sendFile('index.html', { root: './build' });
       }
+
+      const postUrl = process.env.BASE_URL + '/blog/' + post.slug;
 
       // find best value
       const meta_description = findFirstValue([
@@ -117,7 +111,9 @@ router.get('/blog/:slug', async function(req, res) {
 
       // replace values in index.html
       data = data.replace(/\$META_TITLE/g, post.title);
-      data = data.replace(/\$META_CANONICAL/g, post.url);
+
+      data = data.replace(/\$META_CANONICAL/g, postUrl);
+
       data = data.replace(/\$META_DESCRIPTION/g, meta_description);
       data = data.replace(/\$OG_TITLE/g, og_title);
       data = data.replace(/\$OG_DESCRIPTION/g, og_description);
