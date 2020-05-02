@@ -45,3 +45,16 @@ export async function getTag(slug) {
 export async function getSettings(slug) {
   return await api.settings.browse();
 }
+
+export async function getNextPost(tags, id) {
+  return await api.posts
+    .browse({
+      filter: `tags:[${tags}]+id:-${id}`,
+      include: 'tags,authors',
+    })
+    .then((postArray) => {
+      return postArray[0] || {};
+    });
+}
+
+export async function subscribe() {}

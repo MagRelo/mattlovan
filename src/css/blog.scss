@@ -19,6 +19,7 @@
 }
 
 .date {
+  margin-left: 1rem;
   float: right;
   font-size: small;
   color: $servesaGray;
@@ -62,6 +63,12 @@ a.tag:hover {
   border: solid 1px $linkBlue;
 }
 
+hr {
+  border-top: solid 2px $servesaDark;
+  margin: 2rem 0;
+}
+
+
 .content {
 
   h2 {
@@ -87,10 +94,6 @@ a.tag:hover {
     font-style: italic;
   }
 
-  hr {
-    border-top: solid 2px $servesaDark;
-    margin: 2rem 0;
-  }
 
   pre,
   code,
@@ -147,11 +150,7 @@ a.tag:hover {
     }
 
   }
-
-
-
 }
-
 
 // Koenig cards(?)
 .kg-card {

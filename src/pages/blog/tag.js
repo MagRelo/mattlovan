@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from '@reach/router';
 
 import { getTag } from 'api/ghost';
 
-import PostTeaser from 'pages/blog/blogPostTeaser';
+import PostTeaser from 'pages/blog/postTeaser';
 
 function TagPage({ slug }) {
   const [error, setError] = useState([]);
@@ -16,20 +15,16 @@ function TagPage({ slug }) {
   }, []);
 
   return (
-    <section style={{ marginTop: '60px' }}>
+    <section className="skew-padding">
       <div className="container" style={{ margin: '0 auto', maxWidth: '42em' }}>
         <h1>Tag ▸ {slug}</h1>
+
+        <div className="spacer-1"></div>
 
         {error ? <div>{error}</div> : null}
 
         {postList.map((post) => {
-          return (
-            <Link to={'/blog/' + post.slug} key={post.id}>
-              <div className="panel">
-                <PostTeaser post={post} />
-              </div>
-            </Link>
-          );
+          return <PostTeaser post={post} key={post.id} />;
         })}
       </div>
     </section>

@@ -1,11 +1,14 @@
 $white: #dddddd;
 $linkBlue: #2ec7fe;
-$servesaBlack: #282929;
 
 $yellow: #ffc107;
 
+$servesaBlack: #282929;
 $servesaDark: lighten($color: $servesaBlack,
   $amount: 9,
+);
+$servesaMedium: lighten($color: $servesaBlack,
+  $amount: 18,
 );
 $servesaGray: lighten($color: $servesaBlack,
   $amount: 60,

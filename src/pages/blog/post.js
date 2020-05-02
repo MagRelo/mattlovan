@@ -3,9 +3,12 @@ import { Link } from '@reach/router';
 
 import { getPost } from 'api/ghost';
 
+import NextPost from 'pages/blog/nextPost';
+import Subscribe from 'pages/blog/subscribe';
+
 function Post({ slug }) {
   const [error, setError] = useState([]);
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState({});
 
   useEffect(() => {
     getPost(slug)
@@ -17,7 +20,7 @@ function Post({ slug }) {
     <section className="skew-padding">
       <div className="container">
         {error ? <div>{error}</div> : null}
-        {post ? (
+        {post.title ? (
           <div className="post">
             <PostHeader post={post} />
             <div className="spacer-2"></div>
@@ -27,7 +30,11 @@ function Post({ slug }) {
               dangerouslySetInnerHTML={createMarkup(post.html)}
             />
             <div className="spacer-2"></div>
-            <PostFooter post={post} />
+            <div className="dots">· · ·</div>
+
+            <Subscribe post={post} />
+            <hr />
+            <NextPost currentPost={post} />
           </div>
         ) : null}
       </div>
@@ -41,7 +48,7 @@ export function PostHeader({ post }) {
     <div className="post-header">
       <div className="breadcrumbs">
         <div className="date">{formatDate(post.created_at)}</div>
-        <Link to="/blog">Blog </Link> ▸ {post.title}
+        <Link to="/blog">Home </Link> <b>»</b> {post.title}
       </div>
 
       <h1>{post.title}</h1>
@@ -49,17 +56,19 @@ export function PostHeader({ post }) {
       {/* Excerpt */}
       {post.excerpt ? <p className="excerpt">{post.excerpt}</p> : null}
 
-      <div className="byline">
-        <div className="tag-container">
-          {post.tags.map((tag) => {
-            return (
-              <Link to={'/tag/' + tag.slug} className="tag" key={tag.id}>
-                {tag.name}
-              </Link>
-            );
-          })}
+      {post.tags.length ? (
+        <div className="byline">
+          <div className="tag-container">
+            {post.tags.map((tag) => {
+              return (
+                <Link to={'/tag/' + tag.slug} className="tag" key={tag.id}>
+                  {tag.name}
+                </Link>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }
@@ -67,35 +76,19 @@ export function PostHeader({ post }) {
 export function PostFooter({ post }) {
   return (
     <div className="post-header">
-      <div className="byline">
-        <div className="tag-container">
-          {post.tags.map((tag) => {
-            return (
-              <Link to={'/tag/' + tag.slug} className="tag" key={tag.id}>
-                {tag.name}
-              </Link>
-            );
-          })}
+      {post.tags.length ? (
+        <div className="byline">
+          <div className="tag-container">
+            {post.tags.map((tag) => {
+              return (
+                <Link to={'/tag/' + tag.slug} className="tag" key={tag.id}>
+                  {tag.name}
+                </Link>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-export function CTA({ post }) {
-  return (
-    <div className="post-header">
-      <div className="byline">
-        <div className="tag-container">
-          {post.tags.map((tag) => {
-            return (
-              <Link to={'/tag/' + tag.slug} className="tag" key={tag.id}>
-                {tag.name}
-              </Link>
-            );
-          })}
-        </div>
-      </div>
+      ) : null}
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from '@reach/router';
 
 import { getPosts } from 'api/ghost';
 
-import PostTeaser from 'pages/blog/blogPostTeaser';
+import PostTeaser from 'pages/blog/postTeaser';
 
 function BlogHome() {
   const [error, setError] = useState([]);
@@ -21,13 +20,7 @@ function BlogHome() {
         <h1>Blog</h1>
         {error ? <div>{error}</div> : null}
         {postList.map((post) => {
-          return (
-            <Link to={'/blog/' + post.slug} key={post.id}>
-              <div className="panel">
-                <PostTeaser post={post} />
-              </div>
-            </Link>
-          );
+          return <PostTeaser post={post} key={post.id} />;
         })}
       </div>
     </section>

@@ -8,7 +8,7 @@ import Header from './components/header';
 // Routes
 import Home from './pages/home';
 import Blog from './pages/blog/blogList';
-import BlogPost from './pages/blog/blogPost';
+import BlogPost from './pages/blog/post';
 import TagPage from './pages/blog/tag';
 
 import NotFound from './pages/404';

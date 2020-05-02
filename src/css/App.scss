@@ -91,7 +91,7 @@ a .panel {
 
   padding: 1rem 1rem 0 1rem;
   color: $white;
-  border: solid 1px $servesaBlack;
+  border: solid 1px $servesaMedium;
   background-color: $servesaDark;
 
   transition: 120ms ease-in-out;
@@ -100,6 +100,31 @@ a .panel {
 a .panel:hover {
   border: solid 1px $linkBlue;
 }
+
+.dots {
+
+  font-size: 4rem;
+  line-height: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: $servesaDark;
+}
+
+
+.cta-panel {
+  max-width: 32rem;
+  margin: 0 auto;
+
+
+  text-align: center;
+  padding: 1rem 2rem;
+
+  background: $servesaDark;
+  border: solid 1px $servesaMedium;
+  border-radius: 8px;
+}
+
+
 
 /* Header */
 header {
