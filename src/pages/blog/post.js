@@ -4,7 +4,7 @@ import { Link } from '@reach/router';
 import { getPost } from 'api/ghost';
 
 import NextPost from 'pages/blog/nextPost';
-import Subscribe from 'pages/blog/subscribe';
+// import Subscribe from 'pages/blog/subscribe';
 
 function Post({ slug }) {
   const [error, setError] = useState([]);
@@ -17,7 +17,7 @@ function Post({ slug }) {
   }, [slug]);
 
   return (
-    <section className="skew-padding">
+    <div className="skew-padding diagonal-box bg-five">
       <div className="container">
         {error ? <div>{error}</div> : null}
         {post.title ? (
@@ -32,13 +32,13 @@ function Post({ slug }) {
             <div className="spacer-2"></div>
             <div className="dots">· · ·</div>
 
-            <Subscribe post={post} />
-            <hr />
+            {/* <Subscribe post={post} /> */}
+            {/* <hr /> */}
             <NextPost currentPost={post} />
           </div>
         ) : null}
       </div>
-    </section>
+    </div>
   );
 }
 export default Post;

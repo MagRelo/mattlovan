@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+
 import PostTeaser from 'pages/blog/postTeaser';
 
 import { getNextPost } from 'api/ghost';
 
 export default function NextPost({ currentPost }) {
-  const [error, setError] = useState([]);
+  const [error, setError] = useState(null);
   const [nextPost, setNextPost] = useState(null);
 
   useEffect(() => {
@@ -13,7 +14,11 @@ export default function NextPost({ currentPost }) {
 
     if (tagArray.length) {
       getNextPost(tagList, currentPost.id)
-        .then((post) => setNextPost(post))
+        .then((post) => {
+          if (post) {
+            setNextPost(post);
+          }
+        })
         .catch((error) => setError(error.toString()));
     } else {
       console.log('NextPost: no tags');

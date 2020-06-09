@@ -2,9 +2,9 @@
 
 
 // Blog Pos
-.blog-list {
-  padding: var(--skew-padding) 0;
-}
+// .blog-list {
+//   padding: var(--skew-padding) 0;
+// }
 
 .post-header {
 
@@ -18,24 +18,29 @@
   }
 }
 
+.title {
+  margin: .5em 0;
+  font-size: 28px;
+  color: $white;
+}
+
 .date {
-  margin-left: 1rem;
-  float: right;
-  font-size: small;
   color: $servesaGray;
+  font-size: small;
+  margin-top: 10px;
 }
 
 .excerpt {
   font-size: smaller;
   font-style: italic;
-  padding: .33rem;
+  // padding: .33rem;
+  color: $servesaGray;
 }
 
 
 .byline {
   color: $servesaGray;
-  border-top: solid 2px $servesaDark;
-  border-bottom: solid 2px $servesaDark;
+  border-top: solid 2px $servesaGray;
   margin: 0 -1rem;
 }
 
@@ -51,7 +56,7 @@
   font-size: smaller;
   text-transform: uppercase;
   padding: 5px 10px 4px;
-  border: solid 2px $servesaDark;
+  border: solid 2px $servesaGray;
   border-radius: 3px;
 
   display: inline-block;
@@ -64,7 +69,7 @@ a.tag:hover {
 }
 
 hr {
-  border-top: solid 2px $servesaDark;
+  border-top: solid 2px $servesaGray;
   margin: 2rem 0;
 }
 
@@ -122,8 +127,14 @@ hr {
 
 @media screen and (min-width: 445px) {
 
+
+  .byline {
+    border-top: solid 1px $servesaGray;
+  }
+
+
   .tag {
-    border: solid 1px $servesaDark;
+    border: solid 1px $servesaGray;
   }
 
   .post {

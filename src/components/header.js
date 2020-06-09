@@ -9,7 +9,7 @@ import { ReactComponent as GithubLogo } from '../images/github.svg';
 
 function Header({ steps }) {
   return (
-    <React.Fragment>
+    <div>
       <header>
         <div>
           <Link to="/">
@@ -58,8 +58,7 @@ function Header({ steps }) {
       </header>
 
       <div className="stripe"></div>
-      {/* <nav></nav> */}
-    </React.Fragment>
+    </div>
   );
 }
 

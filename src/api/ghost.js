@@ -1,14 +1,11 @@
 import GhostContentAPI from '@tryghost/content-api';
 
-let url = null;
-let key = null;
-if (process.env.NODE_ENV === 'development') {
-  url = 'http://localhost:2368';
-  key = '1fc7e25f67b8d101115c0f07c1';
-} else {
-  url = 'https://content.mattlovan.com';
-  key = '56c748b686a94f2f5ea7cd0f64';
-}
+let url = 'https://content.mattlovan.com';
+let key = '56c748b686a94f2f5ea7cd0f64';
+// if (process.env.NODE_ENV === 'development') {
+//   url = 'http://localhost:2368';
+//   key = '1fc7e25f67b8d101115c0f07c1';
+//}
 
 // Create API instance with site credentials
 const api = new GhostContentAPI({
@@ -53,7 +50,11 @@ export async function getNextPost(tags, id) {
       include: 'tags,authors',
     })
     .then((postArray) => {
-      return postArray[0] || {};
+      console.log(postArray);
+
+      if (postArray.length) {
+        return postArray[0] || {};
+      }
     });
 }
 

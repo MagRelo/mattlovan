@@ -22,12 +22,10 @@ class App extends Component {
         <div>
           <Router>
             <Home path="/" />
+            <BlogPost path="blog/:slug" />
 
             {/* Blog */}
-            <BlogPost path="blog/:slug" />
             <Blog path="blog"></Blog>
-
-            {/* Tag */}
             <TagPage path="tag/:slug" />
 
             <NotFound default />
@@ -38,6 +36,7 @@ class App extends Component {
               window.scrollTo(0, 0);
             }}
           ></OnRouteChange>
+          <div className="stripe"></div>
         </div>
 
         <footer>

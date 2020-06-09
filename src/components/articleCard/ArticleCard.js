@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 
 import './ArticleCard.css';
 
@@ -12,35 +13,67 @@ TimeAgo.addLocale(en);
 const defaultImage =
   'https://cdn-images-1.medium.com/max/2000/1*T1NrRFtxijHcsiQVRjRNJA@2x.jpeg';
 const defaultDateString = '2018-02-16T18:39:44.651Z';
+// const timeAgo = new TimeAgo('en-US');
 
-const timeAgo = new TimeAgo('en-US');
-const ArticleCard = props => {
+const ArticleCard = ({ article }) => {
   return (
-    <div className="post-card">
-      {/* Image */}
-      <div
-        className="post-img"
-        style={{
-          backgroundImage: `url('${props.article.image || defaultImage}')`
-        }}
-      />
+    <React.Fragment>
+      {article.external_url ? (
+        <a href={article.external_url} key={article.id}>
+          <div className="post-card">
+            {/* Image */}
+            <div
+              className="post-img"
+              style={{
+                backgroundImage: `url('${article.feature_image ||
+                  defaultImage}')`,
+              }}
+            />
 
-      {/* Content */}
-      <div className="post-content">
-        <time className="date">
-          {timeAgo.format(new Date(props.article.date || defaultDateString))}
-        </time>
-        <div className="category">{props.article.category}</div>
-        <h3>
-          <a href={props.article.url} target="_blank" rel="noopener noreferrer">
-            {props.article.title}
-          </a>
-        </h3>
+            {/* Content */}
+            <div>
+              <div className="date">{formatDate(article.published_at)}</div>
+              <div className="title">{article.title}</div>
+              <p className="excerpt">{article.excerpt}</p>
+            </div>
+          </div>
+        </a>
+      ) : (
+        <Link to={'/blog/' + article.slug} key={article.id}>
+          <div className="post-card">
+            {/* Image */}
+            <div
+              className="post-img"
+              style={{
+                backgroundImage: `url('${article.feature_image ||
+                  defaultImage}')`,
+              }}
+            />
 
-        <p className="description">{props.article.description}</p>
-      </div>
-    </div>
+            {/* Content */}
+            <div>
+              <div className="date">{formatDate(article.published_at)}</div>
+              <div className="title">{article.title}</div>
+              <p className="excerpt">{article.excerpt}</p>
+            </div>
+          </div>
+        </Link>
+      )}
+    </React.Fragment>
   );
 };
 
 export default ArticleCard;
+
+function formatDate(isoDate) {
+  const date = new Date(isoDate || defaultDateString);
+
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+
+  return date.toLocaleDateString('en', options);
+}
