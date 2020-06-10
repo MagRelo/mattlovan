@@ -18,6 +18,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
+    "fslightbox-react": "^1.4.9",
     "javascript-time-ago": "^1.0.34",
     "morgan": "^1.9.1",
     "react": "^16.6.1",
