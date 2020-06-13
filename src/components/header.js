@@ -95,11 +95,17 @@ const Typer = ({ link, Logo, name, account, fill }) => {
     {
       startDelay: 1800,
       content: 'Web Developer',
-      backspace: 9,
+      backspace: 13,
       backDelay: 3000,
     },
-    { startDelay: 500, content: 'Architect', backspace: 13, backDelay: 1800 },
-    { startDelay: 2600, content: 'Golfer', backDelay: 3800 },
+    {
+      startDelay: 1500,
+      content: 'Dev Ops Guy',
+      backspace: 11,
+      backDelay: 1800,
+    },
+    { startDelay: 2600, content: 'Golfer', backspace: 0, backDelay: 1400 },
+    { startDelay: 900, content: '(?)', backspace: 9, backDelay: 1800 },
   ];
 
   return (
@@ -113,7 +119,7 @@ const Typer = ({ link, Logo, name, account, fill }) => {
                 <Typist.Delay ms={message.startDelay} />
                 <span>{message.content}</span>
                 <Typist.Backspace
-                  count={message.backspace || message.content.length}
+                  count={message.backspace}
                   delay={message.backDelay}
                 />
               </span>

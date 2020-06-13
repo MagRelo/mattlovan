@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import FsLightbox from 'fslightbox-react';
 
 import BlogList from 'pages/blog/blogList';
+import ProjectList from 'pages/project/projectList';
 
 import skillsChart from 'images/skills.jpg';
 import headshot from 'images/matt_grey.jpg';
 
 function App() {
   const [toggler, setToggler] = useState(false);
+  const [profileToggler, setProfileToggler] = useState(false);
 
   return (
     <div>
@@ -17,25 +19,35 @@ function App() {
             <div className="mb-4"></div>
             <div className="grid-2">
               <div className="panel pull-down">
-                <img src={headshot} alt="" className="profile-pic" />
+                <button
+                  style={{ float: 'left' }}
+                  className="image-button"
+                  onClick={() => setProfileToggler(!profileToggler)}
+                >
+                  <img src={headshot} alt="" className="profile-pic" />
+                  <FsLightbox toggler={profileToggler} sources={[headshot]} />
+                </button>
+
                 <h2>Matt Lovan</h2>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Temporibus sequi accusamus dolorum laborum labore,
-                  reprehenderit, et corporis recusandae odio qui vitae eius,
-                  quibusdam delectus minima perspiciatis unde consequuntur id
-                  blanditiis.{' '}
+                  Hi, Welcome! This site is a collection of my current projects,
+                  interests, and writing.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Error modi doloremque sed? Obcaecati beatae, voluptates maxime
-                  impedit atque soluta animi consectetur quas ad, voluptas,
-                  laboriosam voluptatibus accusamus cum quo dignissimos?
+                  I'm a full-stack developer focused on the web, from interfaces
+                  & databases to deployment. I work on new ways to cooperate
+                  using mechanism design, programmable value (Ethereum & Web3),
+                  and the open web. Check out my latest projects in the projects
+                  section below.
+                </p>
+                <p>
+                  I'm always interested in new projects and collaborations so
+                  please reach out if you need help!
                 </p>
               </div>
               <div>
                 <div className="panel pull-up">
-                  <h2>KSA's</h2>
+                  <h2>KSA Map</h2>
                   <p>Knowledge, Skills & Abilities</p>
 
                   <button
@@ -54,8 +66,22 @@ function App() {
             </div>
           </div>
         </section>
+
         <div className="stripe"></div>
         <section className="diagonal-box bg-four">
+          <div className="container">
+            <h2>Current Projects</h2>
+            <p></p>
+            <div className="mb-4"></div>
+            <div className="grid-2">
+              <ProjectList />
+            </div>
+          </div>
+        </section>
+
+        {/* writing */}
+        <div className="stripe"></div>
+        <section className="diagonal-box bg-six">
           <div className="container">
             <h2>Recent Articles</h2>
             <div className="mb-4"></div>
@@ -64,17 +90,6 @@ function App() {
             </div>
           </div>
         </section>
-        {/* <div className="stripe"></div>
-        <section className="diagonal-box bg-five">
-          <div className="container">
-            <h2>Projects & Demos</h2>
-            <p></p>
-            <div className="mb-4"></div>
-            <div className="grid-3">
-              <BlogList />
-            </div>
-          </div>
-        </section> */}
       </div>
     </div>
   );

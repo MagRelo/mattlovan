@@ -32,7 +32,7 @@ const ArticleCard = ({ article }) => {
 
             {/* Content */}
             <div>
-              <div className="date">{formatDate(article.published_at)}</div>
+              <div className="date">{formatDate(article.created_at)}</div>
               <div className="title">{article.title}</div>
               <p className="excerpt">{article.excerpt}</p>
             </div>

@@ -1,0 +1,31 @@
+@import 'css/variables.scss';
+
+.project-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.project-card-status {
+  color: $white
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+
+  border-top: solid 1px $servesaDark;
+  padding-top: 1rem;
+}
+
+.status-label {
+  color: $servesaGray;
+  font-size: smaller;
+  line-height: 1.55rem;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.status-content {
+  color: $white;
+}
