@@ -21,9 +21,11 @@
 .status-label {
   color: $servesaGray;
   font-size: smaller;
-  line-height: 1.55rem;
   text-transform: uppercase;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .status-content {

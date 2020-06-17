@@ -46,7 +46,6 @@ function formatDate(isoDate) {
   const date = new Date(isoDate || defaultDateString);
 
   const options = {
-    weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
