@@ -30,7 +30,7 @@ function Header({ steps }) {
                 Logo={TwitterLogo}
                 fill="#1DA1F2"
                 link="https://twitter.com/mattlovan"
-                account="@mattlovan"
+                account="Twitter"
               />
             </li>
 
@@ -40,7 +40,7 @@ function Header({ steps }) {
                 Logo={MediumLogo}
                 fill="#ddd"
                 link="https://medium.com/@mattlovan"
-                account="@mattlovan"
+                account="Medium"
               />
             </li>
 
@@ -50,7 +50,7 @@ function Header({ steps }) {
                 Logo={GithubLogo}
                 fill="#ddd"
                 link="https://github.com/magrelo"
-                account="magrelo"
+                account="GitHub"
               />
             </li>
           </ul>
@@ -93,7 +93,7 @@ const Typer = ({ link, Logo, name, account, fill }) => {
 
   const messages = [
     {
-      startDelay: 1800,
+      startDelay: 600,
       content: 'Web Developer',
       backspace: 13,
       backDelay: 3000,

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { getPosts } from 'api/ghost';
 
 // import PostTeaser from 'pages/blog/postTeaser';
-import Card from 'components/articleCard/ArticleCard';
+import Card from 'pages/blog/ArticleCard';
 
 function BlogHome() {
   const [error, setError] = useState(null);
@@ -21,7 +21,11 @@ function BlogHome() {
         <div>{error}</div>
       ) : (
         postList.map((post, index) => {
-          return <Card article={post} key={post.id || index} />;
+          return (
+            <div>
+              <Card article={post} key={post.id || index} />
+            </div>
+          );
         })
       )}
     </React.Fragment>
@@ -45,7 +49,7 @@ const articles = [
     image_alt: '',
     title: 'Run your own Public Ethereum Testnet',
     excerpt:
-      'If you’re developing a dApp for Ethereum it can be nice to have a semi-permanent, semi-public environment available for testing. This guide will focus on the steps to set up an Ethereum Proof-of-Authority testnet that is available from the public internet.',
+      'It can be nice to have a semi-permanent, semi-public environment available for testing. This guide will focus on the steps to set up an Ethereum Proof-of-Authority testnet that is available from the public internet.',
     tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
     featured: false,
     external_url: networkURL,
@@ -59,7 +63,7 @@ const articles = [
     image_alt: '',
     title: 'Deploy a Scalable Open-Source Architecture',
     excerpt:
-      'The architecture of Servesa – provisioning a virtual machine, installing SSL certificates, defining a network of Docker containers, and tweaking the configuration for local development. This architecture uses free, open-source tools, it runs on any cloud provider (or can be scaled across multiple providers), and it can handle thousands of requests per minute.',
+      'The architecture of Servesa – provisioning a virtual machine, installing SSL certificates, defining a network of Docker containers, and tweaking the configuration for local development. ',
     tech: ['Docker', 'NGINX', 'SSL', 'Networking'],
     featured: false,
     external_url:

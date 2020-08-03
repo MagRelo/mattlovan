@@ -18,22 +18,25 @@
   }
 }
 
-.title {
-  margin: .5em 0;
-  font-size: 28px;
+.post-title {
   color: $white;
+  margin: 14px 0;
+  font-size: 28px;
+  line-height: 34px;
 }
 
 .date {
-  color: $servesaGray;
+  color: #ababab;
   font-size: small;
-  margin-top: 10px;
+  min-height: 1rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .excerpt {
   font-size: smaller;
   font-style: italic;
-  // padding: .33rem;
+  margin-top: 12px;
   color: $servesaGray;
 }
 

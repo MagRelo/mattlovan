@@ -8,6 +8,8 @@ import './css/skew.scss';
 import './css/App.scss';
 import './css/blog.scss';
 
+import './css/ArticleCard.css';
+
 // Fonts
 import './fonts/Roboto/roboto.css';
 import './fonts/Roboto_Mono/roboto-mono.css';

@@ -21,7 +21,7 @@ const ArticleCard = ({ article }) => {
 
           {/* Content */}
           <div>
-            <div className="title">{article.title}</div>
+            <div className="post-title">{article.title}</div>
             <p className="excerpt">{article.excerpt}</p>
           </div>
 

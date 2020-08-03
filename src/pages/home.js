@@ -5,7 +5,7 @@ import BlogList from 'pages/blog/blogList';
 import ProjectList from 'pages/project/projectList';
 
 import skillsChart from 'images/skills.jpg';
-import headshot from 'images/matt_grey.jpg';
+import headshot from 'images/profile.jpg';
 
 function App() {
   const [toggler, setToggler] = useState(false);
@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <div className="main">
-        <section className="diagonal-box bg-three">
+        <section className="diagonal-box bg-four">
           <div className="container">
             <div className="mb-4"></div>
             <div className="grid-2">
@@ -28,11 +28,9 @@ function App() {
                   <FsLightbox toggler={profileToggler} sources={[headshot]} />
                 </button>
 
-                <h2>Matt Lovan</h2>
-                <p>
-                  Hi, Welcome! This site is a collection of my current projects,
-                  interests, and writing.
-                </p>
+                <h2>Hello 👋 </h2>
+
+                <p>I'm Matt Lovan, Full Stack JavaScript developer.</p>
                 <p>
                   I'm a full-stack developer focused on the web, from interfaces
                   & databases to deployment. I work on new ways to cooperate
@@ -68,7 +66,7 @@ function App() {
         </section>
 
         <div className="stripe"></div>
-        <section className="diagonal-box bg-four">
+        <section className="diagonal-box bg-three">
           <div className="container">
             <h2>Current Projects</h2>
             <p></p>

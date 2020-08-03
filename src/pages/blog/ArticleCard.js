@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-import './ArticleCard.css';
-
 // defaults
 
 // relative time
@@ -13,7 +11,7 @@ TimeAgo.addLocale(en);
 const defaultImage =
   'https://cdn-images-1.medium.com/max/2000/1*T1NrRFtxijHcsiQVRjRNJA@2x.jpeg';
 const defaultDateString = '2018-02-16T18:39:44.651Z';
-// const timeAgo = new TimeAgo('en-US');
+const timeAgo = new TimeAgo('en-US');
 
 const ArticleCard = ({ article }) => {
   return (
@@ -21,6 +19,13 @@ const ArticleCard = ({ article }) => {
       {article.external_url ? (
         <a href={article.external_url} key={article.id}>
           <div className="post-card">
+            <div className="date">
+              <span style={{ float: 'right' }}>
+                {timeAgo.format(new Date(article.created_at))}
+              </span>
+              {/* {formatDate(article.created_at)} */}
+            </div>
+
             {/* Image */}
             <div
               className="post-img"
@@ -30,10 +35,10 @@ const ArticleCard = ({ article }) => {
               }}
             />
 
+            <div className="post-title">{article.title}</div>
+
             {/* Content */}
             <div>
-              <div className="date">{formatDate(article.created_at)}</div>
-              <div className="title">{article.title}</div>
               <p className="excerpt">{article.excerpt}</p>
             </div>
           </div>
@@ -41,6 +46,12 @@ const ArticleCard = ({ article }) => {
       ) : (
         <Link to={'/blog/' + article.slug} key={article.id}>
           <div className="post-card">
+            <div className="date">
+              <span style={{ float: 'right' }}>
+                {timeAgo.format(new Date(article.published_at))}
+              </span>
+            </div>
+
             {/* Image */}
             <div
               className="post-img"
@@ -50,10 +61,11 @@ const ArticleCard = ({ article }) => {
               }}
             />
 
+            {/* Title */}
+            <div className="post-title">{article.title}</div>
+
             {/* Content */}
             <div>
-              <div className="date">{formatDate(article.published_at)}</div>
-              <div className="title">{article.title}</div>
               <p className="excerpt">{article.excerpt}</p>
             </div>
           </div>
@@ -69,9 +81,8 @@ function formatDate(isoDate) {
   const date = new Date(isoDate || defaultDateString);
 
   const options = {
-    weekday: 'long',
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
   };
 
