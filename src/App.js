@@ -7,7 +7,7 @@ import Header from './components/header';
 
 // Routes
 import Home from './pages/home';
-import Blog from './pages/blog/blogList';
+import Blog from './components/blog/blogList';
 import BlogPost from './pages/blog/post';
 import TagPage from './pages/blog/tag';
 
@@ -22,10 +22,10 @@ class App extends Component {
         <div>
           <Router>
             <Home path="/" />
-            <BlogPost path="blog/:slug" />
 
             {/* Blog */}
             <Blog path="blog"></Blog>
+            <BlogPost path="blog/:slug" />
             <TagPage path="tag/:slug" />
 
             <NotFound default />

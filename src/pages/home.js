@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FsLightbox from 'fslightbox-react';
 
-import BlogList from 'pages/blog/blogList';
+import BlogList from 'components/blog/blogList';
 import ProjectList from 'components/project/projectList';
 
 import skillsChart from 'images/skills.jpg';

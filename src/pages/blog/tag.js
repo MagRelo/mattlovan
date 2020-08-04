@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { getTag } from 'api/ghost';
 
-import PostTeaser from 'components/blog/postTeaser';
+import Card from 'components/blog/ArticleCard';
 
 function TagPage({ slug }) {
   const [error, setError] = useState([]);
@@ -15,17 +15,19 @@ function TagPage({ slug }) {
   }, []);
 
   return (
-    <section className="skew-padding">
-      <div className="container" style={{ margin: '0 auto', maxWidth: '42em' }}>
-        <h1>Tag ▸ {slug}</h1>
+    <section className="skew-padding diagonal-box bg-six">
+      <div className="container">
+        <h1 className="section-header">Tag ▸ {slug}</h1>
 
         <div className="spacer-1"></div>
 
         {error ? <div>{error}</div> : null}
 
-        {postList.map((post) => {
-          return <PostTeaser post={post} key={post.id} />;
-        })}
+        <div className="grid-3">
+          {postList.map((post) => {
+            return <Card article={post} key={post.id} />;
+          })}
+        </div>
       </div>
     </section>
   );
