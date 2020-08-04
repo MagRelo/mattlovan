@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { getTag } from 'api/ghost';
 
-import PostTeaser from 'pages/blog/postTeaser';
+import PostTeaser from 'components/blog/postTeaser';
 
 function TagPage({ slug }) {
   const [error, setError] = useState([]);

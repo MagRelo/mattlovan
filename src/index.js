@@ -2,18 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // CSS
-import './css/bootstrap.min.css';
 import './css/index.css';
 import './css/skew.scss';
 import './css/App.scss';
 import './css/blog.scss';
 
-import './css/ArticleCard.css';
-
 // Fonts
 import './fonts/Roboto/roboto.css';
-import './fonts/Roboto_Mono/roboto-mono.css';
-import './fonts/Rock_Salt/rock-salt.css';
 
 //
 import App from './App';

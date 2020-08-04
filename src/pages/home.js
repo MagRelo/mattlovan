@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FsLightbox from 'fslightbox-react';
 
 import BlogList from 'pages/blog/blogList';
-import ProjectList from 'pages/project/projectList';
+import ProjectList from 'components/project/projectList';
 
 import skillsChart from 'images/skills.jpg';
 import headshot from 'images/profile.jpg';
@@ -28,25 +28,31 @@ function App() {
                   <FsLightbox toggler={profileToggler} sources={[headshot]} />
                 </button>
 
-                <h2>Hello 👋 </h2>
+                <h1>
+                  Hello{' '}
+                  <span role="img" aria-label="waving hand">
+                    👋
+                  </span>{' '}
+                </h1>
 
                 <p>I'm Matt Lovan, Full Stack JavaScript developer.</p>
+
                 <p>
-                  I'm a full-stack developer focused on the web, from interfaces
-                  & databases to deployment. I work on new ways to cooperate
-                  using mechanism design, programmable value (Ethereum & Web3),
-                  and the open web. Check out my latest projects in the projects
-                  section below.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Velit, quia laudantium quod commodi neque dicta! Quos nulla
+                  culpa delectus modi nisi laudantium enim temporibus tenetur
+                  asperiores alias quam, vero incidunt.
                 </p>
                 <p>
-                  I'm always interested in new projects and collaborations so
-                  please reach out if you need help!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Obcaecati dicta magni ea adipisci, explicabo officia illo
+                  suscipit ab! Nobis aperiam officiis cumque aliquam saepe
+                  totam. Inventore dolores consectetur numquam saepe.
                 </p>
               </div>
               <div>
                 <div className="panel pull-up">
-                  <h2>KSA Map</h2>
-                  <p>Knowledge, Skills & Abilities</p>
+                  <h3>Professional Skills</h3>
 
                   <button
                     className="image-button"
@@ -66,9 +72,9 @@ function App() {
         </section>
 
         <div className="stripe"></div>
-        <section className="diagonal-box bg-three">
+        <section className="diagonal-box bg-five">
           <div className="container">
-            <h2>Current Projects</h2>
+            <h2 className="section-header">Current Projects</h2>
             <p></p>
             <div className="mb-4"></div>
             <div className="grid-2">
@@ -81,7 +87,7 @@ function App() {
         <div className="stripe"></div>
         <section className="diagonal-box bg-six">
           <div className="container">
-            <h2>Recent Articles</h2>
+            <h2 className="section-header">Recent Posts</h2>
             <div className="mb-4"></div>
             <div className="grid-3">
               <BlogList />

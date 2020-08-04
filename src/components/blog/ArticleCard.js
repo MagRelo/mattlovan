@@ -10,7 +10,7 @@ TimeAgo.addLocale(en);
 
 const defaultImage =
   'https://cdn-images-1.medium.com/max/2000/1*T1NrRFtxijHcsiQVRjRNJA@2x.jpeg';
-const defaultDateString = '2018-02-16T18:39:44.651Z';
+// const defaultDateString = '2018-02-16T18:39:44.651Z';
 const timeAgo = new TimeAgo('en-US');
 
 const ArticleCard = ({ article }) => {
@@ -77,14 +77,14 @@ const ArticleCard = ({ article }) => {
 
 export default ArticleCard;
 
-function formatDate(isoDate) {
-  const date = new Date(isoDate || defaultDateString);
+// function formatDate(isoDate) {
+//   const date = new Date(isoDate || defaultDateString);
 
-  const options = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  };
+//   const options = {
+//     year: 'numeric',
+//     month: 'short',
+//     day: 'numeric',
+//   };
 
-  return date.toLocaleDateString('en', options);
-}
+//   return date.toLocaleDateString('en', options);
+// }

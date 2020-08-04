@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { getPosts } from 'api/ghost';
 
 // import PostTeaser from 'pages/blog/postTeaser';
-import Card from 'pages/blog/ArticleCard';
+import Card from 'components/blog/ArticleCard';
 
 function BlogHome() {
   const [error, setError] = useState(null);

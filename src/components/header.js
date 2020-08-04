@@ -21,40 +21,7 @@ function Header({ steps }) {
             </div>
           </Link>
         </div>
-
-        <div className="social-container">
-          <ul className="social-links">
-            <li>
-              <SocialAccountLink
-                name="Twitter"
-                Logo={TwitterLogo}
-                fill="#1DA1F2"
-                link="https://twitter.com/mattlovan"
-                account="Twitter"
-              />
-            </li>
-
-            <li>
-              <SocialAccountLink
-                name="Medium"
-                Logo={MediumLogo}
-                fill="#ddd"
-                link="https://medium.com/@mattlovan"
-                account="Medium"
-              />
-            </li>
-
-            <li>
-              <SocialAccountLink
-                name="Github"
-                Logo={GithubLogo}
-                fill="#ddd"
-                link="https://github.com/magrelo"
-                account="GitHub"
-              />
-            </li>
-          </ul>
-        </div>
+        <SocialContainer />
       </header>
 
       <div className="stripe"></div>
@@ -64,6 +31,43 @@ function Header({ steps }) {
 
 export default Header;
 
+export const SocialContainer = () => {
+  return (
+    <div className="social-container">
+      <ul className="social-links">
+        <li>
+          <SocialAccountLink
+            name="Twitter"
+            Logo={TwitterLogo}
+            fill="#1DA1F2"
+            link="https://twitter.com/mattlovan"
+            account="Twitter"
+          />
+        </li>
+
+        <li>
+          <SocialAccountLink
+            name="Medium"
+            Logo={MediumLogo}
+            fill="#ddd"
+            link="https://medium.com/@mattlovan"
+            account="Medium"
+          />
+        </li>
+
+        <li>
+          <SocialAccountLink
+            name="Github"
+            Logo={GithubLogo}
+            fill="#ddd"
+            link="https://github.com/magrelo"
+            account="GitHub"
+          />
+        </li>
+      </ul>
+    </div>
+  );
+};
 //
 
 const SocialAccountLink = ({ link, Logo, account, fill }) => {

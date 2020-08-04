@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import PostTeaser from 'pages/blog/postTeaser';
+import PostTeaser from 'components/blog/postTeaser';
 
 import { getNextPost } from 'api/ghost';
 

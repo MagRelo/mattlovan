@@ -3,7 +3,7 @@ import { Link } from '@reach/router';
 
 import { getPost } from 'api/ghost';
 
-import NextPost from 'pages/blog/nextPost';
+import NextPost from 'components/blog/nextPost';
 // import Subscribe from 'pages/blog/subscribe';
 
 function Post({ slug }) {
