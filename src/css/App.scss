@@ -44,11 +44,6 @@ h3 {
   line-height: 30px;
 }
 
-.section-header {
-  // font-weight: 600;
-  text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px;
-}
-
 p {
   margin-top: 0.33rem;
   line-height: 1.5em;
@@ -58,13 +53,17 @@ a {
   color: $linkBlue;
   text-decoration: none;
   transition: 120ms ease-in-out;
+  border-bottom: dashed 1px;
 }
 
 a:hover {
-  color: yellow;
+  color: $linkBlue;
   text-decoration: none;
 }
 
+// b {
+//   letter-spacing: 0.025rem;
+// }
 
 // margins for spacing around components
 .spacer-1 {
@@ -118,12 +117,6 @@ button.image-button:focus {
     gap: 2em;
   }
 
-  .grid-blog {
-    display: grid;
-    grid-template-columns: 2fr 5fr;
-    gap: 2em;
-  }
-
   .grid-x-2 {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -137,6 +130,13 @@ button.image-button:focus {
   }
 }
 
+
+// Homepage styles
+
+.section-header {
+  text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px;
+  opacity: .95;
+}
 
 // gray stripe between sections
 .stripe {
@@ -164,9 +164,26 @@ button.image-button:focus {
   }
 }
 
+ul.bio>li:nth-child(1) {
+  list-style: "⚙️ ";
+  list-style-position: outside;
+}
+
+ul.bio>li:nth-child(2) {
+  margin-top: 10px;
+  list-style: "👩‍💼  ";
+  list-style-position: outside;
+}
+
+ul.bio>li:nth-child(3) {
+  margin-top: 10px;
+  list-style: "📬  ";
+  list-style-position: outside;
+}
+
 
 .panel {
-  padding: 1rem;
+  padding: 22px;
   background-color: $black;
   box-shadow: 2px 2px 6px #1f1f1f;
 }
@@ -183,8 +200,6 @@ a .panel {
   transition: 120ms ease-in-out;
 }
 
-
-/* Bio */
 .profile-pic {
   float: left;
   height: 90px;

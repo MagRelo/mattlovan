@@ -51,7 +51,7 @@ export default ProjectList;
 
 const ProjectCard = ({ article }) => {
   return (
-    <React.Fragment>
+    <div>
       <a href={article.external_url} key={article.id}>
         <div className="post-card project-card">
           {/* Image */}
@@ -80,7 +80,7 @@ const ProjectCard = ({ article }) => {
           </div>
         </div>
       </a>
-    </React.Fragment>
+    </div>
   );
 };
 

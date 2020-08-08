@@ -15,7 +15,7 @@ function Header({ steps }) {
           <Link to="/">
             <div className="title">
               Matt Lovan is a
-              <div style={{ minHeight: '40px' }}>
+              <div style={{ minHeight: '1em' }}>
                 <Typer />
               </div>
             </div>

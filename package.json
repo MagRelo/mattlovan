@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_BUILD_TIME=$(date +%s) react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node server.js",
     "dev": "NODE_ENV=development nodemon --inspect server.js",
-    "build-prod": "react-scripts build && docker build . -t magrelo/servesa-home && docker push magrelo/servesa-home",
+    "build-prod": "REACT_APP_BUILD_TIME=$(date +%s) react-scripts build && docker build . -t magrelo/servesa-home && docker push magrelo/servesa-home",
     "ssh": "ssh root@209.97.154.109"
   },
   "dependencies": {
