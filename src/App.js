@@ -17,7 +17,6 @@ import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo('en-US');
-
 var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
 d.setUTCSeconds(process.env.REACT_APP_BUILD_TIME);
 const lastUpdate = timeAgo.format(d);
