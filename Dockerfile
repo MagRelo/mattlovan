@@ -3,7 +3,7 @@
 FROM node:current-alpine as build
 
 # Step 2: only copy in what you need
-ENV APP_HOME /app/
+ARG APP_HOME=/app/
 RUN mkdir -pv $APP_HOME
 WORKDIR $APP_HOME
 
