@@ -1,33 +1,28 @@
 import React, { useState, useEffect } from 'react';
-
-import { getPosts } from 'api/ghost';
+//
+// import { getPosts } from 'api/ghost';
 
 // import PostTeaser from 'pages/blog/postTeaser';
 import Card from 'components/blog/ArticleCard';
 
 function BlogHome() {
-  const [error, setError] = useState(null);
-  const [postList, setPostList] = useState([]);
-
-  useEffect(() => {
-    getPosts()
-      .then((posts) => setPostList([...posts, ...articles]))
-      .catch((error) => setError(error.toString()));
-  }, []);
+  // const [error, setError] = useState(null);
+  // const [postList, setPostList] = useState([]);
+  // useEffect(() => {
+  //   getPosts()
+  //     .then((posts) => setPostList([...posts, ...articles]))
+  //     .catch((error) => setError(error.toString()));
+  // }, []);
 
   return (
     <React.Fragment>
-      {error ? (
-        <div>{error}</div>
-      ) : (
-        postList.map((post, index) => {
-          return (
-            <div>
-              <Card article={post} key={post.id || index} />
-            </div>
-          );
-        })
-      )}
+      {articles.map((post, index) => {
+        return (
+          <div>
+            <Card article={post} key={post.id || index} />
+          </div>
+        );
+      })}
     </React.Fragment>
   );
 }

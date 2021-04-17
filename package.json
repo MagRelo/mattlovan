@@ -25,10 +25,13 @@
     "react-dom": "^16.6.1",
     "react-typist": "^2.0.5"
   },
+  "resolutions": {
+    "sharp": "0.27.2"
+  },
   "devDependencies": {
     "node-sass": "^4.13.1",
     "nodemon": "^1.18.6",
-    "react-scripts": "2.1.1"
+    "react-scripts": "^4.0.3"
   },
   "optionalDependencies": {
     "fsevents": "^2.1.3"

@@ -7,9 +7,9 @@ import Header from './components/header';
 
 // Routes
 import Home from './pages/home';
-import Blog from './components/blog/blogList';
-import BlogPost from './pages/blog/post';
-import TagPage from './pages/blog/tag';
+// import Blog from './components/blog/blogList';
+// import BlogPost from './pages/blog/post';
+// import TagPage from './pages/blog/tag';
 import NotFound from './pages/404';
 
 // relative time
@@ -25,17 +25,17 @@ const lastUpdate = timeAgo.format(d);
 class App extends Component {
   render() {
     return (
-      <div className="app">
+      <div className='app'>
         <Header />
 
         <div>
           <Router>
-            <Home path="/" />
+            <Home path='/' />
 
             {/* Blog */}
-            <Blog path="blog"></Blog>
-            <BlogPost path="blog/:slug" />
-            <TagPage path="tag/:slug" />
+            {/* <Blog path="blog"></Blog> */}
+            {/* <BlogPost path="blog/:slug" /> */}
+            {/* <TagPage path="tag/:slug" /> */}
 
             <NotFound default />
           </Router>
@@ -43,14 +43,13 @@ class App extends Component {
           <OnRouteChange
             action={() => {
               window.scrollTo(0, 0);
-            }}
-          ></OnRouteChange>
-          <div className="stripe"></div>
+            }}></OnRouteChange>
+          <div className='stripe'></div>
         </div>
 
         <footer>
-          <div className="container">
-            <div className="date clear" style={{ float: 'right' }}>
+          <div className='container'>
+            <div className='date clear' style={{ float: 'right' }}>
               Updated {lastUpdate}
             </div>
             <p>2020</p>
