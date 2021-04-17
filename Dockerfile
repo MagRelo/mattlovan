@@ -4,8 +4,7 @@ FROM node:current-alpine as build
 
 # Step 2: only copy in what you need
 ARG APP_HOME=/app/
-RUN echo "this is home: $APP_HOME"
-RUN mkdir -pv $APP_HOME
+RUN mkdir -pv /app/
 WORKDIR $APP_HOME
 
 # Step 3: Copy npm dependencies & install
