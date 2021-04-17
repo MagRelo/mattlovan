@@ -20,7 +20,6 @@
   }
 }
 
-
 h1,
 h2,
 h3 {
@@ -37,7 +36,6 @@ h2 {
   font-size: 28px;
   line-height: 34px;
 }
-
 
 h3 {
   font-size: 24px;
@@ -78,7 +76,6 @@ a:hover {
   margin-top: 60px;
 }
 
-
 /* Buttons styles start */
 button.image-button,
 button.image-button:active,
@@ -101,8 +98,6 @@ button.image-button:focus {
 }
 
 /* Button styles end */
-
-
 
 .grid-2,
 .grid-3 {
@@ -130,12 +125,13 @@ button.image-button:focus {
   }
 }
 
-
 // Homepage styles
 
 .section-header {
-  text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px;
-  opacity: .95;
+  opacity: 0.55;
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 24px;
 }
 
 // gray stripe between sections
@@ -152,7 +148,6 @@ button.image-button:focus {
   z-index: 1;
 }
 
-
 // offset boxes in first section
 @media screen and (min-width: 450px) {
   .pull-up {
@@ -164,30 +159,28 @@ button.image-button:focus {
   }
 }
 
-ul.bio>li:nth-child(1) {
-  list-style: "⚙️ ";
+ul.bio > li:nth-child(1) {
+  list-style: '⚙️ ';
   list-style-position: outside;
 }
 
-ul.bio>li:nth-child(2) {
+ul.bio > li:nth-child(2) {
   margin-top: 10px;
-  list-style: "👩‍💼  ";
+  list-style: '👩‍💼  ';
   list-style-position: outside;
 }
 
-ul.bio>li:nth-child(3) {
+ul.bio > li:nth-child(3) {
   margin-top: 10px;
-  list-style: "📬  ";
+  list-style: '📬  ';
   list-style-position: outside;
 }
-
 
 .panel {
   padding: 22px;
   background-color: $black;
   box-shadow: 2px 2px 6px #1f1f1f;
 }
-
 
 a .panel {
   margin-bottom: 2rem;
@@ -208,14 +201,14 @@ a .panel {
   border-radius: 50%;
 }
 
-
 /* Header */
 header {
   transform: skewY(-4deg);
   padding: 1rem;
 }
 
-header a {
+header a,
+header a:hover {
   color: $white;
 }
 
@@ -277,7 +270,7 @@ ul.social-links {
   padding-left: 0;
 }
 
-ul.social-links>li {
+ul.social-links > li {
   display: inline;
   flex: 0 1 auto;
   list-style-type: none;
@@ -295,7 +288,7 @@ ul.social-links>li {
     padding: 0;
   }
 
-  ul.social-links>li {
+  ul.social-links > li {
     display: block;
     margin-bottom: 0.75rem;
   }

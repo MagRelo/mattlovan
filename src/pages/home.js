@@ -101,28 +101,29 @@ function App() {
           </div>
         </section>
 
-        {/* <div className='stripe'></div>
-        <section className='diagonal-box bg-seven'>
-          <div className='container'>
-            <h2 className='section-header'>Current Projects</h2>
-            <div className='mb-4'></div>
-            <div className='grid-2'>
-              <ProjectList />
-            </div>
-          </div>
-        </section> */}
-
         {/* writing */}
         <div className='stripe'></div>
         <section className='diagonal-box bg-six'>
           <div className='container'>
-            <h2 className='section-header'>Recent Posts</h2>
+            <h2 className='section-header'>Writing</h2>
             <div className='mb-4'></div>
             <div className='grid-3'>
               <BlogList />
             </div>
           </div>
         </section>
+
+        {/* Projects */}
+        {/* <div className='stripe'></div>
+        <section className='diagonal-box bg-seven'>
+          <div className='container'>
+            <h2 className='section-header'>Projects</h2>
+            <div className='mb-4'></div>
+            <div className='grid-2'>
+              <ProjectList />
+            </div>
+          </div>
+        </section> */}
       </div>
     </div>
   );
