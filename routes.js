@@ -4,33 +4,33 @@ var router = express.Router();
 const path = require('path');
 const fs = require('fs');
 
-const GhostContentAPI = require('@tryghost/content-api');
-let url = process.env.GHOST_PATH;
-let key = process.env.GHOST_KEY;
-console.log('Ghost Settings:', url, key);
+// const GhostContentAPI = require('@tryghost/content-api');
+// let url = process.env.GHOST_PATH;
+// let key = process.env.GHOST_KEY;
+// console.log('Ghost Settings:', url, key);
 
 // Create API instance with site credentials
-const api = new GhostContentAPI({
-  url: url,
-  key: key,
-  version: 'v3',
-});
+// const api = new GhostContentAPI({
+//   url: url,
+//   key: key,
+//   version: 'v3',
+// });
 
-// get single post
-async function getPost(postSlug) {
-  return await api.posts
-    .read(
-      {
-        slug: postSlug,
-      },
-      { include: 'tags,authors' }
-    )
-    .catch((error) => {
-      // swallow errors, let the front-end handle it
-      console.log('Ghost Error:', error.errorType);
-      return {};
-    });
-}
+// // get single post
+// async function getPost(postSlug) {
+//   return await api.posts
+//     .read(
+//       {
+//         slug: postSlug,
+//       },
+//       { include: 'tags,authors' }
+//     )
+//     .catch((error) => {
+//       // swallow errors, let the front-end handle it
+//       console.log('Ghost Error:', error.errorType);
+//       return {};
+//     });
+// }
 
 // async function getTag(slug) {
 //   return await api.posts.browse({
@@ -39,11 +39,11 @@ async function getPost(postSlug) {
 //   });
 // }
 
-async function getSettings(slug) {
-  return await api.settings.browse();
-}
+// async function getSettings(slug) {
+//   return await api.settings.browse();
+// }
 
-// get publication settings from Ghost Content API
+// // get publication settings from Ghost Content API
 let pub = {
   title: 'Matt Lovan is a Web Developer',
   description: 'Articles, Concepts & Demos by Matt Lovan',
@@ -56,85 +56,85 @@ let pub = {
   twitter_image: 'https://mattlovan.com/twitter_600x300.png',
 };
 
-getSettings()
-  .then((settings) => {
-    pub = settings;
-  })
-  .catch((error) => console.log('Ghost Error:', error.code));
+// getSettings()
+//   .then((settings) => {
+//     pub = settings;
+//   })
+//   .catch((error) => console.log('Ghost Error:', error.code));
 
 //
 // ROUTES
 //
 
 // individual post
-router.get('/blog/:slug', async function(req, res) {
-  try {
-    // get post
-    const post = await getPost(req.params.slug);
+// router.get('/blog/:slug', async function(req, res) {
+//   try {
+//     // get post
+//     const post = await getPost(req.params.slug);
 
-    // get index page and replace meta values
-    const filePath = path.resolve(__dirname, './build', 'index.html');
-    fs.readFile(filePath, 'utf8', async function(err, data) {
-      if (err) {
-        res.sendFile('index.html', { root: './build' });
-      }
+//     // get index page and replace meta values
+//     const filePath = path.resolve(__dirname, './build', 'index.html');
+//     fs.readFile(filePath, 'utf8', async function(err, data) {
+//       if (err) {
+//         res.sendFile('index.html', { root: './build' });
+//       }
 
-      const postUrl = process.env.BASE_URL + '/blog/' + post.slug;
+//       const postUrl = process.env.BASE_URL + '/blog/' + post.slug;
 
-      // find best value
-      const meta_description = findFirstValue([
-        post.meta_description,
-        post.custom_excerpt,
-        pub.description,
-      ]);
-      const og_title = findFirstValue([post.og_title, post.title, pub.title]);
-      const og_description = findFirstValue([
-        post.og_description,
-        post.custom_excerpt,
-        pub.description,
-      ]);
-      const og_image = findFirstValue([post.og_image, pub.og_image]);
-      const twitter_title = findFirstValue([
-        post.twitter_title,
-        post.title,
-        pub.twitter_title,
-      ]);
-      const twitter_desc = findFirstValue([
-        post.twitter_description,
-        post.custom_excerpt,
-        pub.twitter_description,
-      ]);
-      const twitter_image = findFirstValue([
-        post.twitter_image,
-        pub.twitter_image,
-      ]);
+//       // find best value
+//       const meta_description = findFirstValue([
+//         post.meta_description,
+//         post.custom_excerpt,
+//         pub.description,
+//       ]);
+//       const og_title = findFirstValue([post.og_title, post.title, pub.title]);
+//       const og_description = findFirstValue([
+//         post.og_description,
+//         post.custom_excerpt,
+//         pub.description,
+//       ]);
+//       const og_image = findFirstValue([post.og_image, pub.og_image]);
+//       const twitter_title = findFirstValue([
+//         post.twitter_title,
+//         post.title,
+//         pub.twitter_title,
+//       ]);
+//       const twitter_desc = findFirstValue([
+//         post.twitter_description,
+//         post.custom_excerpt,
+//         pub.twitter_description,
+//       ]);
+//       const twitter_image = findFirstValue([
+//         post.twitter_image,
+//         pub.twitter_image,
+//       ]);
 
-      // replace values in index.html
-      data = data.replace(/\$META_TITLE/g, post.title);
+//       // replace values in index.html
+//       data = data.replace(/\$META_TITLE/g, post.title);
 
-      data = data.replace(/\$META_CANONICAL/g, postUrl);
+//       data = data.replace(/\$META_CANONICAL/g, postUrl);
 
-      data = data.replace(/\$META_DESCRIPTION/g, meta_description);
-      data = data.replace(/\$OG_TITLE/g, og_title);
-      data = data.replace(/\$OG_DESCRIPTION/g, og_description);
-      data = data.replace(/\$OG_IMAGE/g, og_image);
-      data = data.replace(/\$TWITTER_TITLE/g, twitter_title);
-      data = data.replace(/\$TWITTER_DESCRIPTION/g, twitter_desc);
-      data = data.replace(/\$TWITTER_IMAGE/g, twitter_image);
+//       data = data.replace(/\$META_DESCRIPTION/g, meta_description);
+//       data = data.replace(/\$OG_TITLE/g, og_title);
+//       data = data.replace(/\$OG_DESCRIPTION/g, og_description);
+//       data = data.replace(/\$OG_IMAGE/g, og_image);
+//       data = data.replace(/\$TWITTER_TITLE/g, twitter_title);
+//       data = data.replace(/\$TWITTER_DESCRIPTION/g, twitter_desc);
+//       data = data.replace(/\$TWITTER_IMAGE/g, twitter_image);
 
-      // send to client
-      res.send(data);
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).send('error');
-  }
-});
+//       // send to client
+//       res.send(data);
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).send('error');
+//   }
+// });
 
 // default
-router.get('*', function(req, res) {
+router.get('*', function (req, res) {
   const filePath = path.resolve(__dirname, './build', 'index.html');
-  fs.readFile(filePath, 'utf8', async function(err, data) {
+  fs.readFile(filePath, 'utf8', async function (err, data) {
     if (err) {
       res.sendFile('index.html', { root: './build' });
     }
