@@ -27,57 +27,20 @@ function App() {
                   <FsLightbox toggler={profileToggler} sources={[headshot]} />
                 </button>
 
-                <div>
-                  <h1>
-                    Hello{' '}
-                    <span role='img' aria-label='waving hand'>
-                      👋
-                    </span>{' '}
-                  </h1>
-                  <p>I'm Matt Lovan, Full Stack JavaScript developer</p>
-                </div>
+                <h1>Matt Lovan</h1>
 
-                <ul className='bio'>
-                  {/* Skills Tools */}
-                  <li>
-                    <p>
-                      For the past 8 years I have been helping early startups
-                      build amazing software. My default toolkit includes{' '}
-                      <b>React</b>, <b>Node</b>, <b>PostgreSQL</b>,{' '}
-                      <b>Docker</b>, & <b>Linux</b>. See examples in my{' '}
-                      <a href='https:github.com/magrelo'>GitHub</a>.
-                    </p>
-                  </li>
-
-                  {/* Talent Relay */}
-                  <li>
-                    <p>
-                      I've spent the last year building{' '}
-                      <a href='hhtps://talentrelay.app'>Talent Relay</a>, a
-                      collaborative marketplace for hiring powered by{' '}
-                      <a href='https://medium.com/@incentive_exchange/find-10-red-balloons-collect-40-000-b3cf7984c0a1'>
-                        incentive trees
-                      </a>
-                      . It uses all of the tools above plus integrations with{' '}
-                      <b>GMail</b>, <b>Stripe</b>, <b>Plaid</b>, <b>Sendgrid</b>
-                      , and more.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>
-                      I'm currently <b>looking to join a team</b> as a Senior
-                      Developer or Engineering Manager. See my work experience
-                      on{' '}
-                      <a href='https://www.linkedin.com/in/matt-lovan/'>
-                        LinkedIn
-                      </a>{' '}
-                      or reach out on{' '}
-                      <a href='https:twitter.com/mattlovan'>Twitter</a> or{' '}
-                      <a href='https:github.com/magrelo'>GitHub</a>. Thanks!
-                    </p>
-                  </li>
-                </ul>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Fugiat vel, adipisci id est nobis sapiente natus distinctio
+                  vero excepturi, voluptatibus praesentium! Facere ab nobis
+                  perferendis porro quam consequuntur iusto velit.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                  dignissimos distinctio, quidem nesciunt alias, cumque vero
+                  odio consectetur voluptatem aliquid perspiciatis numquam nemo
+                  quis enim in placeat voluptatum mollitia minima?
+                </p>
               </div>
 
               {/* Map */}

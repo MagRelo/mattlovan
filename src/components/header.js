@@ -12,8 +12,8 @@ function Header({ steps }) {
     <div>
       <header>
         <div>
-          <Link to="/">
-            <div className="title">
+          <Link to='/'>
+            <div className='title'>
               Matt Lovan is a
               <div style={{ minHeight: '1em' }}>
                 <Typer />
@@ -24,7 +24,7 @@ function Header({ steps }) {
         <SocialContainer />
       </header>
 
-      <div className="stripe"></div>
+      <div className='stripe'></div>
     </div>
   );
 }
@@ -33,35 +33,35 @@ export default Header;
 
 export const SocialContainer = () => {
   return (
-    <div className="social-container">
-      <ul className="social-links">
+    <div className='social-container'>
+      <ul className='social-links'>
         <li>
           <SocialAccountLink
-            name="Twitter"
+            name='Twitter'
             Logo={TwitterLogo}
-            fill="#1DA1F2"
-            link="https://twitter.com/mattlovan"
-            account="Twitter"
+            fill='#1DA1F2'
+            link='https://twitter.com/mattlovan'
+            account='Twitter'
           />
         </li>
 
         <li>
           <SocialAccountLink
-            name="Medium"
+            name='Medium'
             Logo={MediumLogo}
-            fill="#ddd"
-            link="https://medium.com/@mattlovan"
-            account="Medium"
+            fill='#ddd'
+            link='https://medium.com/@mattlovan'
+            account='Medium'
           />
         </li>
 
         <li>
           <SocialAccountLink
-            name="Github"
+            name='Github'
             Logo={GithubLogo}
-            fill="#ddd"
-            link="https://github.com/magrelo"
-            account="GitHub"
+            fill='#ddd'
+            link='https://github.com/magrelo'
+            account='GitHub'
           />
         </li>
       </ul>
@@ -73,14 +73,14 @@ export const SocialContainer = () => {
 const SocialAccountLink = ({ link, Logo, account, fill }) => {
   return (
     <div style={{ display: 'inline-block' }}>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <div className="social-label">
-          <span className="social-label-icon">
+      <a href={link} target='_blank' rel='noopener noreferrer'>
+        <div className='social-label'>
+          <span className='social-label-icon'>
             <Logo fill={fill} />
           </span>
           <div>
             {/* <span className="platform">{name}</span> */}
-            <span className="account">{account}</span>
+            <span className='account'>{account}</span>
           </div>
         </div>
       </a>
@@ -104,8 +104,14 @@ const Typer = ({ link, Logo, name, account, fill }) => {
     },
     {
       startDelay: 1500,
-      content: 'Dev Ops Guy',
-      backspace: 11,
+      content: 'Mechanism Designer',
+      backspace: 18,
+      backDelay: 1800,
+    },
+    {
+      startDelay: 900,
+      content: 'Solidity Dev',
+      backspace: 12,
       backDelay: 1800,
     },
     { startDelay: 2600, content: 'Golfer', backspace: 0, backDelay: 1400 },
