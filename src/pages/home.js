@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import FsLightbox from 'fslightbox-react';
 
 import BlogList from 'components/blog/blogList';
-import ProjectList from 'components/project/projectList';
+// import ProjectList from 'components/project/projectList';
 
 import skillsChart from 'images/skills_map_v2.jpg';
 import headshot from 'images/profile.jpg';
 
-function App() {
+function App({ lastUpdate }) {
   const [toggler, setToggler] = useState(false);
   const [profileToggler, setProfileToggler] = useState(false);
 
@@ -28,18 +28,21 @@ function App() {
                 </button>
 
                 <h1>Matt Lovan</h1>
-
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Fugiat vel, adipisci id est nobis sapiente natus distinctio
-                  vero excepturi, voluptatibus praesentium! Facere ab nobis
-                  perferendis porro quam consequuntur iusto velit.
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
+                  iure numquam asperiores, recusandae ipsam quos tempore animi
+                  vero quam voluptates! Ratione, dolor expedita accusamus dolore
+                  placeat tenetur tempora blanditiis fugiat?
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                  dignissimos distinctio, quidem nesciunt alias, cumque vero
-                  odio consectetur voluptatem aliquid perspiciatis numquam nemo
-                  quis enim in placeat voluptatum mollitia minima?
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
+                  iure numquam asperiores, recusandae ipsam quos tempore animi
+                  vero quam voluptates! Ratione, dolor expedita accusamus dolore
+                  placeat tenetur tempora blanditiis fugiat?
+                </p>
+
+                <p style={{ textAlign: 'right' }}>
+                  <small>- updated {lastUpdate}</small>
                 </p>
               </div>
 
@@ -47,7 +50,6 @@ function App() {
               <div>
                 <div className='panel pull-up'>
                   <h3>Professional Skills</h3>
-
                   <button
                     className='image-button'
                     onClick={() => setToggler(!toggler)}>

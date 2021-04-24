@@ -29,7 +29,7 @@ class App extends Component {
 
         <div>
           <Router>
-            <Home path='/' />
+            <Home path='/' lastUpdate={lastUpdate} />
 
             {/* Blog */}
             {/* <Blog path="blog"></Blog> */}
