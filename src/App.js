@@ -47,7 +47,7 @@ class App extends Component {
             <div className='date clear' style={{ float: 'right' }}>
               Updated {lastUpdate}
             </div>
-            <p>2020</p>
+            <p>{d.getUTCFullYear()}</p>
           </div>
         </footer>
       </div>
