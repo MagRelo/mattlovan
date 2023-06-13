@@ -10,6 +10,7 @@ import Home from './pages/home';
 // import Blog from './components/blog/blogList';
 // import BlogPost from './pages/blog/post';
 // import TagPage from './pages/blog/tag';
+import Account from './pages/account';
 import NotFound from './pages/404';
 
 // relative time
@@ -30,11 +31,7 @@ class App extends Component {
         <div>
           <Router>
             <Home path='/' lastUpdate={lastUpdate} />
-
-            {/* Blog */}
-            {/* <Blog path="blog"></Blog> */}
-            {/* <BlogPost path="blog/:slug" /> */}
-            {/* <TagPage path="tag/:slug" /> */}
+            <Account path='/account' />
 
             <NotFound default />
           </Router>
