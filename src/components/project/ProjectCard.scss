@@ -6,7 +6,7 @@
 }
 
 .project-card-status {
-  color: $white
+  color: $white;
 }
 
 .status-grid {
@@ -22,7 +22,8 @@
   color: $servesaGray;
   font-size: smaller;
   text-transform: uppercase;
-  text-align: right;
+
+  // text-align: right;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import './css/skew.scss';
 import './css/App.scss';
-import './css/blog.scss';
 
 // Fonts
 import './fonts/Roboto/roboto.css';
