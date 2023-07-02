@@ -76,18 +76,23 @@ function Biography() {
             <span className='tag-container'>
               <a
                 className='tag'
-                href='https://en.wikipedia.org/wiki/Hold-up_problem'>
+                href='https://en.wikipedia.org/wiki/Hold-up_problem'
+                rel='noreferrer'
+                target='_blank'>
+                {' '}
                 HoldUp Problem
               </a>
               <a
                 className='tag'
                 href='https://ergodicityeconomics.com/'
+                rel='noreferrer'
                 target='_blank'>
                 Ergodicity
               </a>
               <a
                 className='tag'
                 href='https://en.wikipedia.org/wiki/Promise_theory'
+                rel='noreferrer'
                 target='_blank'>
                 Promise Theory
               </a>

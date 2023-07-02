@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from '@reach/router';
 
-import Typist from 'react-typist';
+// import Typist from 'react-typist';
 
 import { ReactComponent as TwitterLogo } from '../images/twitter.svg';
 import { ReactComponent as MediumLogo } from '../images/medium.svg';
@@ -101,57 +101,57 @@ const SocialAccountLink = ({ link, Logo, account, fill }) => {
   );
 };
 
-const Typer = ({ link, Logo, name, account, fill }) => {
-  // this will reset the Typer animation to produce loop
-  const [count, setCount] = useState(1);
-  useEffect(() => {
-    setCount(1);
-  }, [count]);
+// const Typer = ({ link, Logo, name, account, fill }) => {
+//   // this will reset the Typer animation to produce loop
+//   const [count, setCount] = useState(1);
+//   useEffect(() => {
+//     setCount(1);
+//   }, [count]);
 
-  const messages = [
-    {
-      startDelay: 600,
-      content: 'Web Developer',
-      backspace: 13,
-      backDelay: 3000,
-    },
-    {
-      startDelay: 1500,
-      content: 'Mechanism Designer',
-      backspace: 18,
-      backDelay: 1800,
-    },
-    {
-      startDelay: 900,
-      content: 'Solidity Dev',
-      backspace: 12,
-      backDelay: 1800,
-    },
-    { startDelay: 2600, content: 'Golfer', backspace: 0, backDelay: 1400 },
-    { startDelay: 900, content: '(?)', backspace: 9, backDelay: 1800 },
-  ];
+//   const messages = [
+//     {
+//       startDelay: 600,
+//       content: 'Web Developer',
+//       backspace: 13,
+//       backDelay: 3000,
+//     },
+//     {
+//       startDelay: 1500,
+//       content: 'Mechanism Designer',
+//       backspace: 18,
+//       backDelay: 1800,
+//     },
+//     {
+//       startDelay: 900,
+//       content: 'Solidity Dev',
+//       backspace: 12,
+//       backDelay: 1800,
+//     },
+//     { startDelay: 2600, content: 'Golfer', backspace: 0, backDelay: 1400 },
+//     { startDelay: 900, content: '(?)', backspace: 9, backDelay: 1800 },
+//   ];
 
-  return (
-    <span>
-      {count ? (
-        <Typist avgTypingDelay={80} onTypingDone={() => setCount(0)}>
-          <Typist.Delay ms={1000} />
-          {messages.map((message, index) => {
-            return (
-              <span key={index}>
-                <Typist.Delay ms={message.startDelay} />
-                <span>{message.content}</span>
-                <Typist.Backspace
-                  count={message.backspace}
-                  delay={message.backDelay}
-                />
-              </span>
-            );
-          })}
-        </Typist>
-      ) : (
-        ''
-      )}
-    </span>
-  );
-};
+//   return (
+//     <span>
+//       {count ? (
+//         <Typist avgTypingDelay={80} onTypingDone={() => setCount(0)}>
+//           <Typist.Delay ms={1000} />
+//           {messages.map((message, index) => {
+//             return (
+//               <span key={index}>
+//                 <Typist.Delay ms={message.startDelay} />
+//                 <span>{message.content}</span>
+//                 <Typist.Backspace
+//                   count={message.backspace}
+//                   delay={message.backDelay}
+//                 />
+//               </span>
+//             );
+//           })}
+//         </Typist>
+//       ) : (
+//         ''
+//       )}
+//     </span>
+//   );
+// };

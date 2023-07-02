@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TalentRelay from 'images/talentrelay.png';
-import PositionPaper from 'images/positionpaper.png';
+// import TalentRelay from 'images/talentrelay.png';
+// import PositionPaper from 'images/positionpaper.png';
 
 import './ProjectCard.scss';
 const defaultImage =
@@ -61,7 +61,7 @@ const ProjectCard = ({ article }) => {
           <div className='status-grid'>
             <div className='status-label'>Status:</div>
             <div className='status-label'>{article.status}</div>
-            <div className='status-label'>Deployed:</div>
+            <div className='status-label'>Last Update:</div>
             <div className='status-label'>{formatDate(article.created_at)}</div>
           </div>
         </div>
