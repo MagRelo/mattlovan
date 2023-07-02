@@ -30,7 +30,7 @@ class App extends Component {
 
         <div>
           <Router>
-            <Home path='/' lastUpdate={lastUpdate} />
+            <Home path='/' />
 
             <NotFound default />
           </Router>
@@ -39,9 +39,9 @@ class App extends Component {
             action={() => {
               window.scrollTo(0, 0);
             }}></OnRouteChange>
-          <div className='stripe'></div>
         </div>
 
+        <div className='stripe'></div>
         <footer>
           <div className='container'>
             <div className='date clear' style={{ float: 'right' }}>

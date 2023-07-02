@@ -23,18 +23,23 @@
 h1,
 h2,
 h3 {
-  margin: 0 0 12px;
-  font-weight: 400;
+  margin: 0 0 0;
+  letter-spacing: 0.0375rem;
 }
 
 h1 {
   font-size: 32px;
-  line-height: 38px;
+  // line-height: 38px;
 }
 
 h2 {
-  font-size: 28px;
-  line-height: 34px;
+  font-size: 16px;
+  // line-height: 26px;
+  // font-weight: 400;
+
+  color: $servesaMedium;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -43,8 +48,9 @@ h3 {
 }
 
 p {
-  margin-top: 0.33rem;
+  margin-top: 0.2rem;
   line-height: 1.5em;
+  letter-spacing: 0.01rem;
 }
 
 a {
@@ -100,6 +106,7 @@ button.image-button:focus {
 /* Button styles end */
 
 .grid-2,
+.grid-x-2,
 .grid-3 {
   display: grid;
   gap: 2em;
@@ -142,6 +149,7 @@ button.image-button:focus {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 10px;
+
   transform: skewY(-4deg);
   background: $servesaDark;
   box-shadow: $box-shadow-inner;
@@ -154,9 +162,9 @@ button.image-button:focus {
     margin-top: -60px;
   }
 
-  .pull-down {
-    margin-bottom: -60px;
-  }
+  // .pull-down {
+  //   margin-bottom: -60px;
+  // }
 }
 
 ul.bio > li:nth-child(1) {
@@ -177,7 +185,7 @@ ul.bio > li:nth-child(3) {
 }
 
 .panel {
-  padding: 22px;
+  padding: 22px 22px 0 22px;
   background-color: $black;
   box-shadow: 2px 2px 6px #1f1f1f;
 }
@@ -225,10 +233,10 @@ footer {
 
 @media screen and (min-width: 450px) {
   header {
-    display: grid;
-    grid-template-columns: 4fr 2fr;
+    // display: grid;
+    // grid-template-columns: 4fr 2fr;
     transform: skewY(-4deg);
-    padding: 3rem 2rem 2rem;
+    // padding: 3rem 2rem 2rem;
   }
 }
 
@@ -241,7 +249,7 @@ footer {
 
 @media screen and (min-width: 999px) {
   header .title {
-    text-align: right;
+    // text-align: right;
   }
 }
 
@@ -278,20 +286,20 @@ ul.social-links > li {
 }
 
 @media screen and (min-width: 450px) {
-  ul.social-links {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-around;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+  // ul.social-links {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: stretch;
+  //   justify-content: space-around;
+  //   width: 100%;
+  //   margin: 0;
+  //   padding: 0;
+  // }
 
-  ul.social-links > li {
-    display: block;
-    margin-bottom: 0.75rem;
-  }
+  // ul.social-links > li {
+  //   display: block;
+  //   margin-bottom: 0.75rem;
+  // }
 
   .social-container {
     display: flex;

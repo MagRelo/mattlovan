@@ -13,21 +13,34 @@ function Header({ steps }) {
       <header>
         <div>
           <Link to='/'>
-            <div className='title'>
-              Matt Lovan is a
-              <div style={{ minHeight: '1em' }}>
-                <Typer />
-              </div>
-            </div>
+            <div className='title'>mattlovan.dev</div>
           </Link>
         </div>
         <SocialContainer />
       </header>
-
-      <div className='stripe'></div>
     </div>
   );
 }
+
+// function Header({ steps }) {
+//   return (
+//     <div>
+//       <header>
+//         <div>
+//           <Link to='/'>
+//             <div className='title'>
+//               Matt Lovan is a
+//               <div style={{ minHeight: '1em' }}>
+//                 <Typer />
+//               </div>
+//             </div>
+//           </Link>
+//         </div>
+//         <SocialContainer />
+//       </header>
+//     </div>
+//   );
+// }
 
 export default Header;
 
