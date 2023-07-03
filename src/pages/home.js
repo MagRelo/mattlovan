@@ -27,7 +27,7 @@ function Home() {
         <div className='stripe'>PROJECTS</div>
         <section className='diagonal-box bg-seven'>
           <div className='container'>
-            <div style={{ display: 'grid', justifyContent: 'center' }}>
+            <div className='grid grid-2'>
               <ProjectList />
             </div>
           </div>
@@ -68,7 +68,8 @@ function Biography() {
           <h1>Matt Lovan</h1>
           <p>
             I develop social coordination systems using mechanism design & game
-            theory.
+            theory. I've worked on a variety of Web3 applications such as
+            user-generated content, networking & recruiting, social media.
           </p>
 
           <h2>Concepts</h2>
@@ -98,20 +99,13 @@ function Biography() {
               </a>
             </span>
           </p>
-
-          <h2>Design & Simulation</h2>
-          <p>
-            <span className='tag-container'>
-              <span className='tag'>cadCAD</span>
-              <span className='tag'>Machinations</span>
-            </span>
-          </p>
-
-          <h2>Development</h2>
+          <h2>Tools</h2>
           <p>
             <span className='tag-container'>
               <span className='tag'>Solidity</span>
               <span className='tag'>Javascript</span>
+              <span className='tag'>Dev ops</span>
+              <span className='tag'>cadCAD</span>
             </span>
           </p>
 

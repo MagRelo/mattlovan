@@ -17,11 +17,7 @@ function BlogHome() {
   return (
     <React.Fragment>
       {articles.map((post, index) => {
-        return (
-          <div>
-            <Card article={post} key={post.id || index} />
-          </div>
-        );
+        return <Card article={post} key={post.id || index} />;
       })}
     </React.Fragment>
   );

@@ -57,7 +57,7 @@ a {
   color: $linkBlue;
   text-decoration: none;
   transition: 120ms ease-in-out;
-  border-bottom: dashed 1px;
+  // border-bottom: dashed 1px;
 }
 
 a:hover {
@@ -262,7 +262,7 @@ footer {
 
 .social-label-icon {
   width: 1rem;
-  margin-right: 0.667rem;
+  margin-right: 0.1rem;
   padding: 4px;
   border-radius: 25%;
   box-sizing: content-box;
@@ -275,6 +275,7 @@ footer {
 
 ul.social-links {
   margin-bottom: 0;
+  margin-top: 0.25rem;
   padding-left: 0;
 }
 

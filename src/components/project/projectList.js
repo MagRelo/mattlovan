@@ -4,8 +4,7 @@ import React from 'react';
 // import PositionPaper from 'images/positionpaper.png';
 
 import './ProjectCard.scss';
-const defaultImage =
-  'https://cdn-images-1.medium.com/max/2000/1*T1NrRFtxijHcsiQVRjRNJA@2x.jpeg';
+const defaultImage = '/images/comingsoon.jpg';
 const defaultDateString = '2018-02-16T18:39:44.651Z';
 
 const projects = [
@@ -17,8 +16,20 @@ const projects = [
     image_alt: '',
     title: 'Public Agent',
     excerpt:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus ex voluptas similique ab iste, deleniti accusamus molestiae, veniam unde voluptatum reiciendis alias ipsam inventore exercitationem, nemo sunt beatae deserunt eum!',
+      'Permissioning system based on DAO membership. Find and retain individual contrbutors using DAO membership.',
     status: 'In Development',
+    tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
+    external_url: '',
+  },
+  {
+    type: 'project',
+    created_at: '2023-05-21T15:43:46.739Z',
+    feature_image: null,
+    image_credit: '',
+    image_alt: '',
+    title: 'Simulation',
+    excerpt: 'Simulating protocol interactions using cadCAD & Machinations.',
+    status: 'In Progress',
     tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
     external_url: '',
   },
@@ -38,8 +49,8 @@ export default ProjectList;
 
 const ProjectCard = ({ article }) => {
   return (
-    <div style={{ maxWidth: '42rem' }}>
-      <a href={article.external_url} key={article.id}>
+    <div style={{ maxWidth: '34rem' }}>
+      <LinkWrapper href={article.external_url}>
         <div className='post-card project-card'>
           {/* Image */}
           <div
@@ -65,10 +76,21 @@ const ProjectCard = ({ article }) => {
             <div className='status-label'>{formatDate(article.created_at)}</div>
           </div>
         </div>
-      </a>
+      </LinkWrapper>
     </div>
   );
 };
+
+function LinkWrapper({ children, href }) {
+  if (href && href.length) {
+    console.log('use link: ', href);
+    // return <a href={href}>{[children]}</a>;
+    return <></>;
+  } else {
+    console.log('no link');
+    return <>{children}</>;
+  }
+}
 
 function formatDate(isoDate) {
   const date = new Date(isoDate || defaultDateString);
