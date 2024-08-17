@@ -23,7 +23,7 @@
 h1,
 h2,
 h3 {
-  margin: 0 0 0;
+  margin: 0.33rem 0 0;
   letter-spacing: 0.0375rem;
 }
 
@@ -48,7 +48,6 @@ h3 {
 }
 
 p {
-  margin-top: 0.2rem;
   line-height: 1.5em;
   letter-spacing: 0.01rem;
 }
@@ -195,8 +194,6 @@ a .panel {
 
   padding: 1rem 1rem 0 1rem;
   color: $white;
-  // border: solid 1px $servesaMedium;
-  // background-color: $servesaDark;
 
   transition: 120ms ease-in-out;
 }
@@ -212,7 +209,7 @@ a .panel {
 /* Header */
 header {
   transform: skewY(-4deg);
-  padding: 1rem;
+  padding: 1rem 1rem 0.67rem;
 }
 
 header a,

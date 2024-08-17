@@ -3,6 +3,7 @@
 .project-card {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  white-space: pre-line;
 }
 
 .project-card-status {
@@ -20,15 +21,19 @@
 
 .status-label {
   color: $servesaGray;
-  font-size: smaller;
+  // font-size: smaller;
   text-transform: uppercase;
 
   // text-align: right;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  color: $servesaGray;
+  letter-spacing: 0.05rem;
 }
 
 .status-content {
   color: $white;
+  // font-size: smaller;
 }

@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "server": "node server.js",
     "dev": "NODE_ENV=development nodemon --inspect server.js",
-    "build-prod": "REACT_APP_BUILD_TIME=$(date +%s) react-scripts build && docker build . -t magrelo/servesa-home && docker push magrelo/servesa-home",
+    "build-prod": "REACT_APP_BUILD_TIME=$(date +%s) react-scripts build && docker build . --platform linux/amd64 -t magrelo/mattlovan && docker push magrelo/mattlovan",
     "ssh": "ssh root@209.97.154.109"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "morgan": "^1.9.1",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-responsive-masonry": "^2.3.0",
     "react-typist": "^2.0.5",
     "sass": "^1.63.3"
   },

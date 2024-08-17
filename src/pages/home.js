@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import FsLightbox from 'fslightbox-react';
 
-import BlogList from 'components/blog/blogList';
 import ProjectList from 'components/project/projectList';
+import BlogList from 'components/blog/blogList';
 
 import headshot from 'images/profile.jpg';
 
@@ -12,9 +12,8 @@ function Home() {
   return (
     <div>
       <div className='main'>
-        <div className='stripe'>BIO</div>
-
         {/* Bio */}
+        <div className='stripe'>BIO</div>
         <section className='diagonal-box bg-four'>
           <div className='container'>
             <div style={{ display: 'grid', justifyContent: 'center' }}>
@@ -24,12 +23,10 @@ function Home() {
         </section>
 
         {/* Projects */}
-        <div className='stripe'>PROJECTS</div>
+        <div className='stripe'>RECENT PROJECTS</div>
         <section className='diagonal-box bg-seven'>
           <div className='container'>
-            <div className='grid grid-2'>
-              <ProjectList />
-            </div>
+            <ProjectList />
           </div>
         </section>
 
@@ -37,9 +34,7 @@ function Home() {
         <div className='stripe'>WRITING</div>
         <section className='diagonal-box bg-six'>
           <div className='container'>
-            <div className='grid-3'>
-              <BlogList />
-            </div>
+            <BlogList />
           </div>
         </section>
       </div>
@@ -66,48 +61,48 @@ function Biography() {
         </div>
         <div>
           <h1>Matt Lovan</h1>
+          <h2>Fullstack Engineer</h2>
+
           <p>
-            I develop social coordination systems using mechanism design & game
-            theory. I've worked on a variety of Web3 applications such as
-            user-generated content, networking & recruiting, social media.
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only
+            five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
           </p>
 
-          <h2>Concepts</h2>
-          <p>
-            <span className='tag-container'>
-              <a
-                className='tag'
-                href='https://en.wikipedia.org/wiki/Hold-up_problem'
-                rel='noreferrer'
-                target='_blank'>
-                {' '}
-                HoldUp Problem
-              </a>
-              <a
-                className='tag'
-                href='https://ergodicityeconomics.com/'
-                rel='noreferrer'
-                target='_blank'>
-                Ergodicity
-              </a>
-              <a
-                className='tag'
-                href='https://en.wikipedia.org/wiki/Promise_theory'
-                rel='noreferrer'
-                target='_blank'>
-                Promise Theory
-              </a>
-            </span>
-          </p>
-          <h2>Tools</h2>
-          <p>
-            <span className='tag-container'>
-              <span className='tag'>Solidity</span>
-              <span className='tag'>Javascript</span>
-              <span className='tag'>Dev ops</span>
-              <span className='tag'>cadCAD</span>
-            </span>
-          </p>
+          {/* <h2>Concepts</h2>
+          <span className='tag-container'>
+            <a
+              className='tag'
+              href='https://en.wikipedia.org/wiki/Hold-up_problem'
+              rel='noreferrer'
+              target='_blank'>
+              {' '}
+              HoldUp Problem
+            </a>
+            <a
+              className='tag'
+              href='https://ergodicityeconomics.com/'
+              rel='noreferrer'
+              target='_blank'>
+              Ergodicity Economics
+            </a>
+            <a
+              className='tag'
+              href='https://en.wikipedia.org/wiki/Promise_theory'
+              rel='noreferrer'
+              target='_blank'>
+              Promise Theory
+            </a>
+          </span> */}
+
+          <h2>Toolkit</h2>
+          <span className='tag-container'>
+            <span className='tag'>Solidity</span>
+            <span className='tag'>Node</span>
+            <span className='tag'>React</span>
+          </span>
 
           <br />
         </div>

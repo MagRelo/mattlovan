@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: '1mb' }));
 app.use(
   morgan('dev', {
-    skip: function(req, res) {
+    skip: function (req, res) {
       // remove the frontend dev server's 'json' calls from the console output
       return req.originalUrl.indexOf('json') > 0;
     },

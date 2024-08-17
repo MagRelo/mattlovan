@@ -8,14 +8,18 @@ RUN mkdir -pv /app/
 WORKDIR /app/
 
 # Step 3: Copy npm dependencies & install
-ENV NPM_CONFIG_LOGLEVEL warn
-ENV NODE_ENV production
+ENV NPM_CONFIG_LOGLEVEL=warn
+ENV NODE_ENV=production
 COPY package.json yarn.lock /app/
 RUN yarn
 
 # Step #4: copy app files
 COPY build /app/build/
-COPY server.js routes.js /app/
+COPY server.js routes.js /app/ 
+
+## HACK dangerous
+COPY .env /app/ 
+## HACK dangerous
 
 # Step 4: use a multi-stage build
 FROM node:current-alpine

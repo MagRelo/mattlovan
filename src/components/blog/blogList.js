@@ -1,25 +1,17 @@
 import React from 'react';
-//
-// import { getPosts } from 'api/ghost';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-// import PostTeaser from 'pages/blog/postTeaser';
 import Card from 'components/blog/ArticleCard';
 
 function BlogHome() {
-  // const [error, setError] = useState(null);
-  // const [postList, setPostList] = useState([]);
-  // useEffect(() => {
-  //   getPosts()
-  //     .then((posts) => setPostList([...posts, ...articles]))
-  //     .catch((error) => setError(error.toString()));
-  // }, []);
-
   return (
-    <React.Fragment>
-      {articles.map((post, index) => {
-        return <Card article={post} key={post.id || index} />;
-      })}
-    </React.Fragment>
+    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+      <Masonry gutter='1rem'>
+        {articles.map((post, index) => {
+          return <Card article={post} key={post.id || index} />;
+        })}
+      </Masonry>
+    </ResponsiveMasonry>
   );
 }
 
@@ -40,7 +32,7 @@ const articles = [
     image_alt: '',
     title: 'Run your own Public Ethereum Testnet',
     excerpt:
-      'It can be nice to have a semi-permanent, semi-public environment available for testing. This guide will focus on the steps to set up an Ethereum Proof-of-Authority testnet that is available from the public internet.',
+      'Set up a Proof-of-Authority testnet that is available from the public internet.',
     tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
     featured: false,
     external_url: networkURL,
