@@ -6,6 +6,7 @@ import { SocialAccountLink } from '../SocialLink';
 import './ProjectCard.scss';
 
 import midifighter from '../../images/midifighter.png';
+import scorebug from '../../images/scorebug.png';
 
 const defaultImage = '/images/comingsoon.jpg';
 const defaultDateString = '2018-02-16T18:39:44.651Z';
@@ -13,18 +14,29 @@ const defaultDateString = '2018-02-16T18:39:44.651Z';
 const projects = [
   {
     type: 'project',
-    // feature_image: networkImage,
-    feature_image:
-      'https://images.prismic.io/turing/659d771c531ac2845a2742a6_Directed_acyclic_graph_of_Bayesian_network_in_AI_6_11zon_ebf67e2f97.webp?auto=format,compress',
+    feature_image: scorebug,
     image_credit: '',
     image_alt: '',
-    title: 'Referral Relay',
+    title: 'Baseball Scorebug Redesign Exercise',
     excerpt:
-      'Referral Relay is a referral protocol based on Query Incentive Networks. Agents cooperate & compete to complete tasks created by Principals.',
-    status: 'In Progress',
-    created_at: '2024-08-10T15:43:46.739Z',
-    tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
-    external_url: '',
+      'The scorebug design should follow a left-to-right, "zoom level" approach that mirrors the structure of the content of the broadcast, from the widest context (the history, the ballpark, the series) down to the most immediate action.',
+    status: 'Live',
+    created_at: '2025-02-03T15:43:46.739Z',
+    tech: ['vite', 'react', 'tailwind', 'typescript'],
+    external_url: 'https://scorebug.mattlovan.dev',
+  },
+  {
+    type: 'project',
+    feature_image: 'https://cut.mattlovan.dev/cut-logo.png',
+    image_credit: '',
+    image_alt: '',
+    title: 'the Cut',
+    excerpt:
+      'Join the Cut to participate in fantasy golf competitions and track real-money bets. Create leagues, manage teams, and compete with live PGA Tour data.',
+    status: 'Live',
+    created_at: '2025-02-03T15:43:46.739Z',
+    tech: ['vite', 'react', 'tailwind', 'typescript'],
+    external_url: 'https://cut.mattlovan.dev',
   },
   {
     type: 'project',
@@ -188,3 +200,20 @@ function statusWrapper(status, externalLink) {
     );
   }
 }
+
+// keep this for reference
+// {
+//   type: 'project',
+//   // feature_image: networkImage,
+//   feature_image:
+//     'https://images.prismic.io/turing/659d771c531ac2845a2742a6_Directed_acyclic_graph_of_Bayesian_network_in_AI_6_11zon_ebf67e2f97.webp?auto=format,compress',
+//   image_credit: '',
+//   image_alt: '',
+//   title: 'Referral Relay',
+//   excerpt:
+//     'Referral Relay is a referral protocol based on Query Incentive Networks. Agents cooperate & compete to complete tasks created by Principals.',
+//   status: 'In Progress',
+//   created_at: '2024-08-10T15:43:46.739Z',
+//   tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
+//   external_url: '',
+// },
