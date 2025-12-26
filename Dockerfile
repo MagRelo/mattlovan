@@ -23,4 +23,4 @@ COPY --from=build /app /
 
 # start
 EXPOSE 8080
-CMD [ "yarn", "run", "server" ]
+CMD [ "yarn", "run", "serve" ]
