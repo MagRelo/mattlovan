@@ -6,7 +6,7 @@ import BlogList from 'components/blog/blogList';
 
 import headshot from 'images/profile.jpg';
 
-import 'components/blog/blog.scss';
+import 'components/blog/blog.css';
 
 function Home() {
   return (
@@ -71,32 +71,6 @@ function Biography() {
             remaining essentially unchanged.
           </p>
 
-          {/* <h2>Concepts</h2>
-          <span className='tag-container'>
-            <a
-              className='tag'
-              href='https://en.wikipedia.org/wiki/Hold-up_problem'
-              rel='noreferrer'
-              target='_blank'>
-              {' '}
-              HoldUp Problem
-            </a>
-            <a
-              className='tag'
-              href='https://ergodicityeconomics.com/'
-              rel='noreferrer'
-              target='_blank'>
-              Ergodicity Economics
-            </a>
-            <a
-              className='tag'
-              href='https://en.wikipedia.org/wiki/Promise_theory'
-              rel='noreferrer'
-              target='_blank'>
-              Promise Theory
-            </a>
-          </span> */}
-
           <h2>Toolkit</h2>
           <span className='tag-container'>
             <span className='tag'>Solidity</span>
@@ -110,3 +84,4 @@ function Biography() {
     </div>
   );
 }
+

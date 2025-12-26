@@ -1,4 +1,4 @@
-@import 'css/variables.scss';
+@import '../../css/variables.css';
 
 .project-card {
   display: grid;
@@ -7,7 +7,7 @@
 }
 
 .project-card-status {
-  color: $white;
+  color: var(--white);
 }
 
 .status-grid {
@@ -15,25 +15,23 @@
   grid-template-columns: auto 1fr;
   gap: 0.5rem;
 
-  border-top: solid 1px $servesaDark;
+  border-top: solid 1px var(--servesa-dark);
   padding-top: 1rem;
 }
 
 .status-label {
-  color: $servesaGray;
-  // font-size: smaller;
+  color: var(--servesa-gray);
   text-transform: uppercase;
 
-  // text-align: right;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  color: $servesaGray;
+  color: var(--servesa-gray);
   letter-spacing: 0.05rem;
 }
 
 .status-content {
-  color: $white;
-  // font-size: smaller;
+  color: var(--white);
 }
+

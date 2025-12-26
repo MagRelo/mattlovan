@@ -1,18 +1,16 @@
-@import 'css/variables.scss';
+@import '../../css/variables.css';
 
-.post-header {
-  .breadcrumbs {
-    font-size: smaller;
-    color: $servesaGray;
-  }
+.post-header .breadcrumbs {
+  font-size: smaller;
+  color: var(--servesa-gray);
+}
 
-  h1 {
-    margin-top: 1.5rem;
-  }
+.post-header h1 {
+  margin-top: 1.5rem;
 }
 
 .post-title {
-  color: $white;
+  color: var(--white);
   margin: 14px 0;
   font-size: 28px;
   line-height: 34px;
@@ -20,7 +18,6 @@
 
 .date {
   color: #888;
-  // border-bottom: $servesaDark solid 1px;
   font-size: small;
   min-height: 1rem;
   margin-bottom: 7px;
@@ -29,14 +26,13 @@
 
 .excerpt {
   font-size: smaller;
-  // font-style: italic;
   margin-top: 12px;
-  color: $servesaGray;
+  color: var(--servesa-gray);
 }
 
 .byline {
-  color: $servesaGray;
-  border-top: solid 2px $servesaGray;
+  color: var(--servesa-gray);
+  border-top: solid 2px var(--servesa-gray);
   margin: 0 -1rem;
 }
 
@@ -50,84 +46,78 @@
 .tag {
   display: inline-block;
 
-  color: $servesaGray;
+  color: var(--servesa-gray);
   line-height: initial;
   font-size: smaller;
   text-transform: uppercase;
   padding: 5px 8px 4px;
 
-  border: solid 2px $servesaDark;
+  border: solid 2px var(--servesa-dark);
   border-radius: 3px;
 
   margin: 0 8px 6px 0;
 }
 
 a.tag:hover {
-  color: $linkBlue;
-  border: solid 2px $linkBlue;
+  color: var(--link-blue);
+  border: solid 2px var(--link-blue);
 }
 
 hr {
-  border-top: solid 2px $servesaGray;
+  border-top: solid 2px var(--servesa-gray);
   margin: 2rem 0;
 }
 
-.content {
-  h2 {
-    margin: 0 0 20px;
-    padding: 12px 0 0;
-  }
+.content h2 {
+  margin: 0 0 20px;
+  padding: 12px 0 0;
+}
 
-  h3 {
-    margin: 0 0 18px;
-    padding: 12px 0 0;
-    font-size: 1.17rem;
-    font-family: 'Roboto-Bold';
-  }
+.content h3 {
+  margin: 0 0 18px;
+  padding: 12px 0 0;
+  font-size: 1.17rem;
+  font-family: 'Roboto-Bold';
+}
 
-  blockquote {
-    margin: 2rem 0.25rem;
-    padding: 1rem;
+.content blockquote {
+  margin: 2rem 0.25rem;
+  padding: 1rem;
 
-    background: $servesaDark;
-    border-left: solid 2px gray;
+  background: var(--servesa-dark);
+  border-left: solid 2px gray;
 
-    font-family: serif;
-    font-style: italic;
-  }
+  font-family: serif;
+  font-style: italic;
+}
 
-  pre,
-  code,
-  kbd {
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-  }
+.content pre,
+.content code,
+.content kbd {
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
 
-  pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow: auto;
+.content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
 
-    padding: 1rem;
-    background-color: #1d2020;
-    border-radius: 8px;
-  }
+  padding: 1rem;
+  background-color: #1d2020;
+  border-radius: 8px;
+}
 
-  pre code {
-    color: $yellow;
-    font-size: 10px;
-  }
+.content pre code {
+  color: var(--yellow);
+  font-size: 10px;
 }
 
 @media screen and (min-width: 445px) {
   .byline {
-    border-top: solid 1px $servesaGray;
+    border-top: solid 1px var(--servesa-gray);
   }
-
-  // .tag {
-  //   border: solid 1px $servesaGray;
-  // }
 
   .post {
     max-width: 44rem;
@@ -136,20 +126,20 @@ hr {
 
   .content {
     padding: 0 1em;
+  }
 
-    h2 {
-      margin: 0 0 20px -1rem;
-    }
+  .content h2 {
+    margin: 0 0 20px -1rem;
+  }
 
-    h3 {
-      margin: 0 0 20px -1rem;
-    }
+  .content h3 {
+    margin: 0 0 20px -1rem;
+  }
 
-    blockquote {
-      margin: 2rem;
-      padding: 1rem 1.5rem;
-      font-style: italic;
-    }
+  .content blockquote {
+    margin: 2rem;
+    padding: 1rem 1.5rem;
+    font-style: italic;
   }
 }
 
@@ -158,7 +148,7 @@ hr {
   line-height: 2rem;
   text-align: center;
   margin-bottom: 1rem;
-  color: $servesaGray;
+  color: var(--servesa-gray);
 }
 
 .cta-panel {
@@ -168,16 +158,15 @@ hr {
   text-align: center;
   padding: 1rem 2rem;
 
-  background: $servesaDark;
-  border: solid 1px $servesaMedium;
+  background: var(--servesa-dark);
+  border: solid 1px var(--servesa-medium);
   border-radius: 8px;
 }
 
 /* Post */
 .post-card {
-  /* height: 100%; */
   padding: 22px;
-  background: $black;
+  background: var(--black);
   border: solid 1px #2d2d2d;
   border-right: solid 1px #232323;
   border-bottom: solid 1px #232323;
@@ -218,22 +207,17 @@ hr {
 
 .post-content {
   padding: 0 0 0 1em;
-  /* border: 1px solid #4c4b4b; */
-  /* border-top: 1px solid #313131; */
 }
 
-// Koenig cards(?)
-.kg-card {
-  figcaption {
-    text-align: center;
-    font-size: smaller;
-    padding: 0.667rem;
-    font-style: italic;
+/* Koenig cards(?) */
+.kg-card figcaption {
+  text-align: center;
+  font-size: smaller;
+  padding: 0.667rem;
+  font-style: italic;
 
-    background-color: $servesaDark;
-    // border-bottom: solid 1px $servesaGray;
-    box-shadow: $box-shadow-inner;
-  }
+  background-color: var(--servesa-dark);
+  box-shadow: var(--box-shadow-inner);
 }
 
 .kg-image-card {
@@ -244,12 +228,7 @@ hr {
   max-width: 100%;
 }
 
-// from https://ghost.org/docs/api/v2/handlebars-themes/editor/#bookmark-card
-.kg-bookmark-card {
-  width: 100%;
-  position: relative;
-}
-
+/* from https://ghost.org/docs/api/v2/handlebars-themes/editor/#bookmark-card */
 .kg-bookmark-card {
   width: 100%;
   position: relative;
@@ -262,7 +241,7 @@ hr {
   color: currentColor;
   font-family: inherit;
   text-decoration: none;
-  border: 1px solid $servesaDark;
+  border: 1px solid var(--servesa-dark);
 }
 
 .kg-bookmark-container:hover {
@@ -275,7 +254,7 @@ hr {
   padding: 20px;
   order: 1;
 
-  background-color: $servesaDark;
+  background-color: var(--servesa-dark);
 }
 
 .kg-bookmark-title {
@@ -340,7 +319,7 @@ hr {
   }
 }
 
-// Gallery
+/* Gallery */
 
 .kg-gallery-container {
   display: flex;
@@ -370,3 +349,4 @@ hr {
 .kg-gallery-image:not(:first-of-type) {
   margin: 0 0 0 0.75em;
 }
+

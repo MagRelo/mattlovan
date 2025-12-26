@@ -15,11 +15,7 @@ RUN yarn
 
 # Step #4: copy app files
 COPY build /app/build/
-COPY server.js routes.js /app/ 
-
-## HACK dangerous
-COPY .env /app/ 
-## HACK dangerous
+COPY server.js /app/
 
 # Step 4: use a multi-stage build
 FROM node:current-alpine

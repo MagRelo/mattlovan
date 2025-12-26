@@ -1,12 +1,6 @@
-$angle: -4deg;
-
 :root {
   --width: 100vw;
   --full-width: 100vw;
-
-  // @media (min-width: 42em) {
-  //   --width: 42rem;
-  // }
 
   /*-----------------
   Magic Number Alert:
@@ -24,24 +18,22 @@ $angle: -4deg;
   position: relative;
   padding: var(--skew-padding) 0;
   margin-top: -1px;
+}
 
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    transform: skewy($angle);
-    transform-origin: 50% 0;
-    outline: 1px solid transparent;
-    backface-visibility: hidden;
-  }
+.diagonal-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewy(-4deg);
+  transform-origin: 50% 0;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
 }
 
 .bg-one:before {
-  // background-image: linear-gradient(45deg, #654ea3, #eaafc8);
-
   background: #00b09b;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #96c93d, #00b09b);
@@ -51,8 +43,6 @@ $angle: -4deg;
 }
 
 .bg-two:before {
-  // background-image: linear-gradient(-135deg, #ff0084, #33001b);
-
   background: #0f0c29;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
@@ -108,35 +98,36 @@ $angle: -4deg;
 
 .Typist .Cursor {
   display: inline-block;
+}
 
-  &--blinking {
+.Typist .Cursor--blinking {
+  opacity: 1;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
     opacity: 1;
-    animation: blink 1s linear infinite;
+  }
 
-    @keyframes blink {
-      0% {
-        opacity: 1;
-      }
+  47% {
+    opacity: 1;
+  }
 
-      47% {
-        opacity: 1;
-      }
+  50% {
+    opacity: 0;
+  }
 
-      50% {
-        opacity: 0;
-      }
+  97% {
+    opacity: 0;
+  }
 
-      97% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
+  100% {
+    opacity: 1;
   }
 }
 
 .skew-padding {
   padding: var(--skew-padding) 0;
 }
+

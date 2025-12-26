@@ -1,9 +1,7 @@
 import React from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-import { SocialAccountLink } from '../SocialLink';
-
-import './ProjectCard.scss';
+import './ProjectCard.css';
 
 import midifighter from '../../images/midifighter.png';
 import scorebug from '../../images/scorebug.png';
@@ -11,7 +9,22 @@ import scorebug from '../../images/scorebug.png';
 const defaultImage = '/images/comingsoon.jpg';
 const defaultDateString = '2018-02-16T18:39:44.651Z';
 
-const projects = [
+interface Project {
+  type: string;
+  feature_image?: string;
+  image_credit?: string;
+  image_alt?: string;
+  title: string;
+  excerpt: string;
+  status: string;
+  created_at: string;
+  tech?: string[];
+  external_url: string;
+  featured?: boolean;
+  id?: string;
+}
+
+const projects: Project[] = [
   {
     type: 'project',
     feature_image: scorebug,
@@ -51,7 +64,6 @@ const projects = [
     tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
     external_url: 'https://rara.social',
   },
-
   {
     type: 'project',
     created_at: '2018-07-16T18:39:44.651Z',
@@ -87,7 +99,6 @@ const projects = [
     status: 'View Code',
     external_url: 'https://github.com/MagRelo/signingDemo',
   },
-
   {
     feature_image: midifighter,
     type: 'project',
@@ -115,12 +126,14 @@ function ProjectList() {
 
 export default ProjectList;
 
-const ProjectCard = ({ article }) => {
+interface ProjectCardProps {
+  article: Project;
+}
+
+const ProjectCard = ({ article }: ProjectCardProps) => {
   return (
     <div>
       <div className='post-card project-card'>
-        {/* Image */}
-
         {article.feature_image ? (
           <div
             className='post-img'
@@ -133,53 +146,22 @@ const ProjectCard = ({ article }) => {
           />
         ) : null}
 
-        {/* Content */}
         <div>
           <div className='post-title'>{article.title}</div>
           <p className='excerpt'>{article.excerpt}</p>
         </div>
 
-        {/* status  */}
         <div className='status-grid'>
-          {/* <div className='status-label'>Status:</div> */}
           <div className='status-content'>
             {statusWrapper(article.status, article.external_url)}
           </div>
-          {/* <div className='status-label'>Updated:</div>
-            <div className='status-label'>{formatDate(article.created_at)}</div> */}
         </div>
       </div>
     </div>
   );
 };
 
-function LinkWrapper({ children, href }) {
-  if (href && href.length) {
-    // console.log('use link: ', href);
-    return (
-      <a href={href} target='_blank' rel='noreferrer'>
-        {[children]}
-      </a>
-    );
-  } else {
-    // console.log('no link');
-    return <>{children}</>;
-  }
-}
-
-function formatDate(isoDate) {
-  const date = new Date(isoDate || defaultDateString);
-
-  const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
-
-  return date.toLocaleDateString('en', options);
-}
-
-function statusWrapper(status, externalLink) {
+function statusWrapper(status: string, externalLink: string) {
   if (status === 'Live') {
     return (
       <div style={{ display: 'inline-block' }}>
@@ -199,21 +181,7 @@ function statusWrapper(status, externalLink) {
       </div>
     );
   }
+
+  return null;
 }
 
-// keep this for reference
-// {
-//   type: 'project',
-//   // feature_image: networkImage,
-//   feature_image:
-//     'https://images.prismic.io/turing/659d771c531ac2845a2742a6_Directed_acyclic_graph_of_Bayesian_network_in_AI_6_11zon_ebf67e2f97.webp?auto=format,compress',
-//   image_credit: '',
-//   image_alt: '',
-//   title: 'Referral Relay',
-//   excerpt:
-//     'Referral Relay is a referral protocol based on Query Incentive Networks. Agents cooperate & compete to complete tasks created by Principals.',
-//   status: 'In Progress',
-//   created_at: '2024-08-10T15:43:46.739Z',
-//   tech: ['geth', 'Docker', 'NGINX', 'Ubuntu'],
-//   external_url: '',
-// },

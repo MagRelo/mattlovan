@@ -3,26 +3,23 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 import Card from 'components/blog/ArticleCard';
 
-function BlogHome() {
-  return (
-    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-      <Masonry gutter='1rem'>
-        {articles.map((post, index) => {
-          return <Card article={post} key={post.id || index} />;
-        })}
-      </Masonry>
-    </ResponsiveMasonry>
-  );
+interface Article {
+  type: string;
+  created_at: string;
+  feature_image?: string;
+  image_credit?: string;
+  image_alt?: string;
+  title: string;
+  excerpt: string;
+  tech?: string[];
+  featured: boolean;
+  external_url: string;
+  id?: string;
 }
-
-export default BlogHome;
-
-// const slidesUrl =
-//   'https://docs.google.com/presentation/d/e/2PACX-1vQiyHWeRfKluDE_RAYgefiX_ODY4hrn8Y4jL7M5s1wKo5V2Eyd3Wf2HcIzGZIGt8hxoXc2ebYhPugrX/pub?start=false&loop=false&delayms=3000';
 
 const networkURL =
   'https://medium.com/@mattlovan/run-a-public-ethereum-testnet-f0e40cefc1f2';
-const articles = [
+const articles: Article[] = [
   {
     type: 'article',
     created_at: '2019-06-03T15:43:46.739Z',
@@ -52,7 +49,6 @@ const articles = [
     external_url:
       'https://medium.com/@mattlovan/deploy-a-scalable-open-source-architecture-4349cfe27e',
   },
-
   {
     type: 'concept',
     created_at: '2018-07-16T18:39:44.651Z',
@@ -95,3 +91,18 @@ const articles = [
       'https://medium.com/@mattlovan/reputation-and-identity-in-decentralized-systems-ba4a7ff99cc4',
   },
 ];
+
+function BlogHome() {
+  return (
+    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+      <Masonry gutter='1rem'>
+        {articles.map((post, index) => {
+          return <Card article={post} key={post.id || index} />;
+        })}
+      </Masonry>
+    </ResponsiveMasonry>
+  );
+}
+
+export default BlogHome;
+
