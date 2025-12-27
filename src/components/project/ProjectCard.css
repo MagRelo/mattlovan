@@ -6,10 +6,6 @@
   white-space: pre-line;
 }
 
-.project-card-status {
-  color: var(--white);
-}
-
 .status-grid {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -17,18 +13,6 @@
 
   border-top: solid 1px var(--servesa-dark);
   padding-top: 1rem;
-}
-
-.status-label {
-  color: var(--servesa-gray);
-  text-transform: uppercase;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  color: var(--servesa-gray);
-  letter-spacing: 0.05rem;
 }
 
 .status-content {

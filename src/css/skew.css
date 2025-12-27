@@ -96,38 +96,3 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.Typist .Cursor {
-  display: inline-block;
-}
-
-.Typist .Cursor--blinking {
-  opacity: 1;
-  animation: blink 1s linear infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-
-  47% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  97% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.skew-padding {
-  padding: var(--skew-padding) 0;
-}
-
