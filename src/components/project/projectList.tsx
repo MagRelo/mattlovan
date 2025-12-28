@@ -5,6 +5,7 @@ import './ProjectCard.css';
 
 import midifighter from '../../images/midifighter.png';
 import scorebug from '../../images/scorebug.png';
+import referralTree from '../../images/referral-tree.svg';
 
 const defaultImage = '/images/comingsoon.jpg';
 const defaultDateString = '2018-02-16T18:39:44.651Z';
@@ -25,6 +26,19 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    type: 'project',
+    feature_image: referralTree,
+    image_credit: '',
+    image_alt: 'Referral tree diagram showing multi-level reward distribution',
+    title: 'Multi-Level Referral Reward System',
+    excerpt:
+      "Build viral growth through multi-level referral rewards. Solidity contracts implementing tree-based referral chains where users earn rewards not just from their own referrals, but also from their referrer's referrals, creating exponential network growth incentives.",
+    status: 'View Code',
+    created_at: '2025-01-15T15:43:46.739Z',
+    tech: ['Solidity', 'Foundry', 'Ethereum', 'Smart Contracts'],
+    external_url: 'https://github.com/MagRelo/referralTree',
+  },
   {
     type: 'project',
     feature_image: scorebug,
@@ -184,4 +198,3 @@ function statusWrapper(status: string, externalLink: string) {
 
   return null;
 }
-
