@@ -61,30 +61,25 @@ function Biography() {
         </div>
         <div>
           <h1>Matt Lovan</h1>
-          <h2>Fullstack Engineer</h2>
+          <h2>Software Engineer</h2>
 
           <p>
-            I'm passionate about mechanism design and cryptographic primitives
-            that solve real-world problems. I build blockchain systems for
-            meaningful applications beyond speculation—improving coordination
-            mechanisms, enabling new forms of digital ownership, and creating
-            more transparent governance structures. My work sits at the
-            intersection of game theory, cryptography, and practical
-            engineering.
+            I build blockchain systems for meaningful applications beyond
+            speculation—improving coordination, enabling new forms of digital
+            ownership, and creating more transparent governance structures. My
+            work sits at the intersection of game theory, psychology, and
+            practical engineering.
           </p>
 
           <h2>Toolkit</h2>
           <span className='tag-container'>
-            <span className='tag'>JavaScript</span>
             <span className='tag'>TypeScript</span>
             <span className='tag'>React</span>
             <span className='tag'>Node.js</span>
             <span className='tag'>Solidity</span>
-            <span className='tag'>Ethereum</span>
-            <span className='tag'>Foundry</span>
-            <span className='tag'>Express</span>
-            <span className='tag'>Vite</span>
             <span className='tag'>Docker</span>
+            <span className='tag'>Foundry</span>
+            <span className='tag'>Vite</span>
             <span className='tag'>MongoDB</span>
             <span className='tag'>Web3</span>
           </span>
