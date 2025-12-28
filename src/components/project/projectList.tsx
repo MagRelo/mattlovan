@@ -31,9 +31,9 @@ const projects: Project[] = [
     feature_image: referralTree,
     image_credit: '',
     image_alt: 'Referral tree diagram showing multi-level reward distribution',
-    title: 'Multi-Level Referral Reward System',
+    title: 'referralTree - Multi-Level Referral Reward System',
     excerpt:
-      "Build viral growth through multi-level referral rewards. Solidity contracts implementing tree-based referral chains where users earn rewards not just from their own referrals, but also from their referrer's referrals, creating exponential network growth incentives.",
+      "Build viral growth through multi-level referral rewards. Solidity contracts implement a tree-based referral system where users earn rewards not just from their own referrals, but also from their referrer's referrals, creating exponential network growth incentives.",
     status: 'View Code',
     created_at: '2025-01-15T15:43:46.739Z',
     tech: ['Solidity', 'Foundry', 'Ethereum', 'Smart Contracts'],
@@ -44,7 +44,7 @@ const projects: Project[] = [
     feature_image: scorebug,
     image_credit: '',
     image_alt: '',
-    title: 'Baseball Scorebug Redesign Exercise',
+    title: 'Baseball Scorebug Redesign',
     excerpt:
       'The scorebug design should follow a left-to-right, "zoom level" approach that mirrors the structure of the content of the broadcast, from the widest context (the history, the ballpark, the series) down to the most immediate action.',
     status: 'Live',
@@ -54,7 +54,7 @@ const projects: Project[] = [
   },
   {
     type: 'project',
-    feature_image: 'https://cut.mattlovan.dev/cut-logo.png',
+    feature_image: 'https://cut.mattlovan.dev/cut-logo2-og.png',
     image_credit: '',
     image_alt: '',
     title: 'the Cut',
@@ -63,7 +63,7 @@ const projects: Project[] = [
     status: 'Live',
     created_at: '2025-02-03T15:43:46.739Z',
     tech: ['vite', 'react', 'tailwind', 'typescript'],
-    external_url: 'https://cut.mattlovan.dev',
+    external_url: 'https://cut-v2.mattlovan.dev',
   },
   {
     type: 'project',

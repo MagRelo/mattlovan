@@ -1,6 +1,6 @@
 
 # Step 1: choose a smaller base image
-FROM node:current-alpine as build
+FROM node:current-alpine AS build
 
 # Step 2: only copy in what you need
 ARG APP_HOME=/app/

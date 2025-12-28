@@ -65,10 +65,10 @@ function Biography() {
 
           <p>
             I build blockchain systems for meaningful applications beyond
-            speculation—improving coordination, enabling new forms of digital
-            ownership, and creating more transparent governance structures. My
-            work sits at the intersection of game theory, psychology, and
-            practical engineering.
+            speculation—improving incentives for coordination, enabling new
+            forms of digital ownership, and creating more effective governance
+            structures. My interests lie at the intersection of game theory,
+            psychology, and practical engineering.
           </p>
 
           <h2>Toolkit</h2>
