@@ -64,18 +64,29 @@ function Biography() {
           <h2>Fullstack Engineer</h2>
 
           <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only
-            five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            I'm passionate about mechanism design and cryptographic primitives
+            that solve real-world problems. I build blockchain systems for
+            meaningful applications beyond speculation—improving coordination
+            mechanisms, enabling new forms of digital ownership, and creating
+            more transparent governance structures. My work sits at the
+            intersection of game theory, cryptography, and practical
+            engineering.
           </p>
 
           <h2>Toolkit</h2>
           <span className='tag-container'>
-            <span className='tag'>Solidity</span>
-            <span className='tag'>Node</span>
+            <span className='tag'>JavaScript</span>
+            <span className='tag'>TypeScript</span>
             <span className='tag'>React</span>
+            <span className='tag'>Node.js</span>
+            <span className='tag'>Solidity</span>
+            <span className='tag'>Ethereum</span>
+            <span className='tag'>Foundry</span>
+            <span className='tag'>Express</span>
+            <span className='tag'>Vite</span>
+            <span className='tag'>Docker</span>
+            <span className='tag'>MongoDB</span>
+            <span className='tag'>Web3</span>
           </span>
 
           <br />
@@ -84,4 +95,3 @@ function Biography() {
     </div>
   );
 }
-
