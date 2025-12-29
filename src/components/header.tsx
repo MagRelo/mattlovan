@@ -43,19 +43,19 @@ export const SocialContainer = () => {
 
         <li>
           <SocialAccountLink
-            name='Medium'
+            name='Github'
             fill='#ddd'
-            link='https://medium.com/@mattlovan'
-            account='Medium'
+            link='https://github.com/magrelo'
+            account='GitHub'
           />
         </li>
 
         <li>
           <SocialAccountLink
-            name='Github'
+            name='Medium'
             fill='#ddd'
-            link='https://github.com/magrelo'
-            account='GitHub'
+            link='https://medium.com/@mattlovan'
+            account='Medium'
           />
         </li>
       </ul>

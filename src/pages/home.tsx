@@ -64,24 +64,20 @@ function Biography() {
           <h2>Software Engineer</h2>
 
           <p>
-            I build blockchain systems for meaningful applications beyond
-            speculation—improving incentives for coordination, enabling new
-            forms of digital ownership, and creating more effective governance
-            structures. My interests lie at the intersection of game theory,
-            psychology, and practical engineering.
+            I design blockchain systems for applications beyond speculation. I
+            believe that we can build structures & incentives that enhance human
+            agency and enable people to make choices that are more in line with
+            their aspirations. My interests lie at the intersection of game
+            theory, psychology, and practical engineering.
           </p>
 
           <h2>Toolkit</h2>
           <span className='tag-container'>
-            <span className='tag'>TypeScript</span>
-            <span className='tag'>React</span>
-            <span className='tag'>Node.js</span>
             <span className='tag'>Solidity</span>
             <span className='tag'>Docker</span>
-            <span className='tag'>Foundry</span>
-            <span className='tag'>Vite</span>
-            <span className='tag'>MongoDB</span>
-            <span className='tag'>Web3</span>
+            <span className='tag'>TypeScript</span>
+            <span className='tag'>Node</span>
+            <span className='tag'>React</span>
           </span>
 
           <br />
