@@ -116,5 +116,10 @@ const Typer = () => {
     };
   }, [currentIndex, isDeleting, messageIndex]);
 
-  return <span>{displayText || '\u00A0'}</span>;
+  return (
+    <span>
+      {displayText}
+      <span className='typer-cursor'>_</span>
+    </span>
+  );
 };

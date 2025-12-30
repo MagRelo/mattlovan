@@ -153,6 +153,24 @@ header .title {
   text-transform: uppercase;
 }
 
+.typer-cursor {
+  margin-left: 0.1em;
+  display: inline-block;
+  animation: blink 900ms step-end infinite;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
 footer {
   padding: 60px 0 0;
 }
