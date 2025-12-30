@@ -4,6 +4,10 @@ body,
   min-height: 100vh;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -13,4 +17,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #282929;
+  overflow-x: hidden;
 }

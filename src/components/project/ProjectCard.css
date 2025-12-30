@@ -12,10 +12,8 @@
   gap: 0.5rem;
 
   border-top: solid 1px var(--servesa-dark);
-  padding-top: 1rem;
 }
 
 .status-content {
   color: var(--white);
 }
-

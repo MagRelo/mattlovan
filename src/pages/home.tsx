@@ -16,9 +16,7 @@ function Home() {
         <div className='stripe'>BIO</div>
         <section className='diagonal-box bg-four'>
           <div className='container'>
-            <div style={{ display: 'grid', justifyContent: 'center' }}>
-              <Biography />
-            </div>
+            <Biography />
           </div>
         </section>
 
@@ -48,7 +46,7 @@ function Biography() {
   const [profileToggle, setProfileToggle] = useState(false);
 
   return (
-    <div className='panel' style={{ maxWidth: '42rem' }}>
+    <div className='panel' style={{ maxWidth: '42rem', margin: '0 auto' }}>
       <div className='profile-header'>
         <button
           className='image-button'

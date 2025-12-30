@@ -1,6 +1,7 @@
 :root {
-  --width: 100vw;
-  --full-width: 100vw;
+  /* Use 100% to avoid scrollbar width issue, but calculate from body width */
+  --width: 100%;
+  --full-width: 100%;
 
   /*-----------------
   Magic Number Alert:
@@ -18,6 +19,10 @@
   position: relative;
   padding: var(--skew-padding) 0;
   margin-top: -1px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
 }
 
 .diagonal-box:before {
@@ -95,4 +100,3 @@
   background: linear-gradient(to bottom, #f9d423, #ff4e50);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-

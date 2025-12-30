@@ -107,7 +107,7 @@ button.image-button:focus {
 }
 
 .panel {
-  padding: 22px 22px 0 22px;
+  padding: 22px;
   background-color: var(--black);
   box-shadow: 2px 2px 6px #1f1f1f;
 }
@@ -221,7 +221,6 @@ ul.social-links > li {
 /* Latest Updates - Current Work Section */
 .latest-updates {
   margin-top: 1rem;
-  margin-bottom: 1.5rem;
 }
 
 .update {
@@ -230,7 +229,6 @@ ul.social-links > li {
   border: 1px solid rgba(0, 242, 96, 0.3);
   border-left: 3px solid rgba(0, 242, 96, 0.8);
   border-radius: 4px;
-  margin-bottom: 1rem;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 242, 96, 0.1);
 }
@@ -268,7 +266,7 @@ ul.social-links > li {
 
 .update-description {
   color: var(--servesa-gray);
-  margin: 0.75rem 0;
+  margin: 0.75rem 0 0 0;
   line-height: 1.5em;
 }
 
@@ -280,7 +278,7 @@ ul.social-links > li {
   font-size: 13px;
   color: rgba(96, 200, 232, 0.9);
   text-decoration: none;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   transition: color 0.2s ease-in-out;
 }
 
