@@ -62,14 +62,18 @@ function Biography() {
         </div>
       </div>
 
-      <p>I live in New York City and work freelance as a software engineer.</p>
+      <p>
+        I live in New York City and work freelance as a full-stack software
+        engineer. I specialize in parachuting into early-stage startups and
+        contributing across all levels of the technical stack & business.
+      </p>
 
       <p>
-        I design incentive systems for blockchain applications beyond
-        speculation. I believe that we can build structures that enhance human
-        agency and enable people to make choices that are more in line with
-        their aspirations. My interests lie at the intersection of game theory,
-        psychology, and practical engineering.
+        In my free time I design incentive systems for blockchain applications
+        beyond speculation. I believe that we can build structures that enhance
+        human agency and enable people to make choices that are more in line
+        with their aspirations. My interests lie at the intersection of game
+        theory, psychology, and practical engineering.
       </p>
 
       <h2>Toolkit</h2>
