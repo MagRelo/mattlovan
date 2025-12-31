@@ -62,8 +62,8 @@ function Biography() {
 
       <p>
         I live in New York City and work freelance as a full-stack software
-        engineer. I specialize in parachuting into early-stage startups and
-        contributing across all levels of the technical stack & business.
+        engineer. I work with early-stage startups to help them build their
+        products and scale their business.
       </p>
 
       <p>
