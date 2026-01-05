@@ -62,10 +62,9 @@ function Biography() {
 
       <p>
         I design incentive structures for blockchain applications beyond
-        speculation. We can build structures that enhance human agency and
-        enable people to make choices that align with their aspirations. My
-        interests lie at the intersection of game theory, psychology, and
-        practical engineering.
+        speculation – structures that enhance human agency and enable people to
+        make choices that align with their aspirations. My interests lie at the
+        intersection of game theory, psychology, and practical engineering.
       </p>
 
       <h2>Toolkit</h2>
