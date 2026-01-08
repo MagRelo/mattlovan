@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "node server.js",
-    "build-prod": "vite build && docker build . --platform linux/amd64 -t magrelo/mattlovan && docker push magrelo/mattlovan",
+    "deploy": "vite build && docker build . --platform linux/amd64 -t magrelo/mattlovan && docker push magrelo/mattlovan",
     "ssh": "ssh root@45.55.136.214"
   },
   "dependencies": {
