@@ -6,6 +6,7 @@ import './ProjectCard.css';
 import midifighter from '../../images/midifighter.png';
 import scorebug from '../../images/scorebug.png';
 import referralTree from '../../images/referral-tree.svg';
+import cut from '../../images/cut-logo.png';
 
 const defaultImage = '/images/comingsoon.jpg';
 const defaultDateString = '2018-02-16T18:39:44.651Z';
@@ -26,6 +27,19 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    type: 'project',
+    feature_image: cut,
+    image_credit: '',
+    image_alt: '',
+    title: 'the Cut',
+    excerpt:
+      'Crypto-native fantasy golf platform featuring passkey wallets, a native token, interest-bearing accounts via Compound V3, two-layer prediction market, live scoring, and more.',
+    status: 'Live',
+    created_at: '2025-02-03T15:43:46.739Z',
+    tech: ['solidity', 'foundry', 'ethereum', 'wagmi', 'porto'],
+    external_url: 'https://cut-v2.mattlovan.dev',
+  },
   {
     type: 'project',
     feature_image: referralTree,
@@ -52,19 +66,7 @@ const projects: Project[] = [
     tech: ['vite', 'react', 'tailwind', 'typescript'],
     external_url: 'https://scorebug.mattlovan.dev',
   },
-  {
-    type: 'project',
-    feature_image: 'https://cut.mattlovan.dev/cut-logo2-og.png',
-    image_credit: '',
-    image_alt: '',
-    title: 'the Cut',
-    excerpt:
-      'Join the Cut to participate in fantasy golf competitions and track real-money bets. Create leagues, manage teams, and compete with live PGA Tour data.',
-    status: 'Live',
-    created_at: '2025-02-03T15:43:46.739Z',
-    tech: ['vite', 'react', 'tailwind', 'typescript'],
-    external_url: 'https://cut-v2.mattlovan.dev',
-  },
+
   {
     type: 'project',
     feature_image: 'https://rara.social/assets/images/share.jpg?v=712ff776',
